@@ -434,10 +434,10 @@ export default function Home() {
                   className="w-16 h-16 rounded-full mb-4"
                 />
                 <p className="text-gray-700">
-                  "Antes do ImobDeal, eu mandava PDFs para os clientes e não
+                  &quot;Antes do ImobDeal, eu mandava PDFs para os clientes e não
                   fazia ideia se eles viam ou ignoravam. Agora, sei exatamente
                   quando abriram a proposta e posso entrar em contato no momento
-                  certo. "
+                  certo. &quot;
                 </p>
                 <h4 className="mt-4 font-semibold text-gray-900">João Silva</h4>
                 <span className="text-gray-500 text-sm">
@@ -453,11 +453,11 @@ export default function Home() {
                   className="w-16 h-16 rounded-full mb-4"
                 />
                 <p className="text-gray-700">
-                  "Eu sempre perdia tempo reenviando propostas ou explicando
+                  &quot;Eu sempre perdia tempo reenviando propostas ou explicando
                   detalhes que os clientes esqueciam. Com o ImobDeal, envio tudo
                   organizado, e se vejo que abriram, mas não responderam, sei
                   que posso dar um follow-up na hora certa. Isso fez toda
-                  diferença nos fechamentos!"
+                  diferença nos fechamentos!&quot;
                 </p>
                 <h4 className="mt-4 font-semibold text-gray-900">
                   Maria Souza
@@ -475,10 +475,10 @@ export default function Home() {
                   className="w-16 h-16 rounded-full mb-4"
                 />
                 <p className="text-gray-700">
-                  "Trabalho com investidores e cada segundo conta. Saber que um
+                  &quot;Trabalho com investidores e cada segundo conta. Saber que um
                   investidor abriu a proposta e ficou 5 minutos analisando me dá
                   uma vantagem absurda. Antes, eu enviava e ficava no escuro.
-                  Agora, fecho negócios de forma mais estratégica e rápida."
+                  Agora, fecho negócios de forma mais estratégica e rápida.&quot;
                 </p>
                 <h4 className="mt-4 font-semibold text-gray-900">
                   Carlos Mendes
