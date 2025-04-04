@@ -459,8 +459,8 @@ export default function Home() {
                   <Image
                     width={100}
                     height={100}
-                    src="https://res.cloudinary.com/dpegpgjpr/image/upload/v17262571003/qez8luzs7dnk06s1kf1q.jpg"
-                    alt="Pedro Regert"
+                    src="https://res.cloudinary.com/dpegpgjpr/image/upload/v1730392692/bfmotq1hhzrkn5c9vuij.jpg"
+                    alt="Rodrigo Barbosa"
                     className="h-16 w-16 rounded-full mb-4 object-cover"
                   />
                   <p className="text-gray-700  h-[280px]">
