@@ -471,7 +471,7 @@ export default function Home() {
                     certa. Isso fez toda diferença nos fechamentos!&quot;
                   </p>
                   <h4 className="mt-4 font-semibold text-gray-900">
-                    Pedro Regert
+                   Rodrigo Barbosa
                   </h4>
                   <span className="text-gray-500 text-sm">
                     Corretor Imobiliário
