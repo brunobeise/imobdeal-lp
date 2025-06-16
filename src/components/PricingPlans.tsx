@@ -6,7 +6,7 @@ const plans = {
   corretores: [
     {
       name: "Autônomo",
-      price: "R$ 129,90",
+      price: "R$ 169,90",
       per: "",
       features: [
         "Acompanhe quando o cliente abre a proposta",
@@ -22,7 +22,7 @@ const plans = {
   imobiliarias: [
     {
       name: "Bronze",
-      price: "R$ 89,90",
+      price: "R$ 109,90",
       per: "por corretor (5 corretores)",
       features: [
         "Dashboard com histórico de propostas",
@@ -36,7 +36,7 @@ const plans = {
     },
     {
       name: "Prata",
-      price: "R$ 79,90",
+      price: "R$ 94,90",
       per: "por corretor (10 corretores)",
       features: [
         "Todos os benefícios do plano Bronze",
@@ -49,7 +49,7 @@ const plans = {
     },
     {
       name: "Ouro",
-      price: "R$ 66,45",
+      price: "R$ 78,90",
       per: "por corretor (15 corretores)",
       features: [
         "Todos os benefícios do plano Prata",
