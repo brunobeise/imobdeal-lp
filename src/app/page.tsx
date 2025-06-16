@@ -3,7 +3,12 @@ import imobdeal from "../../public/ImobDeal-branco.png";
 import Preview1 from "../../public/proposta-mockup.png";
 import Ideia from "../../public/ideia.svg";
 import Sino from "../../public/sino.svg";
+import House from "../../public/house.svg";
+import File from "../../public/file2.svg";
+import Time from "../../public/time.svg";
+import Portfolio from "../../public/portfolio.png";
 import Chart from "../../public/chart.svg";
+import ChartPortfolio from "../../public/grafico-portfolio.png";
 import ProposalCTA from "@/components/ProposalCTA";
 import {
   FaCheckCircle,
@@ -110,6 +115,104 @@ export default function Home() {
             </div>
           </section>
           <ProposalCTA />
+          <section className="features z-10 bg-white py-16">
+            <div className="max-w-6xl mx-auto px-6 text-center">
+              <h2 className="text-3xl font-bold text-gray-900 mb-10">
+                Crie Portfólios Interativos e Impressione seus Clientes
+              </h2>
+
+              {/* Cards de funcionalidades do Portfólio */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
+                <div className="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col items-center">
+                  <Image
+                    width={58}
+                    height={58}
+                    src={House.src}
+                    alt="Mostrar Imóveis"
+                  />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">
+                    Mostrar imóveis
+                  </h3>
+                  <p className="text-gray-600 mt-2">
+                    Apresente todos os imóveis relevantes em um só link, com
+                    fotos e informações detalhadas.
+                  </p>
+                </div>
+                <div className="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col items-center">
+                  <Image
+                    width={50}
+                    height={50}
+                    src={File.src}
+                    alt="Comparar Propostas"
+                  />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">
+                    Comparar propostas
+                  </h3>
+                  <p className="text-gray-600 mt-2">
+                    Permita que o cliente compare diferentes condições de
+                    pagamento e escolha com mais clareza.
+                  </p>
+                </div>
+                <div className="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col items-center">
+                  <Image
+                    width={50}
+                    height={50}
+                    src={Time.src}
+                    alt="Tempo em cada item"
+                  />
+                  <h3 className="text-xl font-semibold mt-4 mb-2">
+                    Tempo em cada item
+                  </h3>
+                  <p className="text-gray-600 mt-2">
+                    Descubra quanto tempo o cliente passou em cada imóvel e
+                    saiba o que mais chamou a atenção dele.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row justify-center gap-10">
+                <div className="text-left max-w-md">
+                  <h3 className="text-2xl font-bold text-[#0b2a41] mb-4">
+                    Exemplo de Link do Portfólio
+                  </h3>
+                  <p className="text-gray-700 mb-2">
+                    Envie um link como este para o seu cliente acessar o
+                    portfólio completo:
+                  </p>
+                  <div className="bg-gray-100 rounded-lg p-4 text-sm break-words font-mono text-[#0b2a41] shadow-inner">
+                    <a
+                      target="blank"
+                      className="hover:text-blue-500"
+                      href="https://app.imobdeal.com.br/portfolio/seu-link-aqui "
+                    >
+                      https://app.imobdeal.com.br/portfolio/seu-link-aqui
+                    </a>
+                  </div>
+                  <p className="text-gray-600 mt-4 mb-6">
+                    Com um clique, o cliente acessa tudo o que precisa — e você
+                    acompanha cada interação, e com gráfico para filtrar os
+                    itens de maior interesse.
+                  </p>
+
+                  <Image
+                    width={400}
+                    height={300}
+                    src={ChartPortfolio.src}
+                    alt="Exemplo de Portfólio"
+                    className="rounded-lg shadow-md"
+                  />
+                </div>
+                <Image
+                  width={320}
+                  height={570}
+                  src={Portfolio.src}
+                  alt="Exemplo de Portfólio"
+                  className="rounded-lg shadow-md"
+                />
+              </div>
+            </div>
+          </section>
+
           <section className="py-12 bg-gray-100">
             <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
               {/* Texto explicativo */}
@@ -471,7 +574,7 @@ export default function Home() {
                     certa. Isso fez toda diferença nos fechamentos!&quot;
                   </p>
                   <h4 className="mt-4 font-semibold text-gray-900">
-                   Rodrigo Barbosa
+                    Rodrigo Barbosa
                   </h4>
                   <span className="text-gray-500 text-sm">
                     Corretor Imobiliário

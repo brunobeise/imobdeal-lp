@@ -26,7 +26,7 @@ export default function ProposalCTA() {
   };
 
   return (
-    <section className="bg-white mt-10 mb-10 text-[#0b2a41] py-14 px-6 text-center ">
+    <section className="bg-gray-100 mt-10 mb-10 text-[#0b2a41] py-14 px-6 text-center ">
       <div className="max-w-3xl mx-auto flex flex-col items-center">
         <h2 className="text-4xl font-bold mb-6">
           Experimente uma proposta agora mesmo!
