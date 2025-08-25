@@ -1,8 +1,8 @@
 "use client";
 
 import { FaCheck, FaStar, FaWhatsapp, FaEnvelope } from "react-icons/fa";
-import Link from "next/link";
 import WhatsAppButton from "../../components/WhatsAppButtons";
+import FreeTrialButton from "../../components/FreeTrialButton";
 import { useState, useEffect } from "react";
 import { use } from "react";
 
@@ -161,12 +161,13 @@ export default function Precos({
             Escolha o plano ideal e comece a fechar mais negócios hoje mesmo
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              href="https://app.imobdeal.com.br/cadastro"
-              className="bg-secondary hover:bg-[#e6961f] text-primary text-lg font-bold px-8 py-4 rounded-lg transition-colors inline-block"
+            <FreeTrialButton
+              variant="secondary"
+              size="large"
+              source="precos_hero"
             >
               Teste Grátis por 3 Dias
-            </Link>
+            </FreeTrialButton>
             <p className="text-sm text-white/70">
               Sem cartão de crédito • Acesso completo
             </p>
@@ -399,12 +400,13 @@ export default function Precos({
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link
-              href="https://app.imobdeal.com.br/cadastro"
-              className="bg-secondary hover:bg-[#e6961f] text-primary text-lg font-bold px-8 py-4 rounded-lg transition-colors flex items-center gap-2"
+            <FreeTrialButton
+              variant="secondary"
+              size="large"
+              source="precos_final_cta"
             >
               Teste Grátis Agora
-            </Link>
+            </FreeTrialButton>
 
             <WhatsAppButton
               message="Olá! Gostaria de consultar condições personalizadas para minha empresa."

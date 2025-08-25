@@ -1,11 +1,16 @@
 "use client";
 import { useState } from "react";
+import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 import ProposalCTA from "./ProposalCTA";
 
 export default function DemoButton() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { trackWatchDemo } = useFacebookPixel();
 
-  const openModal = () => setIsModalOpen(true);
+  const openModal = () => {
+    setIsModalOpen(true);
+    trackWatchDemo();
+  };
   const closeModal = () => setIsModalOpen(false);
 
   return (

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import ProposalCTA from "@/components/ProposalCTA";
+import FreeTrialButton from "@/components/FreeTrialButton";
 import {
   FaCheckCircle,
   FaTimesCircle,
@@ -23,9 +23,13 @@ export default function Home() {
                 Descubra como criar propostas profissionais e acompanhar seus clientes 
                 de forma inteligente em poucos minutos
               </p>
-              <Link href="https://app.imobdeal.com.br/cadastro" className="bg-secondary text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-secondary/90 transition-colors inline-block">
+              <FreeTrialButton
+                variant="primary"
+                size="large" 
+                source="como_funciona_hero"
+              >
                 Comece seu Teste Grátis de 3 Dias
-              </Link>
+              </FreeTrialButton>
             </div>
           </section>
           
@@ -189,9 +193,13 @@ export default function Home() {
                 <p className="text-gray-600 mb-6">
                   Crie portfólios profissionais e acompanhe cada interação em tempo real
                 </p>
-                <Link href="https://app.imobdeal.com.br/cadastro" className="bg-secondary text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-secondary/90 transition-colors inline-block">
+                <FreeTrialButton
+                  variant="primary"
+                  size="large"
+                  source="como_funciona_portfolio"
+                >
                   Teste Grátis por 3 Dias
-                </Link>
+                </FreeTrialButton>
               </div>
             </div>
           </section>
@@ -260,9 +268,13 @@ export default function Home() {
                 <p className="text-xl mb-8 text-white/90">
                   Saiba exatamente quando seus clientes abrem suas propostas e tome ação no momento certo
                 </p>
-                <Link href="https://app.imobdeal.com.br/cadastro" className="bg-secondary text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-secondary/90 transition-colors inline-block">
+                <FreeTrialButton
+                  variant="secondary"
+                  size="large"
+                  source="como_funciona_tracking"
+                >
                   Comece a Acompanhar seus Clientes Agora
-                </Link>
+                </FreeTrialButton>
               </div>
             </div>
           </section>
@@ -526,9 +538,14 @@ export default function Home() {
                   criar propostas profissionais e acompanhar clientes de forma inteligente
                 </p>
                 <div className="space-y-4">
-                  <Link href="https://app.imobdeal.com.br/cadastro" className="bg-secondary text-primary px-10 py-4 rounded-lg font-bold text-xl hover:bg-secondary/90 transition-colors inline-block">
+                  <FreeTrialButton
+                    variant="primary"
+                    size="large"
+                    className="px-10 py-4 text-xl"
+                    source="como_funciona_final_cta"
+                  >
                     Teste Grátis por 3 Dias
-                  </Link>
+                  </FreeTrialButton>
                   <p className="text-sm text-gray-500">
                     Sem cartão de crédito • Cancele a qualquer momento • Suporte completo
                   </p>

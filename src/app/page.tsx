@@ -1,8 +1,8 @@
-import Link from "next/link";
 import WhatsAppButton from "@/components/WhatsappButton";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import DemoButton from "@/components/DemoModal";
 import StructuredData from "@/components/StructuredData";
+import FreeTrialButton from "@/components/FreeTrialButton";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -102,12 +102,14 @@ export default function Home() {
               CRM completo, envie suas propostas de alto padrão em segundos!
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start">
-              <Link
-                href="https://app.imobdeal.com.br/cadastro"
-                className="max-sm:order-last bg-secondary hover:bg-secondary/90 text-primary px-4 md:px-6 py-2 md:py-3 rounded-lg font-bold transition-colors text-sm md:text-[14px] inline-block text-center"
+              <FreeTrialButton 
+                variant="primary" 
+                size="default"
+                className="max-sm:order-last"
+                source="hero_section"
               >
                 Teste Grátis por 3 Dias
-              </Link>
+              </FreeTrialButton>
               <DemoButton />
             </div>
             <div className="flex max-sm:justify-between gap-1 md:gap-6 text-xs md:text-sm text-gray-600 justify-center lg:justify-start">
@@ -363,14 +365,15 @@ export default function Home() {
             para fechar mais negócios.
           </p>
 
-          <Link
-            href="https://app.imobdeal.com.br/cadastro"
-            className="bg-secondary hover:bg-[#e6961f] text-primary text-base md:text-lg font-bold px-6 md:px-8 py-3 md:py-4 rounded-lg transition-colors mb-6 inline-block"
+          <FreeTrialButton 
+            variant="secondary" 
+            size="large"
+            source="cta_section"
           >
             Comece seu Teste Grátis de 3 Dias
-          </Link>
+          </FreeTrialButton>
 
-          <p className="text-xs md:text-sm text-white/70">
+          <p className="text-xs md:text-sm text-white/70 mt-4">
             Sem cartão de crédito • Cancele a qualquer momento • Acesso completo
             a todos os recursos
           </p>
