@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import BusinessStructuredData from "@/components/BusinessStructuredData";
+import MicrosoftClarity from "@/components/MicrosoftClarity";
 
 import "./globals.css";
 import "../assets/fonts/font.css";
@@ -106,6 +107,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <BusinessStructuredData />
+        <MicrosoftClarity />
         {/* Meta Pixel NoScript */}
         <noscript>
           <img
