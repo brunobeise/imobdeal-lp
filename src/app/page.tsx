@@ -92,11 +92,11 @@ export default function Home() {
       <div className="flex justify-center py-8 md:py-16 px-4 md:px-8">
         <div className="max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-4 md:space-y-6 text-center lg:text-left">
-            <h1 className="text-3xl md:text-4xl lg:text-[45px] leading-tight text-primary">
+            <h1 className="text-4xl md:text-4xl  lg:text-[45px] leading-tight text-primary">
               Crie e acompanhe as suas Propostas Imobiliárias <br />
               <strong className="text-primary">em Segundos</strong>
             </h1>
-            <p className="text-base md:text-lg text-gray-600 leading-6 md:leading-8 lg:pe-16">
+            <p className="text-base md:text-lg text-gray-600 leading-6 md:leading-8 lg:pe-16 max-sm:my-6">
               O ImobDeal simplifica a criação e o acompanhamento das suas
               propostas imobiliárias. Sem a necessidade de burocracia ou de um
               CRM completo, envie suas propostas de alto padrão em segundos!
@@ -104,14 +104,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start">
               <Link
                 href="https://app.imobdeal.com.br/cadastro"
-                className="bg-secondary hover:bg-secondary/90 text-primary px-4 md:px-6 py-2 md:py-3 rounded-lg font-bold transition-colors text-sm md:text-[14px] inline-block text-center"
+                className="max-sm:order-last bg-secondary hover:bg-secondary/90 text-primary px-4 md:px-6 py-2 md:py-3 rounded-lg font-bold transition-colors text-sm md:text-[14px] inline-block text-center"
               >
                 Teste Grátis por 3 Dias
               </Link>
               <DemoButton />
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 text-xs md:text-sm text-gray-600 justify-center lg:justify-start">
-              <div className="flex items-center gap-2">
+            <div className="flex max-sm:justify-between gap-1 md:gap-6 text-xs md:text-sm text-gray-600 justify-center lg:justify-start">
+              <div className="flex items-center gap-1 md:gap-2">
                 <svg
                   className="w-4 h-4 text-green-500"
                   fill="currentColor"
@@ -125,7 +125,7 @@ export default function Home() {
                 </svg>
                 <span>Sem cartão de crédito</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 md:gap-2">
                 <svg
                   className="w-4 h-4 text-green-500"
                   fill="currentColor"
@@ -143,7 +143,7 @@ export default function Home() {
           </div>
 
           {/* Vídeo */}
-          <div className="relative order-first lg:order-last mt-8 lg:mt-0">
+          <div className="relative order-first lg:order-last lg:mt-0">
             <div className="bg-gray-200 rounded-lg overflow-hidden aspect-video">
               <iframe
                 className="w-full h-full"
