@@ -102,8 +102,8 @@ export default function Home() {
               CRM completo, envie suas propostas de alto padrão em segundos!
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start">
-              <FreeTrialButton 
-                variant="primary" 
+              <FreeTrialButton
+                variant="primary"
                 size="default"
                 className="max-sm:order-last"
                 source="hero_section"
@@ -149,7 +149,7 @@ export default function Home() {
             <div className="bg-gray-200 rounded-lg overflow-hidden aspect-video">
               <iframe
                 className="w-full h-full"
-                src="https://player.mux.com/Vp6Q9WfpGa2r01gLKttBrWDKTLdtgG00gyzbQ9M9JYoJY?metadata-video-title=Venda+mais+com+o+ImobDeal&video-title=Venda+mais+com+o+ImobDeal"
+                src="https://player.mux.com/Vp6Q9WfpGa2r01gLKttBrWDKTLdtgG00gyzbQ9M9JYoJY?metadata-video-title=Venda+mais+com+o+ImobDeal&video-title=Venda+mais+com+o+ImobDeal&accent-color=%23113955&primary-color=%23ffffff&secondary-color=%23113955"
                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                 allowFullScreen
               ></iframe>
@@ -365,8 +365,8 @@ export default function Home() {
             para fechar mais negócios.
           </p>
 
-          <FreeTrialButton 
-            variant="secondary" 
+          <FreeTrialButton
+            variant="secondary"
             size="large"
             source="cta_section"
           >
