@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #113955;
+  --color-secondary: #F9A826;
+  --color-sectionBackground: #F8FAFC;
 }
 
 :root {
@@ -13,6 +14,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Rawline Regular";
-  color: #0e344f;
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  cursor: pointer;
 }
