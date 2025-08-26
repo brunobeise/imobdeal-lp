@@ -7,13 +7,16 @@ import "./globals.css";
 import "../assets/fonts/font.css";
 import Image from "next/image";
 import Link from "next/link";
+import WhatsAppButton from "@/components/WhatsappButton";
 
 export const metadata: Metadata = {
   title: {
-    default: "ImobDeal - Envio de Propostas de Imóveis | Software para Corretores",
-    template: "%s | ImobDeal - Envio de Propostas de Imóveis"
+    default:
+      "ImobDeal - Envio de Propostas de Imóveis | Software para Corretores",
+    template: "%s | ImobDeal - Envio de Propostas de Imóveis",
   },
-  description: "Plataforma líder para envio de propostas de imóveis. Crie, envie e acompanhe propostas imobiliárias profissionais em segundos. Software completo para corretores e imobiliárias aumentarem vendas.",
+  description:
+    "Plataforma líder para envio de propostas de imóveis. Crie, envie e acompanhe propostas imobiliárias profissionais em segundos. Software completo para corretores e imobiliárias aumentarem vendas.",
   keywords: [
     "envio de propostas de imóveis",
     "propostas imobiliárias",
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
     "enviar proposta imóvel",
     "sistema para corretor",
     "CRM imobiliário",
-    "automação imobiliária"
+    "automação imobiliária",
   ],
   authors: [{ name: "ImobDeal" }],
   creator: "ImobDeal",
@@ -34,31 +37,34 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://imobdeal.com.br'),
+  metadataBase: new URL("https://imobdeal.com.br"),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    title: "ImobDeal - Envio de Propostas de Imóveis | Software para Corretores",
-    description: "Plataforma líder para envio de propostas de imóveis. Crie, envie e acompanhe propostas imobiliárias profissionais em segundos.",
-    url: 'https://imobdeal.com.br',
-    siteName: 'ImobDeal',
+    title:
+      "ImobDeal - Envio de Propostas de Imóveis | Software para Corretores",
+    description:
+      "Plataforma líder para envio de propostas de imóveis. Crie, envie e acompanhe propostas imobiliárias profissionais em segundos.",
+    url: "https://imobdeal.com.br",
+    siteName: "ImobDeal",
     images: [
       {
-        url: '/imobDeal.png',
+        url: "/imobDeal.png",
         width: 1200,
         height: 630,
-        alt: 'ImobDeal - Envio de Propostas de Imóveis',
-      }
+        alt: "ImobDeal - Envio de Propostas de Imóveis",
+      },
     ],
-    locale: 'pt_BR',
-    type: 'website',
+    locale: "pt_BR",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: "ImobDeal - Envio de Propostas de Imóveis",
-    description: "Plataforma líder para envio de propostas de imóveis. Crie, envie e acompanhe propostas imobiliárias profissionais.",
-    images: ['/imobDeal.png'],
+    description:
+      "Plataforma líder para envio de propostas de imóveis. Crie, envie e acompanhe propostas imobiliárias profissionais.",
+    images: ["/imobDeal.png"],
   },
   robots: {
     index: true,
@@ -66,15 +72,15 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: "your-google-verification-code",
   },
-  manifest: '/manifest.json',
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -235,6 +241,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        <WhatsAppButton />
       </body>
     </html>
   );

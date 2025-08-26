@@ -1,4 +1,3 @@
-import WhatsAppButton from "@/components/WhatsappButton";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import DemoButton from "@/components/DemoModal";
 import StructuredData from "@/components/StructuredData";
@@ -379,8 +378,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-
-      <WhatsAppButton />
     </>
   );
 }

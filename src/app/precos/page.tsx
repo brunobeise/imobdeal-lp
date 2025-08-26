@@ -259,14 +259,18 @@ export default function Precos({
           </div>
 
           {/* Grid de Planos */}
-          <div className="flex justify-center gap-4">
+          <div className={`grid gap-6 ${
+            activePlan === "imobiliarias" 
+              ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" 
+              : "grid-cols-1 max-w-md mx-auto"
+          }`}>
             {plans[activePlan as keyof typeof plans].map((plan, index) => (
               <div
                 key={index}
                 className={`relative ${
                   plan.bgColor
-                } rounded-xl shadow-lg border-2 ${plan.borderColor} p-8 ${
-                  plan.popular ? "transform scale-105" : ""
+                } rounded-xl shadow-lg border-2 ${plan.borderColor} p-6 min-h-[600px] flex flex-col ${
+                  plan.popular ? "ring-2 ring-secondary ring-opacity-50" : ""
                 }`}
               >
                 {plan.discount && (
@@ -277,59 +281,69 @@ export default function Precos({
                   </div>
                 )}
 
-                <div className="text-center mb-6">
-                  <h3 className={`text-2xl font-bold ${plan.color} mb-2`}>
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-secondary text-primary px-4 py-1 rounded-full text-sm font-bold">
+                      Mais Popular
+                    </span>
+                  </div>
+                )}
+
+                <div className="text-center mb-6 flex-shrink-0">
+                  <h3 className={`text-xl font-bold ${plan.color} mb-2`}>
                     {plan.name}
                   </h3>
                   {plan.subtitle && (
-                    <p className="text-sm text-gray-500 mb-4">
+                    <p className="text-sm text-gray-500 mb-4 min-h-[40px] flex items-center justify-center">
                       {plan.subtitle}
                     </p>
                   )}
 
                   <div className="mb-2">
                     {plan.originalPrice && (
-                      <span className="text-lg text-gray-400 line-through mr-2">
+                      <span className="text-base text-gray-400 line-through mr-2">
                         {plan.originalPrice}
                       </span>
                     )}
-                    <div className="text-4xl font-bold text-gray-900">
+                    <div className="text-3xl font-bold text-gray-900">
                       {plan.price}
                     </div>
-                    <span className="text-gray-600">{plan.per}</span>
+                    <span className="text-gray-600 text-sm">{plan.per}</span>
                   </div>
                 </div>
 
-                {/* Botão de Ação */}
-                {plan.isCustom ? (
-                  <WhatsAppButton
-                    message="Olá! Gostaria de consultar condições personalizadas para minha empresa."
-                    className="w-full bg-gradient-to-r from-[#00BFFF] to-[#009ACD] hover:from-[#009ACD] hover:to-[#0080AA] text-white font-bold py-3 rounded-lg transition-all transform hover:scale-105 mb-6"
-                  >
-                    Consultar Condições
-                  </WhatsAppButton>
-                ) : (
-                  <a href={plan.link} target="_blank" rel="noopener noreferrer">
-                    <button
-                      className={`w-full ${
-                        plan.popular
-                          ? "bg-secondary hover:bg-[#e6961f] text-primary"
-                          : "bg-primary hover:bg-primary/90 text-white"
-                      } font-bold py-3 rounded-lg transition-all transform hover:scale-105 mb-6`}
-                    >
-                      Começar Agora
-                    </button>
-                  </a>
-                )}
-
-                {/* Lista de Features */}
-                <div className="space-y-3">
+                {/* Lista de Features - Área flexível */}
+                <div className="space-y-3 flex-grow mb-6">
                   {plan.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start">
                       <FaCheck className="text-green-500 flex-shrink-0 w-4 h-4 mr-3 mt-1" />
-                      <span className="text-gray-700 text-sm">{feature}</span>
+                      <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
                     </div>
                   ))}
+                </div>
+
+                {/* Botão de Ação - Sempre no final */}
+                <div className="mt-auto">
+                  {plan.isCustom ? (
+                    <WhatsAppButton
+                      message="Olá! Gostaria de consultar condições personalizadas para minha empresa."
+                      className="w-full bg-gradient-to-r from-[#00BFFF] to-[#009ACD] hover:from-[#009ACD] hover:to-[#0080AA] text-white font-bold py-3 rounded-lg transition-all hover:scale-105"
+                    >
+                      Consultar Condições
+                    </WhatsAppButton>
+                  ) : (
+                    <a href={plan.link} target="_blank" rel="noopener noreferrer">
+                      <button
+                        className={`w-full ${
+                          plan.popular
+                            ? "bg-secondary hover:bg-[#e6961f] text-primary"
+                            : "bg-primary hover:bg-primary/90 text-white"
+                        } font-bold py-3 rounded-lg transition-all hover:scale-105`}
+                      >
+                        Começar Agora
+                      </button>
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
