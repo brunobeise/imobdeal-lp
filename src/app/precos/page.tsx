@@ -45,11 +45,11 @@ export default function Precos({
     corretores: [
       {
         name: "Autônomo",
-        price: "R$ 169,90",
+        price: "R$ 99,00",
         per: "por mês",
         subtitle: "Para corretores independentes",
-        originalPrice: "R$ 239,90",
-        discount: "30% OFF",
+        originalPrice: "R$ 169,90",
+        discount: "41% OFF",
         popular: true,
         features: [
           "Acompanhe quando o cliente abre a proposta",
@@ -68,11 +68,11 @@ export default function Precos({
     imobiliarias: [
       {
         name: "Bronze",
-        price: "R$ 109,90",
+        price: "R$ 89,90",
         per: "por corretor/mês",
         subtitle: "Mínimo 5 corretores",
-        originalPrice: "R$ 149,90",
-        discount: "27% OFF",
+        originalPrice: "R$ 109,90",
+        discount: "18% OFF",
         features: [
           "Dashboard com histórico de propostas",
           "Envio ilimitado de propostas",
@@ -88,11 +88,11 @@ export default function Precos({
       },
       {
         name: "Prata",
-        price: "R$ 94,90",
+        price: "R$ 74,90",
         per: "por corretor/mês",
         subtitle: "Mínimo 10 corretores",
-        originalPrice: "R$ 129,90",
-        discount: "27% OFF",
+        originalPrice: "R$ 94,90",
+        discount: "21% OFF",
         popular: true,
         features: [
           "Todos os benefícios do plano Bronze",
@@ -109,11 +109,11 @@ export default function Precos({
       },
       {
         name: "Ouro",
-        price: "R$ 78,90",
+        price: "R$ 59,90",
         per: "por corretor/mês",
         subtitle: "Mínimo 15 corretores",
-        originalPrice: "R$ 109,90",
-        discount: "28% OFF",
+        originalPrice: "R$ 78,90",
+        discount: "24% OFF",
         features: [
           "Todos os benefícios do plano Prata",
           "Treinamento personalizado para equipe",
@@ -299,16 +299,29 @@ export default function Precos({
                     </p>
                   )}
 
-                  <div className="mb-2">
-                    {plan.originalPrice && (
-                      <span className="text-base text-gray-400 line-through mr-2">
-                        {plan.originalPrice}
-                      </span>
+                  <div className="mb-2 relative">
+                    {plan.name === "Autônomo" ? (
+                      <div className="flex flex-col items-center">
+                        <span className="text-base text-gray-400 line-through mb-1">R$ 169,90</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-3xl font-bold text-gray-900">R$ 99,00</span>
+                          <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full ml-2 absolute right-12">-41% OFF</span>
+                        </div>
+                        <span className="text-gray-600 text-sm">por mês</span>
+                      </div>
+                    ) : (
+                      <>
+                        {plan.originalPrice && (
+                          <span className="text-base text-gray-400 line-through mr-2">
+                            {plan.originalPrice}
+                          </span>
+                        )}
+                        <div className="text-3xl font-bold text-gray-900">
+                          {plan.price}
+                        </div>
+                        <span className="text-gray-600 text-sm">{plan.per}</span>
+                      </>
                     )}
-                    <div className="text-3xl font-bold text-gray-900">
-                      {plan.price}
-                    </div>
-                    <span className="text-gray-600 text-sm">{plan.per}</span>
                   </div>
                 </div>
 

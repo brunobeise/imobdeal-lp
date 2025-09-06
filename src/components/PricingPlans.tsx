@@ -6,7 +6,7 @@ const plans = {
   corretores: [
     {
       name: "Autônomo",
-      price: "R$ 169,90",
+      price: "R$ 99,00",
       per: "",
       features: [
         "Acompanhe quando o cliente abre a proposta",
@@ -22,7 +22,7 @@ const plans = {
   imobiliarias: [
     {
       name: "Bronze",
-      price: "R$ 109,90",
+      price: "R$ 90,00",
       per: "por corretor (5 corretores)",
       features: [
         "Dashboard com histórico de propostas",
@@ -36,7 +36,7 @@ const plans = {
     },
     {
       name: "Prata",
-      price: "R$ 94,90",
+      price: "R$ 80,00",
       per: "por corretor (10 corretores)",
       features: [
         "Todos os benefícios do plano Bronze",
@@ -49,7 +49,7 @@ const plans = {
     },
     {
       name: "Ouro",
-      price: "R$ 78,90",
+      price: "R$ 70,00",
       per: "por corretor (15 corretores)",
       features: [
         "Todos os benefícios do plano Prata",
@@ -125,11 +125,22 @@ export default function PricingPlans() {
                 {plan.name}
               </h3>
               <div className="flex items-end justify-center">
-                <p className="text-4xl font-bold text-gray-900 mt-2">
-                  {plan.price}
-                </p>
-                {plan.price !== "Consulte" && (
-                  <span className="text-xs">/ mês</span>
+                {plan.name === "Autônomo" ? (
+                  <div className="flex flex-col items-center">
+                    <span className="text-gray-400 line-through text-lg">R$ 169,90</span>
+                    <div className="flex items-center gap-2">
+                      <p className="text-4xl font-bold text-gray-900 mt-2">{plan.price}</p>
+                      <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full ml-2">-41% OFF</span>
+                    </div>
+                    <span className="text-xs">/ mês</span>
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-4xl font-bold text-gray-900 mt-2">{plan.price}</p>
+                    {plan.price !== "Consulte" && (
+                      <span className="text-xs">/ mês</span>
+                    )}
+                  </>
                 )}
               </div>
               <span className="text-gray-500 text-sm">{plan.per}</span>
