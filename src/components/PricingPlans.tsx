@@ -5,25 +5,50 @@ import { FaCheck } from "react-icons/fa";
 const plans = {
   corretores: [
     {
-      name: "Autônomo",
+      name: "Starter",
+      price: "R$ 49,90",
+      per: "",
+      popular: false,
+      features: [
+        "Até 5 imóveis cadastrados",
+        "Acompanhe quando o cliente abre a proposta",
+        "Notificações automáticas no WhatsApp",
+        "Propostas interativas básicas",
+        "Dashboard simplificado",
+        "Suporte por email",
+      ],
+      color: "text-gray-600",
+      borderColor: "text-gray-400",
+      link: "https://app.imobdeal.com.br/cadastro",
+    },
+    {
+      name: "Pro",
       price: "R$ 99,00",
       per: "",
+      originalPrice: "R$ 169,90",
+      discount: "41% OFF",
+      popular: true,
       features: [
+        "Imóveis ilimitados",
         "Acompanhe quando o cliente abre a proposta",
         "Notificações automáticas no WhatsApp",
         "Propostas interativas e personalizadas",
         "Envio fácil e profissional para clientes",
+        "Dashboard com histórico completo",
+        "Suporte especializado",
+        "Relatórios avançados",
       ],
-      color: "text-gray-500",
-      borderColor: "text-gray-600",
-      link: "https://www.asaas.com/c/ou1u7cajriwld3uz",
+      color: "text-primary",
+      borderColor: "text-primary",
+      link: "https://app.imobdeal.com.br/cadastro",
     },
   ],
   imobiliarias: [
     {
       name: "Bronze",
-      price: "R$ 90,00",
+      price: "R$ 89,90",
       per: "por corretor (5 corretores)",
+      popular: false,
       features: [
         "Dashboard com histórico de propostas",
         "Envio ilimitado de propostas",
@@ -36,8 +61,9 @@ const plans = {
     },
     {
       name: "Prata",
-      price: "R$ 80,00",
+      price: "R$ 74,90",
       per: "por corretor (10 corretores)",
+      popular: true,
       features: [
         "Todos os benefícios do plano Bronze",
         "Suporte especializado para equipe",
@@ -49,8 +75,9 @@ const plans = {
     },
     {
       name: "Ouro",
-      price: "R$ 70,00",
+      price: "R$ 59,90",
       per: "por corretor (15 corretores)",
+      popular: false,
       features: [
         "Todos os benefícios do plano Prata",
         "Treinamento personalizado para equipe",
@@ -64,6 +91,7 @@ const plans = {
       name: "Diamante",
       price: "Consulte",
       per: "Planos personalizados",
+      popular: false,
       features: [
         "Consultoria personalizada",
         "Integração avançada",
@@ -115,17 +143,29 @@ export default function PricingPlans() {
         </div>
 
         {/* Grid de Planos */}
-        <div className="mt-10 flex flex-wrap justify-center gap-10">
+        <div className={`mt-10 flex flex-wrap justify-center gap-10 ${
+          activePlan === "corretores" ? "max-w-4xl mx-auto" : ""
+        }`}>
           {plans[activePlan as keyof typeof plans].map((plan, index) => (
             <div
               key={index}
-              className={`bg-gray-100  rounded-lg shadow-md p-6 w-[320px]`}
+              className={`bg-gray-100 rounded-lg shadow-md p-6 w-[320px] relative ${
+                plan.popular ? "ring-2 ring-blue-500 bg-white" : ""
+              }`}
             >
+              {plan.popular && (
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                    MAIS POPULAR
+                  </span>
+                </div>
+              )}
+              
               <h3 className={"text-lg font-semibold " + plan.color}>
                 {plan.name}
               </h3>
               <div className="flex items-end justify-center">
-                {plan.name === "Autônomo" ? (
+                {plan.name === "Pro" ? (
                   <div className="flex flex-col items-center">
                     <span className="text-gray-400 line-through text-lg">R$ 169,90</span>
                     <div className="flex items-center gap-2">

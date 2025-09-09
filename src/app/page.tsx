@@ -95,7 +95,14 @@ export default function Home() {
               Crie e acompanhe as suas Propostas Imobiliárias <br />
               <strong className="text-primary">em Segundos</strong>
             </h1>
-            <p className="text-base md:text-lg text-gray-600 leading-6 md:leading-8 lg:pe-16 max-sm:my-6">
+            <div className="rounded-lg py-2">
+              <p className="text-primary font-semibold">
+                A partir de{" "}
+                <span className="text-xl font-bold">R$ 49,90/mês</span> - Sem
+                burocracias!
+              </p>
+            </div>
+            <p className="text-base md:text-md text-gray-600 leading-6 md:leading-8 lg:pe-16 max-sm:my-6">
               O ImobDeal simplifica a criação e o acompanhamento das suas
               propostas imobiliárias. Sem a necessidade de burocracia ou de um
               CRM completo, envie suas propostas de alto padrão em segundos!
@@ -148,7 +155,7 @@ export default function Home() {
             <div className="bg-gray-200 rounded-lg overflow-hidden aspect-video">
               <iframe
                 className="w-full h-full"
-                src="https://player.mux.com/Vp6Q9WfpGa2r01gLKttBrWDKTLdtgG00gyzbQ9M9JYoJY?metadata-video-title=Venda+mais+com+o+ImobDeal&video-title=Venda+mais+com+o+ImobDeal&accent-color=%23113955&primary-color=%23ffffff&secondary-color=%23113955"
+                src="https://player.mux.com/Vp6Q9WfpGa2r01gLKttBrWDKTLdtgG00gyzbQ9M9JYoJY?metadata-video-title=Venda+mais+com+o+ImobDeal&video-title=Venda+mais+com+o+ImobDeal&accent-color=%23113955&primary-color=%23ffffff&secondary-color=%23113955&autoplay=1&muted=1&loop=1"
                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                 allowFullScreen
               ></iframe>
@@ -345,6 +352,118 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Seção Quanto Custa - Estratégia de Conversão */}
+      <div className="bg-gray-50 py-12 md:py-16 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Quanto Custa Perder um Cliente?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Você já perdeu quantas vendas por não saber quando o cliente viu sua
+            proposta?
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 ">
+         
+            <div className="bg-red-50 border border-red-200 p-6 rounded-lg">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <h3 className="text-2xl font-bold text-red-600">R$ 15.000</h3>
+                <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M12 13a1 1 0 100 2h5a1 1 0 001-1V9a1 1 0 10-2 0v2.586l-4.293-4.293a1 1 0 00-1.414 0L8 9.586 3.707 5.293a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0L11 9.414 14.586 13H12z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <p className="text-red-700 text-sm">
+                Comissão perdida por não fazer follow-up no momento certo, ou
+                nem saber se o cliente está interessado
+              </p>
+            </div>
+
+               <div className=" bg-white p-6 rounded-lg border border-gray-200">
+              <h3 className="text-2xl font-bold text-primary mb-2">69%</h3>
+              <p className="text-primary text-sm">
+                Dos leads que &quot;somem&quot; voltam a visualizar propostas depois, mas você não sabe quando isso acontece
+              </p>
+            </div>
+
+            <div className="bg-red-50 border border-red-200 p-6 rounded-lg">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <h3 className="text-2xl font-bold text-red-600">R$ 180.000</h3>
+                <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M12 13a1 1 0 100 2h5a1 1 0 001-1V9a1 1 0 10-2 0v2.586l-4.293-4.293a1 1 0 00-1.414 0L8 9.586 3.707 5.293a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0L11 9.414 14.586 13H12z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <p className="text-red-700 text-sm">
+                Faturamento perdido anualmente por trabalhar no escuro, sem saber quando clientes visualizam propostas ou qual o momento ideal para o follow-up
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white p-8 rounded-xl shadow-lg">
+            <h3 className="text-2xl font-bold text-primary mb-7">
+              🎯 Recupere Essas Vendas Perdidas
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+              <div className="text-center">
+                <div className="bg-gray-100 text-primary text-2xl font-bold py-4 px-6 rounded-lg mb-2">
+                  R$ 49,90
+                </div>
+                <p className="font-semibold text-primary">Plano Starter</p>
+                <p className="text-sm text-gray-600">Ideal para começar</p>
+                <p className="text-xs text-gray-500 mt-1">Até 5 imóveis</p>
+              </div>
+
+              <div className="text-center relative">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-secondary text-primary px-3 py-1 rounded-full text-xs font-bold">
+                    MAIS POPULAR
+                  </span>
+                </div>
+                <div className="bg-primary text-white text-3xl font-bold py-4 px-6 rounded-lg mb-2">
+                  R$ 99,00
+                </div>
+                <p className="font-semibold text-primary">Plano Pro</p>
+                <p className="text-sm text-gray-600">Imóveis ilimitados</p>
+                <div className="text-xs text-gray-400 line-through mt-1">
+                  R$ 169,90
+                </div>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-gray-100 text-gray-600 text-lg font-bold py-4 px-6 rounded-lg mb-2">
+                  A partir de
+                  <br />
+                  R$ 59,90
+                </div>
+                <p className="font-semibold text-primary">Imobiliárias</p>
+                <p className="text-sm text-gray-600">Por corretor</p>
+                <p className="text-xs text-gray-500 mt-1">Planos em equipe</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <FreeTrialButton
+                variant="primary"
+                size="large"
+                source="pricing_section"
+              >
+                Começar por R$ 49,90
+              </FreeTrialButton>
+              <p className="text-sm text-gray-500">
+                3 dias grátis • Sem cartão • Upgrade a qualquer momento
+              </p>
+            </div>
+
+            <div className="mt-6 p-4 rounded-lg">
+              <p className="text-primary font-semibold text-center">
+                <strong>Estratégia Inteligente:</strong> Comece pequeno, prove o
+                valor, depois escale!
+              </p>
             </div>
           </div>
         </div>

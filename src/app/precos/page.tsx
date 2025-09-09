@@ -44,20 +44,40 @@ export default function Precos({
   const plans: { corretores: Plan[]; imobiliarias: Plan[] } = {
     corretores: [
       {
-        name: "Autônomo",
+        name: "Starter",
+        price: "R$ 49,90",
+        per: "por mês",
+        subtitle: "Ideal para começar",
+        features: [
+          "Até 5 imóveis cadastrados",
+          "Acompanhe quando o cliente abre a proposta",
+          "Notificações automáticas no WhatsApp",
+          "Propostas interativas básicas",
+          "Dashboard simplificado",
+          "Suporte por email",
+        ],
+        color: "text-gray-600",
+        bgColor: "bg-white",
+        borderColor: "border-gray-400",
+        link: "https://app.imobdeal.com.br/cadastro",
+      },
+      {
+        name: "Pro",
         price: "R$ 99,00",
         per: "por mês",
-        subtitle: "Para corretores independentes",
+        subtitle: "Para corretores profissionais",
         originalPrice: "R$ 169,90",
         discount: "41% OFF",
         popular: true,
         features: [
+          "Imóveis ilimitados",
           "Acompanhe quando o cliente abre a proposta",
           "Notificações automáticas no WhatsApp",
           "Propostas interativas e personalizadas",
           "Envio fácil e profissional para clientes",
           "Dashboard com histórico completo",
           "Suporte especializado",
+          "Relatórios avançados",
         ],
         color: "text-primary",
         bgColor: "bg-white",
@@ -154,9 +174,16 @@ export default function Precos({
       <section className="py-16 px-8 bg-primary text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-4xl font-bold mb-6">
-            Planos que se <span className="text-secondary">Adaptam</span> ao seu
-            Negócio
+            Planos que <span className="text-secondary">Cabem</span> no seu Bolso
           </h1>
+          <div className="bg-secondary/20 border border-secondary/30 rounded-lg p-4 mb-6 inline-block">
+            <p className="text-2xl font-bold text-secondary">
+              A partir de R$ 49,90/mês
+            </p>
+            <p className="text-white/90 text-sm">
+              Comece pequeno, prove o valor, depois escale!
+            </p>
+          </div>
           <p className="text-xl md:text-xl mb-8 text-white/90">
             Escolha o plano ideal e comece a fechar mais negócios hoje mesmo
           </p>
@@ -170,6 +197,88 @@ export default function Precos({
             </FreeTrialButton>
             <p className="text-sm text-white/70">
               Sem cartão de crédito • Acesso completo
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Valor Perdido vs Ganho */}
+      <section className="py-12 px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-primary mb-4">
+              O que Custa Mais: Investir ou Perder Vendas?
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Lado Esquerdo - Perdas */}
+            <div className="bg-red-50 p-6 rounded-xl border border-red-200">
+              <h3 className="text-xl font-bold text-red-600 mb-4 text-center">
+                😰 Sem o ImobDeal
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-red-500 font-bold">❌</span>
+                  <span className="text-red-700">Cliente vê proposta e some</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-red-500 font-bold">❌</span>
+                  <span className="text-red-700">Você não sabe quando fazer follow-up</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-red-500 font-bold">❌</span>
+                  <span className="text-red-700">Propostas amadoras no WhatsApp</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-red-500 font-bold">❌</span>
+                  <span className="text-red-700">Perde 3-5 vendas por mês</span>
+                </div>
+              </div>
+              <div className="mt-4 p-3 bg-red-100 rounded-lg">
+                <p className="text-red-800 font-bold text-center">
+                  Prejuízo: R$ 45.000+ por ano
+                </p>
+              </div>
+            </div>
+
+            {/* Lado Direito - Ganhos */}
+            <div className="bg-green-50 p-6 rounded-xl border border-green-200">
+              <h3 className="text-xl font-bold text-green-600 mb-4 text-center">
+                🚀 Com o ImobDeal
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-green-500 font-bold">✅</span>
+                  <span className="text-green-700">Sabe exatamente quando cliente acessa</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-green-500 font-bold">✅</span>
+                  <span className="text-green-700">Follow-up no momento perfeito</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-green-500 font-bold">✅</span>
+                  <span className="text-green-700">Propostas profissionais e interativas</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-green-500 font-bold">✅</span>
+                  <span className="text-green-700">Recupera 2-3 vendas por mês</span>
+                </div>
+              </div>
+              <div className="mt-4 p-3 bg-green-100 rounded-lg">
+                <p className="text-green-800 font-bold text-center">
+                  Ganho: R$ 30.000+ por ano
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-gray-600 mb-4">
+              <strong>Investimento:</strong> A partir de R$ 49,90/mês = R$ 599/ano
+            </p>
+            <p className="text-2xl font-bold text-primary">
+              ROI de <span className="text-green-600">5.000%</span> no primeiro ano! 📈
             </p>
           </div>
         </div>
@@ -262,7 +371,7 @@ export default function Precos({
           <div className={`grid gap-6 ${
             activePlan === "imobiliarias" 
               ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" 
-              : "grid-cols-1 max-w-md mx-auto"
+              : "grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto"
           }`}>
             {plans[activePlan as keyof typeof plans].map((plan, index) => (
               <div
