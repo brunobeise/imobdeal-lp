@@ -2,6 +2,7 @@ import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import DemoButton from "@/components/DemoModal";
 import StructuredData from "@/components/StructuredData";
 import FreeTrialButton from "@/components/FreeTrialButton";
+import PictureInPictureVideo from "@/components/PictureInPictureVideo";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -95,13 +96,6 @@ export default function Home() {
               Crie e acompanhe as suas Propostas Imobiliárias <br />
               <strong className="text-primary">em Segundos</strong>
             </h1>
-            <div className="rounded-lg py-2">
-              <p className="text-primary font-semibold">
-                A partir de{" "}
-                <span className="text-xl font-bold">R$ 49,90/mês</span> - Sem
-                burocracias!
-              </p>
-            </div>
             <p className="text-base md:text-md text-gray-600 leading-6 md:leading-8 lg:pe-16 max-sm:my-6">
               O ImobDeal simplifica a criação e o acompanhamento das suas
               propostas imobiliárias. Sem a necessidade de burocracia ou de um
@@ -152,14 +146,7 @@ export default function Home() {
 
           {/* Vídeo */}
           <div className="relative order-first lg:order-last lg:mt-0">
-            <div className="bg-gray-200 rounded-lg overflow-hidden aspect-video">
-              <iframe
-                className="w-full h-full"
-                src="https://player.mux.com/Vp6Q9WfpGa2r01gLKttBrWDKTLdtgG00gyzbQ9M9JYoJY?metadata-video-title=Venda+mais+com+o+ImobDeal&video-title=Venda+mais+com+o+ImobDeal&accent-color=%23113955&primary-color=%23ffffff&secondary-color=%23113955&autoplay=1&muted=1&loop=1"
-                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                allowFullScreen
-              ></iframe>
-            </div>
+            <PictureInPictureVideo />
           </div>
         </div>
       </div>
@@ -408,41 +395,69 @@ export default function Home() {
               🎯 Recupere Essas Vendas Perdidas
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              <div className="text-center">
-                <div className="bg-gray-100 text-primary text-2xl font-bold py-4 px-6 rounded-lg mb-2">
-                  R$ 49,90
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              {/* Plano Starter */}
+              <div className="text-center p-6 border border-gray-200 rounded-lg">
+                <div className="mb-4">
+                  <div className="text-3xl font-bold text-primary mb-2">R$ 49,90</div>
+                  <p className="font-semibold text-primary text-lg">Plano Starter</p>
+                  <p className="text-sm text-gray-600 mb-4">Ideal para começar</p>
                 </div>
-                <p className="font-semibold text-primary">Plano Starter</p>
-                <p className="text-sm text-gray-600">Ideal para começar</p>
-                <p className="text-xs text-gray-500 mt-1">Até 5 imóveis</p>
+                
+                <div className="text-left space-y-2">
+                  <p className="text-sm text-gray-700 flex items-center">
+                    - Até 5 imóveis cadastrados
+                  </p>
+                  <p className="text-sm text-gray-700 flex items-center">
+                    - Acompanhe visualizações da proposta
+                  </p>
+                  <p className="text-sm text-gray-700 flex items-center">
+                    - Notificações automáticas no WhatsApp
+                  </p>
+                  <p className="text-sm text-gray-700 flex items-center">
+                    - Dashboard simplificado
+                  </p>
+                </div>
               </div>
 
-              <div className="text-center relative">
+              {/* Plano Pro */}
+              <div className="text-center p-6 border-2 border-primary rounded-lg relative bg-gradient-to-br from-blue-50 to-white">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-secondary text-primary px-3 py-1 rounded-full text-xs font-bold">
+                  <span className="bg-secondary text-primary px-4 py-1 rounded-full text-xs font-bold">
                     MAIS POPULAR
                   </span>
                 </div>
-                <div className="bg-primary text-white text-3xl font-bold py-4 px-6 rounded-lg mb-2">
-                  R$ 99,00
+                
+                <div className="mb-4">
+                  <div className="text-xs text-gray-400 line-through">R$ 169,90</div>
+                  <div className="text-4xl font-bold text-primary mb-2">R$ 99,00</div>
+                  <p className="font-semibold text-primary text-lg">Plano Pro</p>
+                  <p className="text-sm text-gray-600 mb-4">Para corretores profissionais</p>
                 </div>
-                <p className="font-semibold text-primary">Plano Pro</p>
-                <p className="text-sm text-gray-600">Imóveis ilimitados</p>
-                <div className="text-xs text-gray-400 line-through mt-1">
-                  R$ 169,90
+                
+                <div className="text-left space-y-2">
+                  <p className="text-sm text-primary font-semibold flex items-center">
+                    - Imóveis ilimitados
+                  </p>
+                  <p className="text-sm text-gray-700 flex items-center">
+                   - Acompanhe visualizações da proposta
+                  </p>
+                  <p className="text-sm text-gray-700 flex items-center">
+                   - Notificações automáticas no WhatsApp
+                  </p>
+                  <p className="text-sm text-primary font-semibold flex items-center">
+                    - Propostas personalizadas
+                  </p>
+                  <p className="text-sm text-primary font-semibold flex items-center">
+                    - Opções avançadas de customização
+                  </p>
+                  <p className="text-sm text-primary font-semibold flex items-center">
+                    - Relatórios avançados
+                  </p>
+                  <p className="text-sm text-primary font-semibold flex items-center">
+                    - Suporte especializado
+                  </p>
                 </div>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-gray-100 text-gray-600 text-lg font-bold py-4 px-6 rounded-lg mb-2">
-                  A partir de
-                  <br />
-                  R$ 59,90
-                </div>
-                <p className="font-semibold text-primary">Imobiliárias</p>
-                <p className="text-sm text-gray-600">Por corretor</p>
-                <p className="text-xs text-gray-500 mt-1">Planos em equipe</p>
               </div>
             </div>
 
@@ -452,7 +467,7 @@ export default function Home() {
                 size="large"
                 source="pricing_section"
               >
-                Começar por R$ 49,90
+                Teste Grátis
               </FreeTrialButton>
               <p className="text-sm text-gray-500">
                 3 dias grátis • Sem cartão • Upgrade a qualquer momento
@@ -461,8 +476,10 @@ export default function Home() {
 
             <div className="mt-6 p-4 rounded-lg">
               <p className="text-primary font-semibold text-center">
-                <strong>Estratégia Inteligente:</strong> Comece pequeno, prove o
-                valor, depois escale!
+               Teste nossa plataforma sem compromisso e aumente suas vendas com propostas profissionais!
+              </p>
+              <p className="text-center text-sm text-gray-500 mt-3">
+                Imobiliárias e incorporadoras: <a href="/precos?plano=imobiliarias" className="text-primary hover:underline">consulte nossos planos com desconto para equipes</a>
               </p>
             </div>
           </div>

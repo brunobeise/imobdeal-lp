@@ -10,12 +10,15 @@ const plans = {
       per: "",
       popular: false,
       features: [
-        "Até 5 imóveis cadastrados",
-        "Acompanhe quando o cliente abre a proposta",
-        "Notificações automáticas no WhatsApp",
-        "Propostas interativas básicas",
-        "Dashboard simplificado",
-        "Suporte por email",
+        { text: "Até 5 imóveis cadastrados", included: true },
+        { text: "Acompanhe quando o cliente abre a proposta", included: true },
+        { text: "Notificações automáticas no WhatsApp", included: true },
+        { text: "Propostas interativas básicas", included: true },
+        { text: "Dashboard simplificado", included: true },
+        { text: "Suporte por email", included: true },
+        { text: "Imóveis ilimitados", included: false },
+        { text: "Relatórios avançados", included: false },
+        { text: "Suporte especializado", included: false },
       ],
       color: "text-gray-600",
       borderColor: "text-gray-400",
@@ -29,14 +32,15 @@ const plans = {
       discount: "41% OFF",
       popular: true,
       features: [
-        "Imóveis ilimitados",
-        "Acompanhe quando o cliente abre a proposta",
-        "Notificações automáticas no WhatsApp",
-        "Propostas interativas e personalizadas",
-        "Envio fácil e profissional para clientes",
-        "Dashboard com histórico completo",
-        "Suporte especializado",
-        "Relatórios avançados",
+        { text: "Até 5 imóveis cadastrados", included: true },
+        { text: "Acompanhe quando o cliente abre a proposta", included: true },
+        { text: "Notificações automáticas no WhatsApp", included: true },
+        { text: "Propostas interativas básicas", included: true },
+        { text: "Dashboard simplificado", included: true },
+        { text: "Suporte por email", included: true },
+        { text: "Imóveis ilimitados", included: true },
+        { text: "Relatórios avançados", included: true },
+        { text: "Suporte especializado", included: true },
       ],
       color: "text-primary",
       borderColor: "text-primary",
@@ -191,16 +195,32 @@ export default function PricingPlans() {
                   className={`cursor-pointer mt-4 w-full block text-center bg-[#0b2a41]  text-white font-semibold py-2 rounded-md border hover:bg-opacity-80 transition`}
                 >
                   {" "}
-                  Assinar agora
+                  Teste Grátis
                 </button>
               </a>
 
               {/* Lista de Features */}
               <div className="mt-6 space-y-2 text-left">
                 {plan.features.map((feature, idx) => (
-                  <p key={idx} className="flex items-center text-gray-700">
-                    <FaCheck className="text-[#0b2a41] flex-shrink-0 w-5 h-5 mr-3" />
-                    {feature}
+                  <p key={idx} className={`flex items-center ${
+                    typeof feature === 'object' 
+                      ? feature.included 
+                        ? 'text-gray-700' 
+                        : 'text-gray-400 line-through'
+                      : 'text-gray-700'
+                  }`}>
+                    {typeof feature === 'object' ? (
+                      feature.included ? (
+                        <FaCheck className="text-[#0b2a41] flex-shrink-0 w-5 h-5 mr-3" />
+                      ) : (
+                        <svg className="text-gray-400 flex-shrink-0 w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      )
+                    ) : (
+                      <FaCheck className="text-[#0b2a41] flex-shrink-0 w-5 h-5 mr-3" />
+                    )}
+                    {typeof feature === 'object' ? feature.text : feature}
                   </p>
                 ))}
               </div>
