@@ -28,7 +28,7 @@ export default function BusinessStructuredData() {
       "contactOption": "TollFree"
     },
     "sameAs": [
-      "https://wa.me/5521605371"
+      "https://wa.me/51995529578"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

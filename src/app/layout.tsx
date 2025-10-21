@@ -181,7 +181,7 @@ export default function RootLayout({
                 <ul className="space-y-2">
                   <li>
                     <Link
-                      href="https://wa.me/5521605371?text=Olá! Tenho dúvidas sobre o ImobDeal e preciso de ajuda."
+                      href="https://wa.me/51995529578?text=Olá! Tenho dúvidas sobre o ImobDeal e preciso de ajuda."
                       target="_blank"
                       className="text-gray-600 hover:text-primary transition-colors"
                     >
