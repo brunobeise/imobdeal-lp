@@ -69,6 +69,39 @@ export const useFacebookPixel = () => {
     });
   }, [trackEvent]);
 
+  // Função para atualizar dados de correspondência avançada
+  const updateAdvancedMatching = useCallback((userData: {
+    email?: string;
+    phone?: string;
+    firstName?: string;
+    lastName?: string;
+    city?: string;
+    state?: string;
+  }) => {
+    if (typeof window !== 'undefined' && window.fbq) {
+      // Atualiza a inicialização do pixel com novos dados
+      window.fbq('init', '1253769810303729', {
+        external_id: userData.email || 'imobdeal_visitor',
+        em: userData.email || 'auto',
+        ph: userData.phone || 'auto',
+        fn: userData.firstName || undefined,
+        ln: userData.lastName || undefined,
+        ct: userData.city || undefined,
+        st: userData.state || undefined,
+        country: 'br'
+      });
+      
+      // Salva os dados localmente para futuras sessões
+      localStorage.setItem('imobdeal_user_data', JSON.stringify({
+        ...userData,
+        external_id: userData.email || 'imobdeal_visitor',
+        timestamp: new Date().toISOString()
+      }));
+      
+      console.log('Facebook Pixel - Advanced Matching atualizado:', userData);
+    }
+  }, []);
+
   return {
     trackEvent,
     trackCustomEvent,
@@ -76,7 +109,8 @@ export const useFacebookPixel = () => {
     trackViewPricing,
     trackWatchDemo,
     trackWhatsAppContact,
-    trackCompleteRegistration
+    trackCompleteRegistration,
+    updateAdvancedMatching
   };
 };
 

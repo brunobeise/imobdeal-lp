@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import BusinessStructuredData from "@/components/BusinessStructuredData";
 import MicrosoftClarity from "@/components/MicrosoftClarity";
+import FacebookPixelAdvanced from "@/components/FacebookPixelAdvanced";
 
 import "./globals.css";
 import "../assets/fonts/font.css";
@@ -105,7 +106,11 @@ export default function RootLayout({
               t.src=v;s=b.getElementsByTagName(e)[0];
               s.parentNode.insertBefore(t,s)}(window, document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '1253769810303729');
+              fbq('init', '1253769810303729', {
+                external_id: 'imobdeal_visitor',
+                em: 'auto',
+                ph: 'auto'
+              });
               fbq('track', 'PageView');
             `,
           }}
@@ -114,6 +119,7 @@ export default function RootLayout({
       <body className="antialiased">
         <BusinessStructuredData />
         <MicrosoftClarity />
+        <FacebookPixelAdvanced />
         {/* Meta Pixel NoScript */}
         <noscript>
           <img
