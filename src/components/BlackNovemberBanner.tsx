@@ -7,8 +7,21 @@ export default function BlackNovemberBanner() {
 
   if (!isBlackNovember) return null;
 
+  const scrollToBlackNovemberCard = () => {
+    const element = document.getElementById('black-november-card');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      });
+    }
+  };
+
   return (
-    <div className="bg-black text-white py-2 md:py-3 px-2 md:px-4 overflow-hidden relative">
+    <div 
+      className="bg-black text-white py-2 md:py-3 px-2 md:px-4 overflow-hidden relative cursor-pointer hover:bg-gray-900 transition-colors duration-200"
+      onClick={scrollToBlackNovemberCard}
+    >
       <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-900 to-black opacity-90"></div>
       <div className="relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-center text-center gap-1 md:gap-4 max-w-6xl mx-auto">
@@ -43,6 +56,12 @@ export default function BlackNovemberBanner() {
               <div className="text-sm md:text-xl font-bold">{timeLeft.seconds}</div>
               <div className="text-[8px] md:text-xs">SEG</div>
             </div>
+          </div>
+          
+          {/* Indicativo clicável */}
+          <div className="hidden md:flex items-center gap-2 text-xs text-[#F9A826]">
+            <span>Clique para ver a oferta</span>
+            <span className="animate-bounce">👇</span>
           </div>
         </div>
       </div>

@@ -399,7 +399,7 @@ export default function Home() {
             </h3>
 
             {/* Card da Black November - Aparece apenas em novembro */}
-            <div className="mb-8">
+            <div id="black-november-card" className="mb-8">
               <BlackNovemberPricingCard />
             </div>
 
