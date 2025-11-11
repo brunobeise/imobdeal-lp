@@ -31,7 +31,7 @@ export default function FacebookPixelAdvanced() {
               st: userData.state || undefined,
               country: 'br'
             });
-          } catch (error) {
+          } catch {
             console.log('Dados de usuário inválidos no localStorage');
           }
         }
