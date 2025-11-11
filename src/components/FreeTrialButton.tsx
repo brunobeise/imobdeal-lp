@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
+import BlackNovemberBadge from "./BlackNovemberBadge";
 
 interface FreeTrialButtonProps {
   variant?: "primary" | "secondary";
@@ -9,6 +10,7 @@ interface FreeTrialButtonProps {
   className?: string;
   children: React.ReactNode;
   source?: string;
+  showBlackNovemberBadge?: boolean;
 }
 
 export default function FreeTrialButton({ 
@@ -16,7 +18,8 @@ export default function FreeTrialButton({
   size = "default", 
   className = "", 
   children,
-  source = "homepage"
+  source = "homepage",
+  showBlackNovemberBadge = true
 }: FreeTrialButtonProps) {
   const { trackStartFreeTrial } = useFacebookPixel();
 
@@ -44,12 +47,15 @@ export default function FreeTrialButton({
   `.trim().replace(/\s+/g, ' ');
 
   return (
-    <Link
-      href="https://app.imobdeal.com.br/cadastro"
-      className={finalClassName}
-      onClick={handleClick}
-    >
-      {children}
-    </Link>
+    <div className="relative inline-block">
+      <Link
+        href="https://app.imobdeal.com.br/cadastro"
+        className={finalClassName}
+        onClick={handleClick}
+      >
+        {children}
+      </Link>
+      {showBlackNovemberBadge && <BlackNovemberBadge />}
+    </div>
   );
 }

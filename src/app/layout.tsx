@@ -3,6 +3,7 @@ import Script from "next/script";
 import BusinessStructuredData from "@/components/BusinessStructuredData";
 import MicrosoftClarity from "@/components/MicrosoftClarity";
 import FacebookPixelAdvanced from "@/components/FacebookPixelAdvanced";
+import BlackNovemberBanner from "@/components/BlackNovemberBanner";
 
 import "./globals.css";
 import "../assets/fonts/font.css";
@@ -130,6 +131,7 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
+        <BlackNovemberBanner />
         {children}
 
         {/* Footer */}

@@ -3,6 +3,7 @@ import DemoButton from "@/components/DemoModal";
 import StructuredData from "@/components/StructuredData";
 import FreeTrialButton from "@/components/FreeTrialButton";
 import PictureInPictureVideo from "@/components/PictureInPictureVideo";
+import BlackNovemberPricingCard from "@/components/BlackNovemberPricingCard";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -105,7 +106,7 @@ export default function Home() {
               <FreeTrialButton
                 variant="primary"
                 size="default"
-                className="max-sm:order-last"
+                className="max-sm:order-last w-full"
                 source="hero_section"
               >
                 Teste Grátis por 3 Dias
@@ -344,6 +345,8 @@ export default function Home() {
         </div>
       </div>
 
+            <TestimonialsCarousel testimonials={testimonials} />
+
       {/* Seção Quanto Custa - Estratégia de Conversão */}
       <div className="bg-gray-50 py-12 md:py-16 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -392,8 +395,13 @@ export default function Home() {
 
           <div className="bg-white p-8 rounded-xl shadow-lg">
             <h3 className="text-2xl font-bold text-primary mb-7">
-              🎯 Recupere Essas Vendas Perdidas
+              Recupere Essas Vendas Perdidas
             </h3>
+
+            {/* Card da Black November - Aparece apenas em novembro */}
+            <div className="mb-8">
+              <BlackNovemberPricingCard />
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* Plano Starter */}
@@ -487,7 +495,7 @@ export default function Home() {
       </div>
 
       {/* Seção de Depoimentos */}
-      <TestimonialsCarousel testimonials={testimonials} />
+
 
       {/* Seção CTA Final */}
       <div className="bg-primary py-12 md:py-16 px-4 md:px-8">
