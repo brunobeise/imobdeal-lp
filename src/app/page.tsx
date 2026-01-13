@@ -4,6 +4,7 @@ import FreeTrialButton from "@/components/FreeTrialButton";
 import PictureInPictureVideo from "@/components/PictureInPictureVideo";
 import BlackNovemberPricingCard from "@/components/BlackNovemberPricingCard";
 import { Metadata } from "next";
+import { GrMultiple } from "react-icons/gr";
 
 export const metadata: Metadata = {
   title: "ImobDeal - Crie e Acompanhe Propostas Imobiliárias em Segundos",
@@ -191,19 +192,7 @@ export default function Home() {
             {/* Card 2 */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 7a1 1 0 011-1h4a1 1 0 01.894.553L10 8h6a1 1 0 01.894.553l2 4A1 1 0 0118 14H9a1 1 0 01-.894-.553L7 11H4a1 1 0 01-1-1V7z"
-                  />
-                </svg>
+               <GrMultiple size={20} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold text-primary mb-3">
                 Portfólios personalizados para cada cliente
