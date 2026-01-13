@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "app.imobdeal.com.br",
       },
+      {
+        protocol: "https",
+        hostname: "imagedelivery.net",
+      },
     ],
     formats: ['image/webp', 'image/avif'],
   },
