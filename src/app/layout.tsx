@@ -144,7 +144,7 @@ export default function RootLayout({
                   <Image
                     width={100}
                     height={100}
-                    src="https://app.imobdeal.com.br/assets/static/imobDeal.CDKKpTq1.png"
+                    src="https://imagedelivery.net/OSaOCMwq07nhXnBaDdauwA/3cb8d2ac-1cc9-4fe9-29ed-76dd2dbc5800/public"
                     alt="Logo imobdeal"
                   />
                   <p className="text-primary">

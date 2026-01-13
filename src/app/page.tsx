@@ -4,7 +4,9 @@ import FreeTrialButton from "@/components/FreeTrialButton";
 import PictureInPictureVideo from "@/components/PictureInPictureVideo";
 import BlackNovemberPricingCard from "@/components/BlackNovemberPricingCard";
 import { Metadata } from "next";
+import Image from "next/image";
 import { GrMultiple } from "react-icons/gr";
+import AnaPortfolioModal from "@/components/AnaPortfolioModal";
 
 export const metadata: Metadata = {
   title: "ImobDeal - Crie e Acompanhe Propostas Imobiliárias em Segundos",
@@ -92,11 +94,21 @@ export default function Home() {
       <div className="flex justify-center py-12 md:py-20 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="space-y-6 md:space-y-8 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-5xl leading-tight text-primary font-bold">
-              Apresente seus imóveis com impacto e{" "}
-              <span className="text-primary">acompanhe o interesse em segundos</span>
+            <div className="mb-6 md:mb-8">
+              <Image
+                src="https://imagedelivery.net/OSaOCMwq07nhXnBaDdauwA/4a8be372-df24-4469-2e1a-3dbca6adfe00/public"
+                alt="ImobDeal Logo"
+                width={300}
+                height={80}
+                className="mx-auto w-auto h-12 md:h-16 lg:h-20"
+                priority
+              />
+            </div>
+            <h1 className="text-2xl md:text-5xl lg:text-5xl leading-tight text-primary font-bold">
+              Transforme seus imóveis em links inteligentes e{" "}
+              <span className="text-primary">descubra o interesse dos seus clientes em segundos</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 leading-7 md:leading-9 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 leading-7 md:leading-9 max-w-4xl mx-auto">
               O ImobDeal cria vitrines digitais e propostas elegantes em
               segundos, com alertas de visualização e insights em tempo real
               para você falar com o cliente na hora certa.
@@ -146,6 +158,8 @@ export default function Home() {
         </div>
       </div>
 
+
+
       {/* Seção de Recursos */}
       <div className="bg-gray-50 py-12 md:py-16 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
@@ -192,7 +206,7 @@ export default function Home() {
             {/* Card 2 */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-               <GrMultiple size={20} className="text-white" />
+                <GrMultiple size={20} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold text-primary mb-3">
                 Portfólios personalizados para cada cliente
@@ -269,6 +283,86 @@ export default function Home() {
         </div>
       </div>
 
+
+      {/* Seção Link Inteligente - Exemplo */}
+      <div className="bg-white py-16 md:py-20 px-4 md:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              O que é um link inteligente?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+              É um link único que reúne propostas ou imóveis personalizadas e te avisa quando, e por quanto tempo o cliente acessa.
+              Veja como funciona na prática:
+            </p>
+          </div>
+
+          <div className="bg-gray-50 rounded-2xl p-6 md:p-8 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-2xl font-bold text-primary mb-4">
+                  Imagine enviar isso para sua cliente:
+                </h3>
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                  <p className="text-gray-800 mb-4">
+                    "Oi Ana Clara! 👋<br />
+                    Preparei uma seleção especial de imóveis pensando no seu perfil.<br />
+                    Acesse seu portfólio exclusivo:"
+                  </p>
+                  <AnaPortfolioModal />
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white font-bold text-sm">1</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Personalizado com o nome do cliente</h4>
+                    <p className="text-gray-600">A Ana Clara se sente especial ao ver que você criou algo exclusivo para ela</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white font-bold text-sm">2</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Tudo em um só lugar</h4>
+                    <p className="text-gray-600">Imóveis, preços, detalhes e simulações organizados em uma página limpa</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-white font-bold text-sm">3</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Você sabe quando ela acessa</h4>
+                    <p className="text-gray-600">Recebe notificação no WhatsApp quando ela visualiza e quanto tempo ficou em cada imóvel</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-gray-700 mb-6">
+              Clique no link acima e veja como seus clientes vão receber suas propostas
+            </p>
+            <FreeTrialButton
+              variant="primary"
+              size="large"
+              source="smart_link_section"
+              className="px-8"
+            >
+              Criar meu primeiro link inteligente
+            </FreeTrialButton>
+          </div>
+        </div>
+      </div>
+
       {/* Seção Comparativa: Como o corretor trabalha */}
       <div className="bg-sectionBackground py-16 md:py-20 px-4 md:px-8">
         <div className="max-w-6xl mx-auto space-y-10">
@@ -276,8 +370,8 @@ export default function Home() {
             <span className="inline-flex items-center justify-center px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-primary bg-white border border-primary/20 rounded-full">
               Comparativo: do tradicional ao profissional
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">
-              Clareza para o cliente, previsibilidade para você
+            <h2 className="text-2xl md:text-4xl font-bold text-primary">
+              Clareza para o cliente, previsibilidade para você.
             </h2>
             <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto">
               Em poucos pontos, veja o que muda ao estruturar propostas e acompanhamento dentro do Imobdeal.
@@ -341,7 +435,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 items-center">
               <div className="space-y-2">
                 <p className="text-lg font-semibold leading-relaxed">
-                  “O cliente não compra quando entende o preço. <br/> Ele compra quando entende o negócio.”
+                  “O cliente não compra quando entende o preço. <br /> Ele compra quando entende o negócio.”
                 </p>
                 <p className="text-white/80 text-sm md:text-base">
                   O Imobdeal deixa isso claro em cada proposta e no momento certo do follow-up.
