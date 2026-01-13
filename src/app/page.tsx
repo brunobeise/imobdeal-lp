@@ -305,9 +305,9 @@ export default function Home() {
                 </h3>
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
                   <p className="text-gray-800 mb-4">
-                    "Oi Ana Clara! 👋<br />
+                    &ldquo;Oi Ana Clara! 👋<br />
                     Preparei uma seleção especial de imóveis pensando no seu perfil.<br />
-                    Acesse seu portfólio exclusivo:"
+                    Acesse seu portfólio exclusivo:&rdquo;
                   </p>
                   <AnaPortfolioModal />
                 </div>
