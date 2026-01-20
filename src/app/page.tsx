@@ -363,6 +363,8 @@ export default function Home() {
         </div>
       </div>
 
+      <TestimonialsCarousel testimonials={testimonials} />
+
       {/* Seção Comparativa: Como o corretor trabalha */}
       <div className="bg-sectionBackground py-16 md:py-20 px-4 md:px-8">
         <div className="max-w-6xl mx-auto space-y-10">
@@ -456,8 +458,6 @@ export default function Home() {
         </div>
       </div>
 
-      <TestimonialsCarousel testimonials={testimonials} />
-
       {/* Seção Quanto Custa - Estratégia de Conversão */}
       <div className="bg-gray-50 py-12 md:py-16 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -465,8 +465,7 @@ export default function Home() {
             Quanto Custa Perder um Cliente?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Você já perdeu quantas vendas por não saber quando o cliente viu sua
-            proposta?
+            Por não ter uma ferramenta como o imobdeal?
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 ">
