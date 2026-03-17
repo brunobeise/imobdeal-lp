@@ -109,7 +109,7 @@ export default function BlackNovemberPricingCard() {
           </FreeTrialButton>
           
           <p className="text-[10px] md:text-xs text-gray-400 mt-2 md:mt-3">
-            Teste grátis por 3 dias • Sem cartão de crédito
+            Teste grátis por 7 dias • Setup em 5 minutos
           </p>
         </div>
       </div>

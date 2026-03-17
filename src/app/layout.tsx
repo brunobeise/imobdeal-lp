@@ -3,33 +3,34 @@ import Script from "next/script";
 import BusinessStructuredData from "@/components/BusinessStructuredData";
 import MicrosoftClarity from "@/components/MicrosoftClarity";
 import FacebookPixelAdvanced from "@/components/FacebookPixelAdvanced";
-import BlackNovemberBanner from "@/components/BlackNovemberBanner";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 import "./globals.css";
 import "../assets/fonts/font.css";
-import Image from "next/image";
-import Link from "next/link";
 import WhatsAppButton from "@/components/WhatsappButton";
 
 export const metadata: Metadata = {
   title: {
     default:
-      "ImobDeal - Envio de Propostas de Imóveis | Software para Corretores",
-    template: "%s | ImobDeal - Envio de Propostas de Imóveis",
+      "ImobDeal — CRM Imobiliário Completo | Sua Imobiliária no Próximo Nível",
+    template: "%s | ImobDeal — CRM Imobiliário",
   },
   description:
-    "Plataforma líder para envio de propostas de imóveis. Crie, envie e acompanhe propostas imobiliárias profissionais em segundos. Software completo para corretores e imobiliárias aumentarem vendas.",
+    "O CRM imobiliário completo para gestores e corretores. Propostas inteligentes, funis de venda, dados automáticos, IA integrada e gestão de equipe — tudo em um só lugar. Teste grátis.",
   keywords: [
-    "envio de propostas de imóveis",
-    "propostas imobiliárias",
+    "CRM imobiliário",
     "software imobiliário",
+    "gestão de imobiliária",
     "corretor de imóveis",
     "plataforma imobiliária",
-    "gestão de propostas",
-    "enviar proposta imóvel",
+    "propostas imobiliárias",
+    "funil de vendas imobiliário",
     "sistema para corretor",
-    "CRM imobiliário",
-    "automação imobiliária",
+    "dados automáticos imobiliária",
+    "IA para corretores",
+    "gestão de equipe imobiliária",
+    "software para imobiliárias",
   ],
   authors: [{ name: "ImobDeal" }],
   creator: "ImobDeal",
@@ -45,9 +46,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "ImobDeal - Envio de Propostas de Imóveis | Software para Corretores",
+      "ImobDeal — CRM Imobiliário Completo | Sua Imobiliária no Próximo Nível",
     description:
-      "Plataforma líder para envio de propostas de imóveis. Crie, envie e acompanhe propostas imobiliárias profissionais em segundos.",
+      "O CRM imobiliário completo. Propostas inteligentes, funis de venda, dados automáticos, IA integrada e gestão de equipe. Teste grátis.",
     url: "https://imobdeal.com.br",
     siteName: "ImobDeal",
     images: [
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
         url: "/imobDeal.png",
         width: 1200,
         height: 630,
-        alt: "ImobDeal - Envio de Propostas de Imóveis",
+        alt: "ImobDeal — CRM Imobiliário Completo",
       },
     ],
     locale: "pt_BR",
@@ -63,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ImobDeal - Envio de Propostas de Imóveis",
+    title: "ImobDeal — CRM Imobiliário Completo",
     description:
-      "Plataforma líder para envio de propostas de imóveis. Crie, envie e acompanhe propostas imobiliárias profissionais.",
+      "Propostas inteligentes, funis de venda, dados automáticos, IA integrada e gestão de equipe. Teste grátis.",
     images: ["/imobDeal.png"],
   },
   robots: {
@@ -132,124 +133,9 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-        <BlackNovemberBanner />
-        {children}
-
-        {/* Footer */}
-        <footer className="bg-gray-50 py-12 px-8 border-t border-gray-200">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <Link href={"/"}>
-                <div className="flex flex-col items-center">
-                  <Image
-                    width={100}
-                    height={100}
-                    src="https://imagedelivery.net/OSaOCMwq07nhXnBaDdauwA/3cb8d2ac-1cc9-4fe9-29ed-76dd2dbc5800/public"
-                    alt="Logo imobdeal"
-                  />
-                  <p className="text-primary">
-                    imob<span className="font-bold">Deal</span>
-                  </p>
-                </div>
-              </Link>
-
-              {/* Produto */}
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-4">Produto</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      href="/como-funciona"
-                      className="text-gray-600 hover:text-primary transition-colors"
-                    >
-                      Como Funciona
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/precos"
-                      className="text-gray-600 hover:text-primary transition-colors"
-                    >
-                      Preços
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/integracoes"
-                      className="text-gray-600 hover:text-primary transition-colors"
-                    >
-                      Integrações
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Suporte */}
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-4">Suporte</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      href="https://wa.me/51995529578?text=Olá! Tenho dúvidas sobre o ImobDeal e preciso de ajuda."
-                      target="_blank"
-                      className="text-gray-600 hover:text-primary transition-colors"
-                    >
-                      Dúvidas
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://wa.me/5551995529578?text=Olá! Gostaria de falar sobre parcerias com o ImobDeal."
-                      target="_blank"
-                      className="text-gray-600 hover:text-primary transition-colors"
-                    >
-                      Parcerias
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Empresa */}
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-4">Empresa</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      href="/sobre"
-                      className="text-gray-600 hover:text-primary transition-colors"
-                    >
-                      Sobre Nós
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/politica-privacidade"
-                      className="text-gray-600 hover:text-primary transition-colors"
-                    >
-                      Política de Privacidade
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/termos-servico"
-                      className="text-gray-600 hover:text-primary transition-colors"
-                    >
-                      Termos de Serviço
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Copyright */}
-            <div className="border-t border-gray-200 mt-8 pt-8 text-center">
-              <p className="text-gray-500 text-sm">
-                © 2025 ImobDeal. Todos os direitos reservados. CNPJ
-                62.081.400/0001-26
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Header />
+        <main>{children}</main>
+        <Footer />
         <WhatsAppButton />
       </body>
     </html>

@@ -1,231 +1,193 @@
-"use client";
-import { useState } from "react";
-import { FaCheck } from "react-icons/fa";
+import { MdCheck, MdAutoAwesome } from "react-icons/md";
 
-const plans = {
-  corretores: [
-    {
-      name: "Starter",
-      price: "R$ 49,90",
-      per: "",
-      popular: false,
-      features: [
-        { text: "Até 5 imóveis cadastrados", included: true },
-        { text: "Acompanhe quando o cliente abre a proposta", included: true },
-        { text: "Notificações automáticas no WhatsApp", included: true },
-        { text: "Propostas interativas básicas", included: true },
-        { text: "Dashboard simplificado", included: true },
-        { text: "Suporte por email", included: true },
-        { text: "Imóveis ilimitados", included: false },
-        { text: "Relatórios avançados", included: false },
-        { text: "Suporte especializado", included: false },
-      ],
-      color: "text-gray-600",
-      borderColor: "text-gray-400",
-      link: "https://app.imobdeal.com.br/cadastro",
-    },
-    {
-      name: "Pro",
-      price: "R$ 99,00",
-      per: "",
-      originalPrice: "R$ 169,90",
-      discount: "41% OFF",
-      popular: true,
-      features: [
-        { text: "Até 5 imóveis cadastrados", included: true },
-        { text: "Acompanhe quando o cliente abre a proposta", included: true },
-        { text: "Notificações automáticas no WhatsApp", included: true },
-        { text: "Propostas interativas básicas", included: true },
-        { text: "Dashboard simplificado", included: true },
-        { text: "Suporte por email", included: true },
-        { text: "Imóveis ilimitados", included: true },
-        { text: "Relatórios avançados", included: true },
-        { text: "Suporte especializado", included: true },
-      ],
-      color: "text-primary",
-      borderColor: "text-primary",
-      link: "https://app.imobdeal.com.br/cadastro",
-    },
-  ],
-  imobiliarias: [
-    {
-      name: "Bronze",
-      price: "R$ 89,90",
-      per: "por corretor (5 corretores)",
-      popular: false,
-      features: [
-        "Dashboard com histórico de propostas",
-        "Envio ilimitado de propostas",
-        "Integração com WhatsApp para follow-up",
-        "Acompanhamento detalhado das interações",
-      ],
-      color: "text-[#CD7F32]",
-      borderColor: "[#B5651D]",
-      link: "https://www.asaas.com/c/3wo2j55dgagxexb9",
-    },
-    {
-      name: "Prata",
-      price: "R$ 74,90",
-      per: "por corretor (10 corretores)",
-      popular: true,
-      features: [
-        "Todos os benefícios do plano Bronze",
-        "Suporte especializado para equipe",
-        "Organização avançada por corretor",
-      ],
-      color: "text-gray-400",
-      borderColor: "gray-500",
-      link: "https://www.asaas.com/c/g0wphmygwlblgjbw",
-    },
-    {
-      name: "Ouro",
-      price: "R$ 59,90",
-      per: "por corretor (15 corretores)",
-      popular: false,
-      features: [
-        "Todos os benefícios do plano Prata",
-        "Treinamento personalizado para equipe",
-        "Relatórios de performance detalhados",
-      ],
-      color: "text-[#ddad31]",
-      borderColor: "[#b78c1f]",
-      link: "https://www.asaas.com/c/eg09xmpgwr6j4bqf",
-    },
-    {
-      name: "Diamante",
-      price: "Consulte",
-      per: "Planos personalizados",
-      popular: false,
-      features: [
-        "Consultoria personalizada",
-        "Integração avançada",
-        "Suporte premium",
-      ],
-      color: "[#00BFFF]",
-      borderColor: "[#009ACD]",
-      link: "#",
-    },
-  ],
-};
+interface PricingPlansProps {
+  persona?: "gestor" | "corretor";
+}
 
-export default function PricingPlans() {
-  const [activePlan, setActivePlan] = useState("corretores");
+interface Plan {
+  name: string;
+  description: string;
+  price: string;
+  period: string;
+  users: string;
+  additionalInfo: string[];
+  features: string[];
+  highlighted: boolean;
+  cta: string;
+  link: string;
+}
+
+const plans: Plan[] = [
+  {
+    name: "Autônomo",
+    description: "Para corretores independentes que querem se profissionalizar.",
+    price: "R$ 197",
+    period: "/mês",
+    users: "1 usuário incluído",
+    additionalInfo: ["Usuário adicional: R$ 99,90/mês"],
+    features: [
+      "CRM completo com funis",
+      "Propostas e portfólios interativos",
+      "Cadastro de imóvel por áudio com IA",
+      "Chat com IA para negociações",
+      "Agenda integrada com Google",
+      "Gestão de documentos",
+      "Assinatura eletrônica (R$ 3,99/doc)",
+      "Notificações via WhatsApp",
+      "Suporte por chat e WhatsApp",
+    ],
+    highlighted: false,
+    cta: "Começar teste grátis",
+    link: "https://app.imobdeal.com.br/cadastro",
+  },
+  {
+    name: "Imobiliária",
+    description: "Para imobiliárias que querem controle total da operação.",
+    price: "R$ 569",
+    period: "/mês",
+    users: "5 usuários incluídos",
+    additionalInfo: [
+      "Adicional (6–10): R$ 59,90/mês",
+      "Adicional (11+): R$ 39,90/mês",
+    ],
+    features: [
+      "Tudo do plano Autônomo, mais:",
+      "Dashboard gerencial com KPIs",
+      "Ranking e metas por corretor",
+      "Controle de equipe e tarefas",
+      "Funis e forecast de receita",
+      "Gestão de leads com distribuição",
+      "Relatórios de performance",
+      "Suporte prioritário",
+    ],
+    highlighted: true,
+    cta: "Começar teste grátis",
+    link: "https://app.imobdeal.com.br/cadastro",
+  },
+];
+
+interface Module {
+  name: string;
+  price: string;
+  detail: string;
+  icon: string;
+}
+
+const modules: Module[] = [
+  {
+    name: "Financeiro",
+    price: "R$ 269/mês",
+    detail: "Contas a pagar/receber, comissões, fluxo de caixa",
+    icon: "",
+  },
+  {
+    name: "Site Imobiliária",
+    price: "R$ 2.000",
+    detail: "Setup único — site próprio integrado ao CRM",
+    icon: "",
+  },
+];
+
+export default function PricingPlans({ persona = "gestor" }: PricingPlansProps) {
+  const orderedPlans =
+    persona === "corretor" ? [plans[0], plans[1]] : [plans[1], plans[0]];
 
   return (
-    <section className="py-12 bg-white">
-      <div className="max-w-[1600px] mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-gray-900">
-          Escolha o plano ideal para você
-        </h2>
-        <p className="text-gray-600 mt-4">
-          Envie propostas profissionais, acompanhe visualizações e feche mais
-          negócios com o ImobDeal.
-        </p>
-
-        {/* Botões de alternância */}
-        <div className="mt-6 flex justify-center gap-4">
-          <button
-            className={`px-6 py-2 text-lg font-semibold rounded-md transition cursor-pointer ${
-              activePlan === "corretores"
-                ? "bg-gray-800 text-white"
-                : "bg-gray-200 text-gray-900 hover:bg-gray-300"
-            }`}
-            onClick={() => setActivePlan("corretores")}
-          >
-            Corretores
-          </button>
-          <button
-            className={`px-6 py-2 text-lg font-semibold rounded-md transition cursor-pointer ${
-              activePlan === "imobiliarias"
-                ? "bg-gray-800 text-white"
-                : "bg-gray-200 text-gray-900 hover:bg-gray-300"
-            }`}
-            onClick={() => setActivePlan("imobiliarias")}
-          >
-            Imobiliárias
-          </button>
+    <section id="precos" className="bg-white py-20 md:py-28">
+      <div className="max-w-5xl mx-auto px-5 md:px-8">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <p className="text-sm font-semibold text-accent-amber uppercase tracking-wider mb-3">
+            Preços
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 tracking-tight leading-tight">
+            Investimento transparente
+          </h2>
+          <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
+            Sem surpresas. Teste grátis por 7 dias, cancele quando quiser.
+          </p>
         </div>
 
-        {/* Grid de Planos */}
-        <div className={`mt-10 flex flex-wrap justify-center gap-10 ${
-          activePlan === "corretores" ? "max-w-4xl mx-auto" : ""
-        }`}>
-          {plans[activePlan as keyof typeof plans].map((plan, index) => (
-            <div
-              key={index}
-              className={`bg-gray-100 rounded-lg shadow-md p-6 w-[320px] relative ${
-                plan.popular ? "ring-2 ring-blue-500 bg-white" : ""
-              }`}
-            >
-              {plan.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
-                    MAIS POPULAR
+        {/* Plans grid */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {orderedPlans.map((plan, i) => {
+            const isHighlighted =
+              (persona === "corretor" && plan.name === "Autônomo") ||
+              (persona === "gestor" && plan.name === "Imobiliária") ||
+              plan.highlighted;
+
+            return (
+              <div
+                key={i}
+                className={`relative rounded-2xl p-8 transition-all duration-300 ${isHighlighted
+                    ? "border-2 border-primary bg-white shadow-xl shadow-primary/8 ring-1 ring-primary/10"
+                    : "border border-gray-200 bg-white"
+                  }`}
+              >
+
+                {/* Plan info */}
+                <h3 className="text-xl font-bold text-gray-900 mt-1">{plan.name}</h3>
+                <p className="text-sm text-gray-500 mt-1">{plan.description}</p>
+
+                {/* Price */}
+                <div className="mt-6 flex items-baseline gap-1">
+                  <span className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+                    {plan.price}
                   </span>
+                  <span className="text-gray-400 font-medium">{plan.period}</span>
                 </div>
-              )}
-              
-              <h3 className={"text-lg font-semibold " + plan.color}>
-                {plan.name}
-              </h3>
-              <div className="flex items-end justify-center">
-                {plan.name === "Pro" ? (
-                  <div className="flex flex-col items-center">
-                    <span className="text-gray-400 line-through text-lg">R$ 169,90</span>
-                    <div className="flex items-center gap-2">
-                      <p className="text-4xl font-bold text-gray-900 mt-2">{plan.price}</p>
-                      <span className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full ml-2">-41% OFF</span>
-                    </div>
-                    <span className="text-xs">/ mês</span>
-                  </div>
-                ) : (
-                  <>
-                    <p className="text-4xl font-bold text-gray-900 mt-2">{plan.price}</p>
-                    {plan.price !== "Consulte" && (
-                      <span className="text-xs">/ mês</span>
-                    )}
-                  </>
-                )}
-              </div>
-              <span className="text-gray-500 text-sm">{plan.per}</span>
-
-              {/* Botão de Pagamento */}
-              <a href={plan.link}>
-                <button
-                  className={`cursor-pointer mt-4 w-full block text-center bg-[#0b2a41]  text-white font-semibold py-2 rounded-md border hover:bg-opacity-80 transition`}
-                >
-                  {" "}
-                  Teste Grátis
-                </button>
-              </a>
-
-              {/* Lista de Features */}
-              <div className="mt-6 space-y-2 text-left">
-                {plan.features.map((feature, idx) => (
-                  <p key={idx} className={`flex items-center ${
-                    typeof feature === 'object' 
-                      ? feature.included 
-                        ? 'text-gray-700' 
-                        : 'text-gray-400 line-through'
-                      : 'text-gray-700'
-                  }`}>
-                    {typeof feature === 'object' ? (
-                      feature.included ? (
-                        <FaCheck className="text-[#0b2a41] flex-shrink-0 w-5 h-5 mr-3" />
-                      ) : (
-                        <svg className="text-gray-400 flex-shrink-0 w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                        </svg>
-                      )
-                    ) : (
-                      <FaCheck className="text-[#0b2a41] flex-shrink-0 w-5 h-5 mr-3" />
-                    )}
-                    {typeof feature === 'object' ? feature.text : feature}
+                <p className="text-sm text-gray-500 mt-1">{plan.users}</p>
+                {plan.additionalInfo.map((info, j) => (
+                  <p key={j} className="text-xs text-gray-400 mt-0.5">
+                    {info}
                   </p>
                 ))}
+
+                {/* CTA */}
+                <a
+                  href={plan.link}
+                  className={`mt-6 block w-full text-center py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 ${isHighlighted
+                      ? "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20"
+                      : "bg-gray-100 text-gray-900 hover:bg-gray-200"
+                    }`}
+                >
+                  {plan.cta}
+                </a>
+
+                {/* Features */}
+                <ul className="mt-8 space-y-3">
+                  {plan.features.map((feat, j) => (
+                    <li key={j} className="flex items-start gap-2.5 text-sm text-gray-600">
+                      <MdCheck className="text-primary mt-0.5 flex-shrink-0" size={18} />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          ))}
+            );
+          })}
+        </div>
+
+        {/* Modules */}
+        <div className="mt-10">
+          <p className="text-center text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">
+            Módulos adicionais
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-1">
+            {modules.map((mod, i) => (
+              <span key={i} className="text-xs text-gray-400">
+                {mod.name} · <span className="text-gray-500">{mod.price}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Variable costs note */}
+        <div className="mt-10 flex items-center justify-center gap-2 text-xs text-gray-400">
+          <MdAutoAwesome size={14} className="text-accent-amber" />
+          <span>
+            Custos variáveis: Assinatura eletrônica R$ 3,99/doc · Tokens de IA sob demanda
+          </span>
         </div>
       </div>
     </section>

@@ -1,28 +1,27 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Preços ImobDeal - Planos para Propostas Imobiliárias",
-  description: "Confira os planos do ImobDeal para criação e acompanhamento de propostas imobiliárias. Teste grátis por 3 dias. Envio ilimitado de propostas. Preços acessíveis para corretores e imobiliárias.",
+  title: "Preços — ImobDeal CRM Imobiliário",
+  description: "Planos a partir de R$ 197/mês. CRM completo para imobiliárias e corretores autônomos. Teste grátis por 7 dias, setup em 5 minutos.",
   keywords: [
-    "preços propostas imobiliárias",
+    "CRM imobiliário preço",
     "planos imobdeal",
     "software imobiliário preço",
-    "corretor de imóveis preço",
-    "sistema propostas custo",
+    "CRM corretor de imóveis",
+    "sistema imobiliário custo",
     "plataforma imobiliária valor",
-    "envio propostas ilimitado",
-    "teste grátis corretor"
+    "teste grátis CRM imobiliário",
   ],
   openGraph: {
-    title: "Preços ImobDeal - Planos para Propostas Imobiliárias",
-    description: "Confira os planos do ImobDeal. Teste grátis por 3 dias, envio ilimitado de propostas e preços acessíveis para corretores.",
+    title: "Preços — ImobDeal CRM Imobiliário",
+    description: "Planos a partir de R$ 197/mês. Teste grátis por 7 dias, setup em 5 minutos.",
     url: "https://imobdeal.com.br/precos",
     images: [
       {
         url: "/imobDeal.png",
         width: 1200,
         height: 630,
-        alt: "Preços ImobDeal - Planos para Propostas Imobiliárias",
+        alt: "Preços ImobDeal — CRM Imobiliário Completo",
       },
     ],
   },

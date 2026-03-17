@@ -7,7 +7,7 @@ export default function StructuredData() {
     "name": "ImobDeal",
     "url": "https://imobdeal.com.br",
     "logo": "https://imobdeal.com.br/imobDeal.png",
-    "description": "Plataforma para criação e acompanhamento de propostas imobiliárias",
+    "description": "CRM imobiliário completo para imobiliárias e corretores autônomos",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+55-21-60537-1",
@@ -29,7 +29,7 @@ export default function StructuredData() {
     "name": "ImobDeal",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web Browser",
-    "description": "Software para criação e acompanhamento de propostas imobiliárias. Simplifique a criação de propostas sem burocracia.",
+    "description": "CRM imobiliário completo com gestão de equipe, propostas interativas, IA e módulo financeiro. A plataforma soberana para imobiliárias e corretores.",
     "url": "https://imobdeal.com.br",
     "screenshot": "https://imobdeal.com.br/imobDeal.png",
     "author": {
@@ -38,16 +38,20 @@ export default function StructuredData() {
     },
     "offers": {
       "@type": "Offer",
-      "price": "0",
+      "price": "197",
       "priceCurrency": "BRL",
-      "description": "Teste grátis por 3 dias"
+      "description": "Plano Autônomo a partir de R$ 197/mês. Teste grátis por 7 dias."
     },
     "featureList": [
-      "Criação de propostas imobiliárias",
-      "Acompanhamento de visualizações",
-      "Envio via WhatsApp",
-      "Dashboard de análises",
-      "Modelos personalizáveis"
+      "CRM completo com funis de venda",
+      "Propostas e portfólios interativos",
+      "Cadastro de imóveis por áudio com IA",
+      "Chat com IA integrado",
+      "Gestão de equipe e ranking",
+      "Módulo financeiro",
+      "Assinatura eletrônica",
+      "Dashboard gerencial com KPIs",
+      "Integração com WhatsApp"
     ]
   }
 
@@ -60,7 +64,7 @@ export default function StructuredData() {
         "name": "Como funciona o ImobDeal?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O ImobDeal simplifica a criação e o acompanhamento das suas propostas imobiliárias. Você pode criar propostas em segundos, enviá-las via WhatsApp e acompanhar quando seus clientes as visualizam."
+          "text": "O ImobDeal é um CRM imobiliário completo que centraliza gestão de equipe, propostas interativas, cadastro por áudio com IA, módulo financeiro e muito mais em uma única plataforma."
         }
       },
       {
@@ -68,7 +72,7 @@ export default function StructuredData() {
         "name": "É possível testar gratuitamente?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim! Oferecemos teste grátis por 3 dias sem necessidade de cartão de crédito."
+          "text": "Sim! Oferecemos teste grátis por 7 dias com acesso completo a todas as funcionalidades, sem necessidade de cartão de crédito."
         }
       },
       {
@@ -76,7 +80,7 @@ export default function StructuredData() {
         "name": "Para quem é indicado o ImobDeal?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O ImobDeal é ideal para corretores de imóveis, imobiliárias e profissionais do setor imobiliário que querem criar propostas profissionais e acompanhar o engajamento dos clientes."
+          "text": "O ImobDeal é ideal para gestores de imobiliárias que querem controle total da operação e para corretores autônomos que desejam profissionalizar seus processos com IA e propostas interativas."
         }
       }
     ]
