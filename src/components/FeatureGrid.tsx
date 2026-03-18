@@ -1,3 +1,5 @@
+"use client";
+
 import {
   MdOutlineLink,
   MdAutoAwesome,
@@ -12,7 +14,7 @@ import {
   MdFolder,
   MdShuffle,
 } from "react-icons/md";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 interface FeatureCategory {
   icon: ReactNode;
@@ -160,6 +162,8 @@ const categories: FeatureCategory[] = [
 ];
 
 export default function FeatureGrid() {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section id="funcionalidades" className="bg-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
@@ -173,10 +177,24 @@ export default function FeatureGrid() {
           <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
             Mais de 50 funcionalidades para você parar de usar 5 ferramentas diferentes.
           </p>
+
+          {!expanded && (
+            <button
+              onClick={() => setExpanded(true)}
+              className="mt-8 inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Ver todas as funcionalidades
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-white">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat, i) => (
+        {expanded && (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-in fade-in slide-in-from-top-4 duration-500">
+              {categories.map((cat, i) => (
             <div
               key={i}
               className="group border border-gray-100 rounded-2xl p-6 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
@@ -218,6 +236,20 @@ export default function FeatureGrid() {
             </div>
           ))}
         </div>
+
+            <div className="text-center mt-10">
+              <button
+                onClick={() => setExpanded(false)}
+                className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-primary font-medium transition-colors"
+              >
+                Minimizar
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="rotate-180">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );

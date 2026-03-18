@@ -1,12 +1,9 @@
-import { Suspense } from "react";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import StructuredData from "@/components/StructuredData";
 import FreeTrialButton from "@/components/FreeTrialButton";
 import HeroBackground from "@/components/HeroBackground";
-import PersonaToggle from "@/components/PersonaToggle";
 import FeaturePillars from "@/components/FeaturePillars";
 import FeatureGrid from "@/components/FeatureGrid";
-import CompetitorComparison from "@/components/CompetitorComparison";
 import MetricsBar from "@/components/MetricsBar";
 import PricingPlans from "@/components/PricingPlans";
 import ScreenshotShowcase from "@/components/ScreenshotShowcase";
@@ -23,7 +20,7 @@ type Persona = "gestor" | "corretor";
 const heroContent: Record<Persona, { headline: string; sub: string }> = {
   gestor: {
     headline: "Controle total da sua imobiliária em um só lugar.",
-    sub: "Dashboard gerencial, funis de venda, ranking da equipe e previsão de receita — tudo automatizado para você tomar decisões melhores, mais rápido.",
+    sub: "Chega de depender de planilha para saber o que acontece na sua operação. CRM, dashboards e forecast — tudo automático.",
   },
   corretor: {
     headline: "Propostas que vendem, cadastro por áudio e IA ao seu lado.",
@@ -101,13 +98,6 @@ export default async function Home({ searchParams }: PageProps) {
       <section className="relative min-h-[92vh] flex items-center bg-primary overflow-hidden">
         <HeroBackground />        <FloatingElements />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-8 py-28 md:py-36 text-center">
-          {/* Persona toggle */}
-          <div className="mb-10">
-            <Suspense fallback={null}>
-              <PersonaToggle dark />
-            </Suspense>
-          </div>
-
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-white tracking-tight leading-[1.1] max-w-4xl mx-auto">
             {hero.headline}
@@ -130,10 +120,16 @@ export default async function Home({ searchParams }: PageProps) {
               Teste Grátis por 7 Dias
             </FreeTrialButton>
             <a
-              href="#funcionalidades"
-              className="text-white/60 hover:text-white text-sm font-medium transition-colors"
+              href="https://wa.me/5551995529578?text=Ol%C3%A1!%20Quero%20conhecer%20o%20ImobDeal."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-white/20 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300"
             >
-              Ver funcionalidades →
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-emerald-400">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.61l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.37 0-4.567-.82-6.298-2.192l-.44-.362-3.065 1.027 1.027-3.065-.362-.44A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+              </svg>
+              Falar com especialista
             </a>
           </div>
 
@@ -169,14 +165,8 @@ export default async function Home({ searchParams }: PageProps) {
       {/* ── SCREENSHOT SHOWCASE ──────────────────────────────────────── */}
       <ScreenshotShowcase />
 
-      {/* ── FEATURE GRID (40+ funcionalidades) ───────────────────────── */}
-      <FeatureGrid />
-
       {/* ── METRICS BAR ──────────────────────────────────────────────── */}
       <MetricsBar />
-
-      {/* ── COMPARATIVO ──────────────────────────────────────────────── */}
-      <CompetitorComparison />
 
       {/* ── LINKS INTELIGENTES (promo) ────────────────────────────────── */}
       <section className="relative bg-primary py-20 md:py-28 overflow-hidden">
@@ -276,6 +266,9 @@ export default async function Home({ searchParams }: PageProps) {
           <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
+
+      {/* ── FEATURE GRID (40+ funcionalidades) ───────────────────────── */}
+      <FeatureGrid />
 
       {/* ── PRICING ──────────────────────────────────────────────────── */}
       <PricingPlans persona={persona} />
