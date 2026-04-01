@@ -23,25 +23,18 @@ export default function LeadFormWithAdvancedMatching({ onSubmit, className = "" 
     city: ''
   });
   
-  const { trackStartFreeTrial, updateAdvancedMatching } = useFacebookPixel();
+  const { trackEnviouLead, atualizarDadosUsuario } = useFacebookPixel();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Atualiza a correspondência avançada do Facebook Pixel
-    const [firstName, ...lastNameParts] = formData.name.split(' ');
-    const lastName = lastNameParts.join(' ');
-    
-    updateAdvancedMatching({
+
+    atualizarDadosUsuario({
       email: formData.email,
-      phone: formData.phone,
-      firstName: firstName,
-      lastName: lastName,
-      city: formData.city
+      telefone: formData.phone,
+      nome: formData.name,
     });
-    
-    // Rastreia o evento de lead com dados enriquecidos
-    trackStartFreeTrial('lead_form');
+
+    trackEnviouLead({ nome: formData.name, telefone: formData.phone });
     
     // Chama callback personalizado se fornecido
     if (onSubmit) {

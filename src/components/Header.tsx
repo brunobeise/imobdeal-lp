@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
+import { useLeadModal } from "@/contexts/LeadModalContext";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { open: openLeadModal } = useLeadModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -62,15 +64,15 @@ export default function Header() {
           >
             Entrar
           </Link>
-          <Link
-            href="https://app.imobdeal.com.br/cadastro"
-            className="text-sm font-semibold px-5 py-2.5 rounded-lg text-primary transition-all duration-200"
+          <button
+            onClick={openLeadModal}
+            className="text-sm font-semibold px-5 py-2.5 rounded-lg text-primary transition-all duration-200 cursor-pointer"
             style={{
               backgroundImage: "linear-gradient(90deg, #fde047 0%, #fbbf24 50%, #fb923c 100%)",
             }}
           >
             Teste Grátis
-          </Link>
+          </button>
         </div>
 
         {/* Mobile menu btn */}
@@ -104,15 +106,15 @@ export default function Header() {
             >
               Entrar
             </Link>
-            <Link
-              href="https://app.imobdeal.com.br/cadastro"
-              className="text-center font-semibold px-6 py-3 rounded-lg text-primary"
+            <button
+              onClick={() => { setMenuOpen(false); openLeadModal(); }}
+              className="text-center font-semibold px-6 py-3 rounded-lg text-primary cursor-pointer"
               style={{
                 backgroundImage: "linear-gradient(90deg, #fde047 0%, #fbbf24 50%, #fb923c 100%)",
               }}
             >
               Teste Grátis
-            </Link>
+            </button>
           </div>
         </div>
       )}

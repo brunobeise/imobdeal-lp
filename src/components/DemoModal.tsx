@@ -5,11 +5,11 @@ import ProposalCTA from "./ProposalCTA";
 
 export default function DemoButton() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { trackWatchDemo } = useFacebookPixel();
+  const { trackAssistiuDemo } = useFacebookPixel();
 
   const openModal = () => {
     setIsModalOpen(true);
-    trackWatchDemo();
+    trackAssistiuDemo();
   };
   const closeModal = () => setIsModalOpen(false);
 

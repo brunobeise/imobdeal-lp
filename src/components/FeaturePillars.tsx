@@ -71,7 +71,7 @@ export default function FeaturePillars({ persona }: { persona: Persona }) {
   const pillars = persona === "gestor" ? gestorPillars : corretorPillars;
   const sectionTitle = persona === "gestor"
     ? "Tudo que o gestor precisa para ter controle total"
-    : "Tudo que o corretor precisa para vender mais";
+    : "Tudo que o corretor precisa para potencializar o que ele realmente sabe fazer: VENDER IMÓVEIS";
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);

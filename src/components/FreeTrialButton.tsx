@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { useFacebookPixel } from "@/hooks/useFacebookPixel";
+import { useLeadModal } from "@/contexts/LeadModalContext";
 import BlackNovemberBadge from "./BlackNovemberBadge";
 
 interface FreeTrialButtonProps {
@@ -13,22 +12,17 @@ interface FreeTrialButtonProps {
   showBlackNovemberBadge?: boolean;
 }
 
-export default function FreeTrialButton({ 
-  variant = "primary", 
-  size = "default", 
-  className = "", 
+export default function FreeTrialButton({
+  variant = "primary",
+  size = "default",
+  className = "",
   children,
-  source = "homepage",
   showBlackNovemberBadge = true
 }: FreeTrialButtonProps) {
-  const { trackStartFreeTrial } = useFacebookPixel();
+  const { open } = useLeadModal();
 
-  const handleClick = () => {
-    trackStartFreeTrial(source);
-  };
+  const baseClasses = "font-bold transition-colors inline-block text-center rounded-lg cursor-pointer";
 
-  const baseClasses = "font-bold transition-colors inline-block text-center rounded-lg";
-  
   const variantClasses = {
     primary: "bg-secondary hover:bg-secondary/90 text-primary",
     secondary: "bg-secondary hover:bg-[#e6961f] text-primary"
@@ -40,21 +34,21 @@ export default function FreeTrialButton({
   };
 
   const finalClassName = `
-    ${baseClasses} 
-    ${variantClasses[variant]} 
-    ${sizeClasses[size]} 
+    ${baseClasses}
+    ${variantClasses[variant]}
+    ${sizeClasses[size]}
     ${className}
   `.trim().replace(/\s+/g, ' ');
 
   return (
     <div className="relative inline-block">
-      <Link
-        href="https://app.imobdeal.com.br/cadastro"
+      <button
+        type="button"
         className={finalClassName}
-        onClick={handleClick}
+        onClick={open}
       >
         {children}
-      </Link>
+      </button>
       {showBlackNovemberBadge && <BlackNovemberBadge />}
     </div>
   );

@@ -3,10 +3,10 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 
 export default function WhatsAppButton() {
-  const { trackWhatsAppContact } = useFacebookPixel();
+  const { trackClicouWhatsApp } = useFacebookPixel();
 
   const handleClick = () => {
-    trackWhatsAppContact();
+    trackClicouWhatsApp("botao_flutuante");
   };
 
   return (

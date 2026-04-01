@@ -87,7 +87,7 @@ const corretorSlides: SlideGroup[] = [
     id: "audio",
     label: "Cadastro por Áudio",
     description:
-      "Cadastre imóveis e negócios ditando por áudio — a IA transcreve e preenche tudo.",
+      "Atualize seus negócios em segundos por áudio — a IA transcreve e preenche tudo.",
     images: ["/screenshots/audio.png"],
   },
   {

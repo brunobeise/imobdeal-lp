@@ -11,10 +11,10 @@ export default function WhatsAppButton({
   children: React.ReactNode; 
   className?: string; 
 }) {
-  const { trackWhatsAppContact } = useFacebookPixel();
+  const { trackClicouWhatsApp } = useFacebookPixel();
 
   const handleClick = () => {
-    trackWhatsAppContact();
+    trackClicouWhatsApp("botao_inline");
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/5551995529578?text=${encodedMessage}`, "_blank");
   };

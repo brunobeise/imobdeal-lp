@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import "../assets/fonts/font.css";
 import WhatsAppButton from "@/components/WhatsappButton";
+import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: {
@@ -133,10 +134,12 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <Providers>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <WhatsAppButton />
+        </Providers>
       </body>
     </html>
   );

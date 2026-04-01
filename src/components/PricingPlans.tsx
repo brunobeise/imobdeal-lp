@@ -1,4 +1,7 @@
+"use client";
+
 import { MdCheck, MdAutoAwesome } from "react-icons/md";
+import { useLeadModal } from "@/contexts/LeadModalContext";
 
 interface PricingPlansProps {
   persona?: "gestor" | "corretor";
@@ -89,6 +92,7 @@ const modules: Module[] = [
 ];
 
 export default function PricingPlans({ persona = "gestor" }: PricingPlansProps) {
+  const { open: openLeadModal } = useLeadModal();
   const orderedPlans =
     persona === "corretor" ? [plans[0], plans[1]] : [plans[1], plans[0]];
 
@@ -144,15 +148,15 @@ export default function PricingPlans({ persona = "gestor" }: PricingPlansProps) 
                 ))}
 
                 {/* CTA */}
-                <a
-                  href={plan.link}
-                  className={`mt-6 block w-full text-center py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 ${isHighlighted
+                <button
+                  onClick={openLeadModal}
+                  className={`mt-6 block w-full text-center py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 cursor-pointer ${isHighlighted
                       ? "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20"
                       : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                     }`}
                 >
                   {plan.cta}
-                </a>
+                </button>
 
                 {/* Features */}
                 <ul className="mt-8 space-y-3">
