@@ -118,6 +118,23 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18077235039"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-gtag"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18077235039');
+            `,
+          }}
+        />
       </head>
       <body className="antialiased">
         <BusinessStructuredData />
