@@ -178,7 +178,7 @@ export default function LeadCaptureModal() {
             disabled={!isValid || loading}
             className="w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200 bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? "Redirecionando..." : "Começar Teste Grátis"}
+            {loading ? "Redirecionando..." : "Teste agora na sua imobiliária!"}
           </button>
 
           <p className="text-center text-xs text-gray-400">
