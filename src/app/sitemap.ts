@@ -42,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
+      url: `${baseUrl}/politica-privacidade-app`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+    {
       url: `${baseUrl}/termos-servico`,
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
