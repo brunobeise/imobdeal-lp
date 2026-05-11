@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 const LAST_UPDATE = "10 de Maio de 2026";
 const COMPANY_NAME = "ImobDeal LTDA";
-const COMPANY_CNPJ = "00.000.000/0001-00";
-const COMPANY_ADDRESS = "Caxias do Sul, Rio Grande do Sul, Brasil";
+const COMPANY_CNPJ = "62.081.400/0001-26";
+const COMPANY_ADDRESS = "Santa Cruz do Sul, Rio Grande do Sul, Brasil";
 const SUPPORT_EMAIL = "suporte@imobdeal.com.br";
 const DPO_EMAIL = "privacidade@imobdeal.com.br";
 
@@ -256,14 +256,6 @@ export default function PoliticaPrivacidadeApp() {
                       </tr>
                       <tr>
                         <td className="p-3 border-b border-gray-100">
-                          Cobrança e gestão financeira da assinatura
-                        </td>
-                        <td className="p-3 border-b border-gray-100">
-                          Execução de contrato e cumprimento de obrigação legal/regulatória (art. 7º, II)
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="p-3 border-b border-gray-100">
                           Segurança, prevenção a fraudes e logs de acesso
                         </td>
                         <td className="p-3 border-b border-gray-100">
@@ -346,15 +338,6 @@ export default function PoliticaPrivacidadeApp() {
                           Armazenamento de imagens e arquivos (R2 / Images)
                         </td>
                         <td className="p-3 border-b border-gray-100">EUA</td>
-                      </tr>
-                      <tr>
-                        <td className="p-3 border-b border-gray-100">
-                          <strong>Asaas (Asaas IP Ltda.)</strong>
-                        </td>
-                        <td className="p-3 border-b border-gray-100">
-                          Processamento de pagamentos da assinatura
-                        </td>
-                        <td className="p-3 border-b border-gray-100">Brasil</td>
                       </tr>
                       <tr>
                         <td className="p-3 border-b border-gray-100">
@@ -825,7 +808,7 @@ export default function PoliticaPrivacidadeApp() {
                   Esta política é regida pela legislação brasileira,
                   especialmente pela Lei Geral de Proteção de Dados (Lei
                   13.709/2018) e pelo Marco Civil da Internet (Lei 12.965/2014).
-                  Fica eleito o foro da Comarca de Caxias do Sul (RS) para
+                  Fica eleito o foro da Comarca de Santa Cruz do Sul (RS) para
                   dirimir quaisquer controvérsias decorrentes desta política,
                   com renúncia a qualquer outro, por mais privilegiado que seja,
                   sem prejuízo da possibilidade de o titular reclamar perante a
