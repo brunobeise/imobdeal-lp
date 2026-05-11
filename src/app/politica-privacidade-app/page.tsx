@@ -206,7 +206,12 @@ export default function PoliticaPrivacidadeApp() {
                       3.5 Dados que NÃO coletamos
                     </h3>
                     <ul className="list-disc pl-6 text-gray-700 space-y-1">
-                      <li>Não coletamos sua localização em segundo plano</li>
+                      <li>
+                        <strong>Não coletamos sua localização (GPS) em momento algum</strong>{" "}
+                        — nem em primeiro plano (com o app aberto), nem em segundo
+                        plano. O aplicativo não solicita a permissão de localização
+                        do sistema operacional
+                      </li>
                       <li>Não rastreamos seu uso fora do aplicativo ImobDeal</li>
                       <li>Não acessamos seus contatos pessoais do telefone</li>
                       <li>Não vendemos seus dados a anunciantes ou data brokers</li>
@@ -534,8 +539,15 @@ export default function PoliticaPrivacidadeApp() {
                   </li>
                 </ol>
                 <p className="text-gray-700 mt-3">
-                  Alternativamente, você pode solicitar a exclusão por e-mail
-                  enviando uma mensagem para{" "}
+                  Alternativamente, você pode solicitar a exclusão diretamente
+                  pelo nosso formulário web, sem precisar abrir o aplicativo:{" "}
+                  <a
+                    href="/excluir-conta"
+                    className="text-primary underline font-semibold"
+                  >
+                    imobdeal.com.br/excluir-conta
+                  </a>
+                  . Você também pode escrever para{" "}
                   <a
                     href={`mailto:${DPO_EMAIL}`}
                     className="text-primary underline"
@@ -773,8 +785,13 @@ export default function PoliticaPrivacidadeApp() {
                   </table>
                 </div>
                 <p className="text-gray-700 mt-3">
-                  Não acessamos sua localização nem em primeiro nem em segundo
-                  plano. Não acessamos sua agenda de contatos do sistema.
+                  <strong>
+                    Não solicitamos a permissão de localização (GPS) do sistema
+                    operacional.
+                  </strong>{" "}
+                  O aplicativo não acessa sua localização em nenhum momento, nem
+                  em primeiro plano (com o app aberto) nem em segundo plano. Da
+                  mesma forma, não acessamos sua agenda de contatos do sistema.
                 </p>
               </div>
 
