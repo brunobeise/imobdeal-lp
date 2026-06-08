@@ -20,6 +20,7 @@ export default function LeadCaptureModal() {
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [funcao, setFuncao] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [nameTracked, setNameTracked] = useState(false);
@@ -30,6 +31,7 @@ export default function LeadCaptureModal() {
       trackAbriuModal();
       setName("");
       setPhone("");
+      setFuncao("");
       setNameTracked(false);
       setPhoneTracked(false);
       setError("");
@@ -39,7 +41,8 @@ export default function LeadCaptureModal() {
   if (!isOpen) return null;
 
   const cleanPhone = phone.replace(/\D/g, "");
-  const isValid = name.trim().length >= 2 && cleanPhone.length >= 10;
+  const isValid =
+    name.trim().length >= 2 && cleanPhone.length >= 10 && funcao !== "";
 
   function handleNameBlur() {
     if (name.trim().length >= 2 && !nameTracked) {
@@ -85,6 +88,8 @@ export default function LeadCaptureModal() {
           body: JSON.stringify({
             nome: nomeFinal,
             telefone: telefoneFinal,
+            funcao,
+            tags: [funcao],
           }),
         }
       );
@@ -98,6 +103,7 @@ export default function LeadCaptureModal() {
     const params = new URLSearchParams({
       nome: nomeFinal,
       telefone: telefoneFinal,
+      funcao,
     });
 
     window.location.href = `https://app.imobdeal.com.br/cadastro?${params.toString()}`;
@@ -169,6 +175,33 @@ export default function LeadCaptureModal() {
               placeholder="(51) 99999-9999"
               className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              Hoje você se encontra em qual função dentro do mercado
+              imobiliário?
+            </label>
+            <div className="grid grid-cols-1 gap-2">
+              {[
+                { value: "Dono", label: "Sou dono de uma imobiliária" },
+                { value: "Gestor", label: "Sou gestor de uma imobiliária" },
+                { value: "Corretor", label: "Sou corretor" },
+              ].map((opt) => (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => setFuncao(opt.value)}
+                  className={`w-full px-4 py-3 border rounded-xl text-sm text-left transition-all ${
+                    funcao === opt.value
+                      ? "border-primary bg-primary/5 text-primary font-medium ring-2 ring-primary/20"
+                      : "border-gray-200 text-gray-700 hover:border-primary/40"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {error && <p className="text-red-500 text-xs">{error}</p>}
