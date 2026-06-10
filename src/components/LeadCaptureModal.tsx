@@ -6,6 +6,53 @@ import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 import { InputMask } from "@react-input/mask";
 import { HiX } from "react-icons/hi";
 
+declare global {
+  interface Window {
+    gtag?: (
+      command: string,
+      eventName: string,
+      params?: Record<string, unknown>
+    ) => void;
+  }
+}
+
+// ID da conta do Google Ads (já carregado no layout.tsx)
+const GOOGLE_ADS_ID = "AW-18077235039";
+
+// Conversão diferente por função escolhida no modal.
+// Crie 3 ações de conversão no Google Ads (uma por função) e cole aqui o
+// label de cada uma — está no formato "AbC-dEfGhIj" (a parte depois da "/").
+// Enquanto o label estiver vazio, nenhuma conversão é disparada para aquela função.
+const CONVERSION_LABELS: Record<string, string> = {
+  Dono: "jQhsCMDUy7wcEN_u8qtD", // conversão "Contato Dono"
+  Gestor: "OyGcCPn94bwcEN_u8qtD", // conversão "Contato Gerente"
+  Corretor: "76hICLKL5bwcEN_u8qtD", // conversão "Contato Corretor"
+};
+
+// Dispara a conversão do Google Ads correspondente à função e só então
+// executa o callback (redirect). Usa event_callback para garantir que o
+// evento seja enviado antes de sair da página, com fallback por timeout.
+function dispararConversaoGoogle(funcao: string, callback: () => void) {
+  const label = CONVERSION_LABELS[funcao];
+  let executou = false;
+  const seguir = () => {
+    if (executou) return;
+    executou = true;
+    callback();
+  };
+
+  if (typeof window !== "undefined" && window.gtag && label) {
+    window.gtag("event", "conversion", {
+      send_to: `${GOOGLE_ADS_ID}/${label}`,
+      event_callback: seguir,
+    });
+    // Fallback: se o callback não disparar (bloqueador, falha de rede), segue mesmo assim.
+    setTimeout(seguir, 1200);
+  } else {
+    seguir();
+  }
+}
+
 export default function LeadCaptureModal() {
   const { isOpen, close } = useLeadModal();
   const {
@@ -106,7 +153,11 @@ export default function LeadCaptureModal() {
       funcao,
     });
 
-    window.location.href = `https://app.imobdeal.com.br/cadastro?${params.toString()}`;
+    // Dispara a conversão do Google Ads específica da função escolhida
+    // (Dono / Gestor / Corretor) e só então redireciona.
+    dispararConversaoGoogle(funcao, () => {
+      window.location.href = `https://app.imobdeal.com.br/cadastro?${params.toString()}`;
+    });
     setLoading(false);
   }
 
