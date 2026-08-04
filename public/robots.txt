@@ -14,7 +14,6 @@ Disallow: /private/
 Allow: /precos
 Allow: /como-funciona
 Allow: /sobre
-Allow: /integracoes
 Allow: /politica-privacidade
 Allow: /termos-servico
 
