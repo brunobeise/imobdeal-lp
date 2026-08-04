@@ -3,12 +3,14 @@ import { MdCheck } from "react-icons/md";
 import LightboxImage from "./LightboxImage";
 
 /* ---------------------------------------------------------------------------
- * ⚠️ PREENCHER: URLs das lojas.
- * Enquanto estiverem vazias, os selos renderizam sem link (não quebram).
- * Assim que preencher, viram links de verdade automaticamente.
+ * Lojas. A App Store usa /br/ (e não /us/) para cair na ficha em português;
+ * o Google Play recebe hl=pt_BR pelo mesmo motivo.
+ * Vazias, as constantes fazem o selo virar estático em vez de link quebrado.
  * --------------------------------------------------------------------------- */
-const APP_STORE_URL = "";
-const PLAY_STORE_URL = "";
+const APP_STORE_URL =
+  "https://apps.apple.com/br/app/imobdeal-crm-imobili%C3%A1rio/id6768801586";
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.imobdeal.app&hl=pt_BR";
 
 const appHighlights = [
   "Agenda e visitas do dia na palma da mão",

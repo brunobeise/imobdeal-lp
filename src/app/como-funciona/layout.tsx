@@ -2,12 +2,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Links Inteligentes - Como Funciona o ImobDeal",
-  description: "Envie propostas, portfólios e análises por links rastreáveis. Saiba em tempo real quem abriu, o que olhou e por quanto tempo — e receba alertas no WhatsApp.",
+  description: "Envie propostas, portfólios e análises por links rastreáveis. Saiba em tempo real quem abriu, o que olhou e por quanto tempo — e receba o aviso no aplicativo.",
   keywords: [
     "links inteligentes imobiliários",
     "tracking propostas imobiliárias",
     "rastrear propostas imóveis",
-    "notificação whatsapp proposta",
+    "notificação proposta imóvel",
     "link rastreável imobiliária",
     "como funciona imobdeal",
     "acompanhar propostas tempo real",

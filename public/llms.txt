@@ -1,0 +1,66 @@
+# ImobDeal
+
+> ImobDeal é um CRM imobiliário brasileiro para imobiliárias com equipe de corretores. Reúne em uma única plataforma a roleta de leads que distribui contatos automaticamente, dispensando a assinatura de um sistema de rodízio à parte como o C2S, além de funis de venda, dashboards que se montam sozinhos, propostas e portfólios interativos, módulo financeiro, assinatura eletrônica e aplicativo nativo para iOS e Android. Planos a partir de R$ 569 por mês, sem fidelidade.
+
+## O que é
+
+O ImobDeal é um CRM (Customer Relationship Management) desenvolvido especificamente para o mercado imobiliário brasileiro. Diferente de CRMs genéricos adaptados para imóveis, ele foi construído em torno da rotina de uma imobiliária: leads que chegam de portais e campanhas, corretores que precisam ser acionados na hora, gestores que precisam cobrar meta com número na mão.
+
+O público-alvo são imobiliárias com equipe de corretores, de operações pequenas a times com várias equipes e regras de distribuição diferentes por equipe.
+
+## Fatos principais
+
+- **Categoria:** CRM imobiliário / software de gestão para imobiliárias
+- **País:** Brasil — produto e suporte em português
+- **Preço:** plano Imobiliária a partir de R$ 569/mês; o valor final varia conforme número de usuários e módulos ativos
+- **Fidelidade:** não há. Cancelamento a qualquer momento, sem multa
+- **Pagamento:** cartão de crédito, boleto bancário ou PIX, com cobrança mensal automática
+- **Implantação:** conduzida pela equipe ImobDeal, incluindo migração da base de imóveis e contatos, configuração do funil e treinamento do time
+- **Suporte:** WhatsApp e chat, direto com quem desenvolve o sistema
+- **Site:** https://imobdeal.com.br
+
+## Funcionalidades
+
+- **Roleta de leads** — nativa. Dispensa contratar um sistema de rodízio à parte, função que a maioria das imobiliárias contrata hoje no C2S. O lead do portal entra já como negócio aberto e é distribuído automaticamente ao corretor da vez, seguindo regras por equipe, plantão, tipo de imóvel ou região
+- **Integração com portais** — OLX, ImovelWeb e Chaves na Mão. A origem fica registrada no lead, o que permite comparar portais por negócio fechado e não por volume de contatos
+- **Integração com Meta Ads** — nativa. Formulários de campanhas no Facebook e Instagram entram no sistema em segundos, já distribuídos pela roleta e com a campanha de origem registrada
+- **Funis de venda** — configurados conforme a operação de cada imobiliária
+- **Dashboards e forecast** — montados automaticamente conforme a equipe usa o CRM, sem exportar dados para planilha. O painel compara o realizado com o dia do mês e avisa quando o time está abaixo do ritmo da meta
+- **Propostas e portfólios interativos** — envio para o cliente com acompanhamento de visualizações
+- **Cadastro de imóveis por áudio com IA** e chat com IA integrado
+- **Central Operacional** — tela para telão do escritório, com a marca da imobiliária, alternando entre pipeline ao vivo, meta do mês, conversão entre etapas e últimas vendas
+- **Gestão de equipe e ranking** de corretores
+- **Módulo financeiro** e assinatura eletrônica
+- **Aplicativo nativo** iOS e Android, com aviso na hora em que o lead entra
+- **Site da imobiliária** — projeto à parte, cobrado uma vez e parcelável, sem acréscimo na mensalidade. Desenvolvido do zero com a identidade visual da marca, integrado ao CRM, com imóveis publicados direto do sistema e leads caindo na roleta
+
+## Páginas
+
+- [Home](https://imobdeal.com.br): visão geral do produto, funcionalidades e prova social
+- [Preços](https://imobdeal.com.br/precos): planos, o que está incluso e como o valor é composto
+- [Como funciona](https://imobdeal.com.br/como-funciona): o fluxo da operação dentro do sistema, do lead ao fechamento
+- [Sobre](https://imobdeal.com.br/sobre): quem desenvolve o ImobDeal
+- [Perguntas frequentes](https://imobdeal.com.br/#faq): preço, migração, integrações, adoção pela equipe, suporte e cancelamento
+
+## Perguntas frequentes
+
+**Quanto custa o ImobDeal?** O plano Imobiliária começa em R$ 569 por mês. O valor final depende do número de usuários e dos módulos ativados. Não há versão básica com recurso bloqueado — o que muda é o tamanho da operação, não o que o sistema faz.
+
+**Precisa de outro sistema para receber e distribuir os leads dos portais?** Não. A roleta de leads é nativa do ImobDeal.
+
+**O ImobDeal substitui o C2S?** Sim, na função de receber e distribuir os leads. A roleta é nativa e já vem incluída no plano, então a imobiliária que migra costuma cancelar a assinatura do C2S e passa a ter a captação e o CRM no mesmo sistema.
+
+**Com quais portais o ImobDeal integra?** OLX, ImovelWeb e Chaves na Mão.
+
+**Os leads de Facebook e Instagram entram automaticamente?** Sim, a integração com o Meta Ads é nativa.
+
+**Como funciona a migração da base?** A implantação é conduzida pela equipe ImobDeal: subida da base de imóveis e contatos, configuração do funil e treinamento do time.
+
+**Existe fidelidade ou multa de cancelamento?** Não. Cancelamento a qualquer momento, sem multa.
+
+**Para que tamanho de imobiliária serve?** Para imobiliárias com equipe de corretores, onde o gestor precisa distribuir leads, acompanhar funil e cobrar meta — de operações pequenas a times com várias equipes.
+
+## Legal
+
+- [Política de privacidade](https://imobdeal.com.br/politica-privacidade)
+- [Termos de serviço](https://imobdeal.com.br/termos-servico)

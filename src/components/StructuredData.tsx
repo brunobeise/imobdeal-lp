@@ -7,7 +7,7 @@ export default function StructuredData() {
     "name": "ImobDeal",
     "url": "https://imobdeal.com.br",
     "logo": "https://imobdeal.com.br/imobDeal.png",
-    "description": "CRM imobiliário completo para imobiliárias e corretores autônomos",
+    "description": "CRM imobiliário completo para imobiliárias com equipe de corretores",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+55-21-60537-1",

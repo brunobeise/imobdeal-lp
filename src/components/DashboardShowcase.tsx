@@ -253,16 +253,22 @@ export default function DashboardShowcase() {
 
         {/* ── A história, em três tempos ─────────────────────────── */}
         <div className="mb-16 md:mb-24 grid md:grid-cols-3 gap-8 md:gap-6 relative">
-          {/* Linha conectora (desktop) */}
-          <div
-            className="hidden md:block absolute top-5 left-[16%] right-[16%] h-px bg-gradient-to-r from-red-200 via-gray-200 to-primary/40"
-            aria-hidden="true"
-          />
-
           {story.map((ato, i) => {
             const isLast = i === story.length - 1;
             return (
               <div key={i} className="relative">
+                {/* Linha conectora até o próximo marcador (desktop) */}
+                {!isLast && (
+                  <div
+                    className={`hidden md:block absolute top-5 left-12 -right-4 h-px ${
+                      i === 0
+                        ? "bg-gradient-to-r from-red-200 to-gray-200"
+                        : "bg-gradient-to-r from-gray-200 to-primary/40"
+                    }`}
+                    aria-hidden="true"
+                  />
+                )}
+
                 {/* Marcador */}
                 <div
                   className={`relative z-10 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold mb-5 mx-auto md:mx-0 ${

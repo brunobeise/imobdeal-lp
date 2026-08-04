@@ -28,6 +28,10 @@ const faqs: QA[] = [
     a: "Não. A roleta de leads é nativa do ImobDeal. O lead do portal entra já como negócio aberto e é distribuído automaticamente para o corretor da vez, seguindo as regras que você definir por equipe, plantão, tipo de imóvel ou região. É comum a imobiliária cancelar a assinatura do sistema de captação que pagava à parte ao migrar para o ImobDeal.",
   },
   {
+    q: "O ImobDeal substitui o C2S?",
+    a: "Sim, na função de receber e distribuir os leads. A roleta é nativa do ImobDeal: o lead do portal ou da campanha entra já como negócio aberto, vai para o corretor da vez seguindo as regras que você definir por equipe, plantão, tipo de imóvel ou região, e guarda a origem registrada. Como isso já vem incluído no plano, a imobiliária que migra costuma cancelar a assinatura do C2S e passa a ter a captação e o CRM no mesmo sistema, sem repasse manual entre um e outro.",
+  },
+  {
     q: "Com quais portais de anúncio o ImobDeal integra?",
     a: "OLX, ImovelWeb e Chaves na Mão. O contato preenchido no portal cai direto no sistema, sem exportar planilha e sem ninguém transcrever nada. Como a origem fica registrada no lead, você compara os portais por negócio fechado e não por volume de contatos.",
   },

@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title:
       "ImobDeal — CRM Imobiliário Completo para Quem Quer Resultado",
     description:
-      "O CRM imobiliário completo. Propostas inteligentes, funis de venda, dados automáticos, IA integrada e gestão de equipe. Teste grátis.",
+      "O CRM imobiliário completo. Roleta de leads nativa, funis de venda, dados automáticos, IA integrada e gestão de equipe. Fale com um especialista.",
     url: "https://imobdeal.com.br",
     siteName: "ImobDeal",
     images: [
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ImobDeal — CRM Imobiliário Completo",
     description:
-      "Propostas inteligentes, funis de venda, dados automáticos, IA integrada e gestão de equipe. Teste grátis.",
+      "Roleta de leads nativa, funis de venda, dados automáticos, IA integrada e gestão de equipe. Fale com um especialista.",
     images: ["/imobDeal.png"],
   },
   robots: {

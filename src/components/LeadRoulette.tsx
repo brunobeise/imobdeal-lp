@@ -4,9 +4,18 @@ import LightboxImage from "./LightboxImage";
 
 /* ---------------------------------------------------------------------------
  * Roleta de leads — argumento central de compra.
- * A imobiliária normalmente assina um sistema separado só para receber e
- * rodiziar os leads dos portais. O ImobDeal faz isso nativamente, então o
+ * A imobiliária normalmente assina o C2S, um sistema separado, só para receber
+ * e rodiziar os leads dos portais. O ImobDeal faz isso nativamente, então o
  * cliente elimina essa assinatura ao migrar.
+ *
+ * O concorrente é citado pelo nome de propósito: publicidade comparativa é
+ * lícita (art. 32 do Código do CONAR) desde que objetiva, comprovável e sem
+ * depreciar a marca alheia. Daí as três regras deste arquivo:
+ *   1. nenhum adjetivo sobre o C2S — só o fato de ser assinatura à parte;
+ *   2. nenhum preço nem valor de economia, nosso ou deles;
+ *   3. nada sobre o que o produto deles faz ou deixa de fazer.
+ * Nomear também é decisão de AEO: é assim que a busca por "alternativa ao C2S"
+ * encontra o ImobDeal.
  * --------------------------------------------------------------------------- */
 
 const capabilities = [
@@ -43,15 +52,15 @@ export default function LeadRoulette() {
         {/* Header */}
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 tracking-tight leading-[1.15] text-balance">
-            Você não precisa de outro sistema
-            <span className="block text-primary">
-              só para distribuir seus leads.
-            </span>
+            Você não precisa mais
+            <span className="block text-primary">assinar o C2S.</span>
           </h2>
           <p className="text-gray-500 text-base md:text-lg mt-5 leading-relaxed text-pretty">
-            É comum pagar uma assinatura extra só para receber os leads dos
-            portais e das campanhas e rodiziar entre a equipe. No ImobDeal isso
-            já vem dentro — é um sistema a menos na sua conta todo mês.
+            A maioria das imobiliárias paga uma assinatura à parte, quase
+            sempre o C2S, só para receber os leads dos portais e das campanhas e
+            rodiziar entre a equipe. No ImobDeal a roleta é nativa: recebe,
+            distribui e registra a origem dentro do próprio CRM, já incluída no
+            plano. É um sistema a menos na sua conta todo mês.
           </p>
         </div>
 
@@ -66,8 +75,8 @@ export default function LeadRoulette() {
               {[
                 { step: "Portal ou campanha no Meta", note: "o lead chega" },
                 {
-                  step: "Sistema de captação de leads",
-                  note: "assinatura separada",
+                  step: "C2S",
+                  note: "assinatura separada, fora do CRM",
                   highlight: true,
                 },
                 { step: "Planilha ou grupo de mensagem", note: "repasse manual" },
@@ -152,8 +161,9 @@ export default function LeadRoulette() {
                 Uma assinatura a menos.
               </p>
               <p className="text-xs text-gray-500 mt-1 leading-relaxed">
-                Ao migrar, a imobiliária cancela o sistema de captação que pagava
-                à parte. A roleta já está incluída no plano.
+                Ao migrar, a imobiliária cancela o C2S: a roleta já está
+                incluída no plano do ImobDeal, junto com o CRM que a equipe usa
+                todo dia.
               </p>
             </div>
           </div>

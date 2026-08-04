@@ -1,4 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
 Allow: /
 
@@ -17,8 +18,108 @@ Allow: /integracoes
 Allow: /politica-privacidade
 Allow: /termos-servico
 
-# Sitemap
-Sitemap: https://imobdeal.com.br/sitemap.xml
-
 # Crawl delay (optional - can help with server load)
 Crawl-delay: 1
+
+# ---------------------------------------------------------------------------
+# Crawlers de IA (AEO/GEO).
+# Um bot com bloco proprio ignora o bloco "*" inteiro, entao cada um repete os
+# Disallow acima. Sem Crawl-delay aqui: varios desses bots tratam a diretiva de
+# forma inconsistente e ela nao traz ganho nenhum no volume de trafego deles.
+# ---------------------------------------------------------------------------
+
+# OpenAI — treinamento
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+# OpenAI — indice de busca do ChatGPT (e o que gera citacao)
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+# OpenAI — fetch ao vivo quando o usuario pede no chat
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+# Google — AI Overviews e grounding do Gemini
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+# Common Crawl — alimenta o pre-treino de varios modelos
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://imobdeal.com.br/sitemap.xml
