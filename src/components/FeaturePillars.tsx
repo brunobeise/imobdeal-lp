@@ -5,11 +5,9 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
-import { MdOutlineLink, MdTrendingUp, MdMic, MdCalendarMonth } from "react-icons/md";
+import { MdTrendingUp } from "react-icons/md";
 import { BsGraphUpArrow, BsPeopleFill } from "react-icons/bs";
 import type { ReactNode } from "react";
-
-type Persona = "gestor" | "corretor";
 
 interface Pillar {
   icon: ReactNode;
@@ -19,7 +17,7 @@ interface Pillar {
   src: string;
 }
 
-const gestorPillars: Pillar[] = [
+const pillars: Pillar[] = [
   {
     icon: <BsGraphUpArrow size={22} />,
     title: "Dados Automáticos",
@@ -43,35 +41,8 @@ const gestorPillars: Pillar[] = [
   },
 ];
 
-const corretorPillars: Pillar[] = [
-  {
-    icon: <MdOutlineLink size={22} />,
-    title: "Propostas e Portfólios Inteligentes",
-    description: "Links personalizados por cliente com tracking de abertura. Receba notificação no WhatsApp quando seu cliente abre a proposta.",
-    screenshotAlt: "Proposta interativa com tracking de visualização",
-    src: "/screenshots/propostas.png",
-  },
-  {
-    icon: <MdMic size={22} />,
-    title: "Cadastro por Áudio com IA",
-    description: "Fale os dados do imóvel e a IA transcreve e preenche o cadastro automaticamente. Tecnologia Whisper integrada. Economize 80% do tempo.",
-    screenshotAlt: "Interface de cadastro de imóvel por áudio com IA",
-    src: "/screenshots/audio.png",
-  },
-  {
-    icon: <MdCalendarMonth size={22} />,
-    title: "CRM Completo + Agenda",
-    description: "Leads, contatos, negócios, tarefas e agenda — tudo integrado com Google Calendar. Nunca mais perca um follow-up ou visita.",
-    screenshotAlt: "Calendário integrado com compromissos e tarefas",
-    src: "/screenshots/agenda.png",
-  },
-];
-
-export default function FeaturePillars({ persona }: { persona: Persona }) {
-  const pillars = persona === "gestor" ? gestorPillars : corretorPillars;
-  const sectionTitle = persona === "gestor"
-    ? "Tudo que o gestor precisa para ter controle total"
-    : "Tudo que o corretor precisa para potencializar o que ele realmente sabe fazer: VENDER IMÓVEIS";
+export default function FeaturePillars() {
+  const sectionTitle = "Tudo que o gestor precisa para ter controle total";
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);

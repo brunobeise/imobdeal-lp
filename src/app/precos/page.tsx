@@ -1,16 +1,9 @@
 import PricingPlans from "@/components/PricingPlans";
-import FreeTrialButton from "@/components/FreeTrialButton";
+import CtaButton from "@/components/CtaButton";
 import HeroBackground from "@/components/HeroBackground";
 import { MdHeadsetMic, MdEmail } from "react-icons/md";
 
-interface PageProps {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}
-
-export default async function Precos({ searchParams }: PageProps) {
-  const params = await searchParams;
-  const persona = params.para === "corretor" ? "corretor" as const : "gestor" as const;
-
+export default function Precos() {
   return (
     <>
       {/* Hero */}
@@ -18,27 +11,28 @@ export default async function Precos({ searchParams }: PageProps) {
         <HeroBackground />
         <div className="relative z-10 max-w-4xl mx-auto px-5 md:px-8 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Investimento transparente
+            Quanto custa o ImobDeal
           </h1>
           <p className="text-white/60 text-lg mt-5 max-w-xl mx-auto">
-            Sem surpresas. Teste grátis por 7 dias, cancele quando quiser.
+            Um plano único, dimensionado para a sua operação. Você conversa com
+            um especialista e vê o sistema rodando antes de decidir.
           </p>
           <div className="mt-8">
-            <FreeTrialButton
+            <CtaButton
               variant="primary"
               size="large"
               source="precos_hero"
               showBlackNovemberBadge={false}
               className="!bg-gradient-to-r !from-accent-yellow !via-accent-amber !to-accent-orange !text-primary !rounded-xl !font-bold"
             >
-              Começar Teste Grátis
-            </FreeTrialButton>
+              Falar com especialista
+            </CtaButton>
           </div>
         </div>
       </section>
 
       {/* Pricing component */}
-      <PricingPlans persona={persona} />
+      <PricingPlans />
 
       {/* FAQ */}
       <section className="bg-gray-50 py-20 md:py-28">
@@ -50,8 +44,8 @@ export default async function Precos({ searchParams }: PageProps) {
           <div className="space-y-6">
             {[
               {
-                q: "Posso testar antes de pagar?",
-                a: "Sim! Você tem 7 dias de teste grátis com acesso completo a todas as funcionalidades. Setup em 5 minutos.",
+                q: "Como eu conheço o sistema antes de contratar?",
+                a: "Um especialista faz uma demonstração completa com o cenário da sua imobiliária e tira todas as dúvidas antes de qualquer contratação.",
               },
               {
                 q: "Como funciona o cancelamento?",
@@ -104,7 +98,7 @@ export default async function Precos({ searchParams }: PageProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5551995529578"
               className="inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors"
             >
               <MdHeadsetMic size={18} />

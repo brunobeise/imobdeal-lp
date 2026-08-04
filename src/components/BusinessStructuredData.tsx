@@ -97,7 +97,7 @@ export default function BusinessStructuredData() {
         {
           "@type": "Offer",
           "name": "Teste Gratuito",
-          "description": "7 dias de teste gratuito",
+          "description": "Demonstração guiada por especialista",
           "price": "0",
           "priceCurrency": "BRL"
         }

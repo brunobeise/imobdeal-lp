@@ -1,4 +1,4 @@
-import FreeTrialButton from "@/components/FreeTrialButton";
+import CtaButton from "@/components/CtaButton";
 import HeroBackground from "@/components/HeroBackground";
 
 export default function ComoFunciona() {
@@ -8,30 +8,25 @@ export default function ComoFunciona() {
       <section className="relative min-h-[80vh] flex items-center bg-primary overflow-hidden">
         <HeroBackground />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-8 py-28 md:py-36 text-center">
-          <p className="text-gradient-accent text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-6">
-            Links Inteligentes
-          </p>
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-white tracking-tight leading-[1.1] max-w-4xl mx-auto">
-            Cada clique do seu cliente
-            <br />
-            <span className="text-gradient-accent">conta uma história.</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-white tracking-tight leading-[1.1] max-w-4xl mx-auto text-balance">
+            Cada clique do seu cliente{" "}
+            <span className="text-accent-amber">conta uma história.</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/70 mt-6 max-w-2xl mx-auto leading-relaxed">
-            Envie propostas, portfólios e análises por links rastreáveis. Saiba em tempo real quem abriu, o que olhou e por quanto tempo — e receba um alerta no WhatsApp na hora certa de fazer o follow-up.
+            Envie propostas, portfólios e análises por links rastreáveis. Saiba em tempo real quem abriu, o que olhou e por quanto tempo — e faça o follow-up na hora certa.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <FreeTrialButton
+            <CtaButton
               variant="primary"
               size="large"
               source="como_funciona_hero"
               showBlackNovemberBadge={false}
               className="w-full sm:w-auto px-10 !bg-gradient-to-r !from-accent-yellow !via-accent-amber !to-accent-orange !text-primary !rounded-xl !font-bold !shadow-lg !shadow-accent-amber/20 hover:!shadow-xl hover:!shadow-accent-amber/30 !transition-all !duration-300"
             >
-              Teste Grátis por 7 Dias
-            </FreeTrialButton>
+              Falar com especialista
+            </CtaButton>
             <a
               href="#como-funciona"
               className="text-white/60 hover:text-white text-sm font-medium transition-colors"
@@ -51,7 +46,7 @@ export default function ComoFunciona() {
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-accent-amber">
                 <path d="M11.667 3.5L5.25 9.917 2.333 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Notificação via WhatsApp
+              Acompanhamento em tempo real
             </span>
             <span className="flex items-center gap-1.5">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-accent-amber">
@@ -118,7 +113,7 @@ export default function ComoFunciona() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Alerta instantâneo</h3>
               <p className="text-gray-500 leading-relaxed">
-                Receba uma notificação no WhatsApp no momento exato em que o cliente abre o link. O timing perfeito para o follow-up.
+                Veja o momento exato em que o cliente abre o link. O timing perfeito para o follow-up.
               </p>
             </div>
           </div>
@@ -200,7 +195,7 @@ export default function ComoFunciona() {
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Você recebe o alerta e age</h3>
                 <p className="text-gray-500 text-lg leading-relaxed max-w-xl">
-                  No momento em que o cliente abre o link, uma notificação chega no seu WhatsApp com nome do cliente e qual conteúdo ele acessou. Você faz o follow-up na hora certa, com contexto — quando o interesse está no pico.
+                  No momento em que o cliente abre o link, o acesso aparece no seu painel com o nome dele e qual conteúdo foi acessado. Você faz o follow-up na hora certa, com contexto — quando o interesse está no pico.
                 </p>
                 <div className="mt-5 bg-gray-50 rounded-2xl p-5 max-w-sm border border-gray-100">
                   <div className="flex items-center gap-3 mb-3">
@@ -487,28 +482,6 @@ export default function ComoFunciona() {
         </div>
       </section>
 
-      {/* ── MÉTRICAS RÁPIDAS ─────────────────────────────────────── */}
-      <section className="bg-primary py-16 px-5 md:px-8">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <p className="text-3xl md:text-4xl font-black text-white tracking-tight">+50%</p>
-            <p className="text-white/50 text-sm mt-1">Taxa de fechamento</p>
-          </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-black text-gradient-accent tracking-tight">5 min</p>
-            <p className="text-white/50 text-sm mt-1">Para criar e enviar</p>
-          </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-black text-white tracking-tight">Real-time</p>
-            <p className="text-white/50 text-sm mt-1">Notificação via WhatsApp</p>
-          </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-black text-gradient-accent tracking-tight">100%</p>
-            <p className="text-white/50 text-sm mt-1">Rastreável e mensurável</p>
-          </div>
-        </div>
-      </section>
-
       {/* ── CTA FINAL ────────────────────────────────────────────── */}
       <section className="relative bg-primary py-20 md:py-28 overflow-hidden">
         <HeroBackground />
@@ -517,10 +490,10 @@ export default function ComoFunciona() {
             Pare de vender no escuro.
           </h2>
           <p className="text-white/60 text-lg mt-5 max-w-xl mx-auto">
-            Comece a enviar Links Inteligentes hoje. Saiba quem abre, o que olha e quando agir — tudo em tempo real no seu WhatsApp.
+            Comece a enviar Links Inteligentes hoje. Saiba quem abre, o que olha e quando agir — tudo em tempo real.
           </p>
           <div className="mt-10">
-            <FreeTrialButton
+            <CtaButton
               variant="primary"
               size="large"
               source="como_funciona_cta_final"
@@ -528,10 +501,10 @@ export default function ComoFunciona() {
               className="!bg-gradient-to-r !from-accent-yellow !via-accent-amber !to-accent-orange !text-primary !rounded-xl !font-bold !shadow-lg !shadow-accent-amber/20 hover:!shadow-xl hover:!shadow-accent-amber/30 !transition-all !duration-300 px-12"
             >
               Começar Teste Grátis
-            </FreeTrialButton>
+            </CtaButton>
           </div>
           <p className="text-white/30 text-xs mt-6">
-            7 dias grátis · Setup em 5 minutos · Cancele quando quiser
+            Sem compromisso · Resposta no mesmo dia útil
           </p>
         </div>
       </section>

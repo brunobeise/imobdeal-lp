@@ -1,133 +1,97 @@
-import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import LightboxImage from "@/components/LightboxImage";
+import PeopleBehind from "@/components/PeopleBehind";
+import SocialProof from "@/components/SocialProof";
+import WebsiteShowcase from "@/components/WebsiteShowcase";
 import StructuredData from "@/components/StructuredData";
-import FreeTrialButton from "@/components/FreeTrialButton";
+import CtaButton from "@/components/CtaButton";
 import HeroBackground from "@/components/HeroBackground";
-import FeaturePillars from "@/components/FeaturePillars";
-import FeatureGrid from "@/components/FeatureGrid";
-import MetricsBar from "@/components/MetricsBar";
+import ManagementCycle from "@/components/ManagementCycle";
+import TvMode from "@/components/TvMode";
 import PricingPlans from "@/components/PricingPlans";
 import ScreenshotShowcase from "@/components/ScreenshotShowcase";
 import FloatingElements from "@/components/FloatingElements";
 import DashboardShowcase from "@/components/DashboardShowcase";
+import LeadRoulette from "@/components/LeadRoulette";
+import MobileApp from "@/components/MobileApp";
+import PortalIntegrations from "@/components/PortalIntegrations";
 
 /* ---------------------------------------------------------------------------
- * Dynamic persona content — resolved server-side via searchParams.
- * No "use client" needed for persona switching. SEO-friendly.
+ * Público único: dono/gestor de imobiliária.
+ * A LP não alterna mais copy por persona — o corretor autônomo saiu do foco.
  * --------------------------------------------------------------------------- */
 
-type Persona = "gestor" | "corretor";
-
-const heroContent: Record<Persona, { headline: string; sub: string }> = {
-  gestor: {
-    headline: "Controle total da sua imobiliária em um só lugar.",
-    sub: "Chega de depender de planilha para saber o que acontece na sua operação. CRM, dashboards e forecast — tudo automático.",
-  },
-  corretor: {
-    headline: "Propostas que vendem, cadastro por áudio e IA ao seu lado.",
-    sub: "Portfólios interativos, notificação em tempo real no WhatsApp e um CRM que trabalha por você — para fechar mais negócios sem planilha.",
-  },
-};
-
+/* Depoimentos: só de dono/gestor de imobiliária. O de corretor autônomo saiu
+   junto com a persona. O primeiro da lista ocupa o card maior, então fica o
+   mais completo — e o que fala do atendimento, que é o tema da section.
+   Textos na íntegra das palavras de quem assina; onde há corte, "(...)". */
 const testimonials = [
   {
+    name: "Flávia Costa",
+    role: "CEO na Investe Brasil Negócios Imobiliários",
+    // Recorte no rosto: o original é um selo circular com moldura, que em
+    // 44px deixava o rosto pequeno demais.
+    image: "/depoimentos/flavia-costa.png",
+    highlight:
+      "Mais do que um sistema: um parceiro que cresce junto com a nossa empresa",
+    paragraphs: [
+      "O ImobDeal foi um divisor de águas na organização da nossa operação. Hoje conseguimos centralizar os leads, acompanhar cada etapa do atendimento e ter muito mais controle sobre o processo comercial. Isso trouxe mais agilidade para o time e uma visão muito mais estratégica do negócio.",
+      "Mas o maior diferencial, sem dúvida, é o atendimento. Mais do que resolver dúvidas, eles escutam nossas necessidades e adaptam a plataforma à realidade da nossa operação. Essa proximidade nos dá a segurança de ter um parceiro que cresce junto com a nossa empresa.",
+    ],
+  },
+  {
     name: "Ícaro Parisotto",
-    role: "Gestor — Parisotto Imóveis",
+    role: "Gestor na Parisotto Imóveis",
     image:
       "https://imagedelivery.net/OSaOCMwq07nhXnBaDdauwA/85a0c264-4168-43d1-6f15-103f5048bc00/public",
     highlight: "Aumento de 50% na taxa de fechamento em 3 meses",
-    text: "Na Parisotto Imóveis, o ImobDeal revolucionou nossa gestão. Temos acesso rápido a informações essenciais, organização para os corretores e um aumento de 50% na taxa de fechamento. É mais que um sistema, é um diferencial competitivo.",
-  },
-  {
-    name: "Paulo Eduardo",
-    role: "Corretor de Imóveis",
-    image:
-      "https://imagedelivery.net/OSaOCMwq07nhXnBaDdauwA/a1ea00bb-20dd-46de-159e-f461566c0700/public",
-    highlight: "Follow-ups assertivos com tracking em tempo real",
-    text: "Agora sei quando aquele cliente que sumiu está vendo a proposta, e no momento exato que ele está olhando, eu sei a hora de fazer um follow-up assertivo!",
-  },
-  {
-    name: "Júnior Borges",
-    role: "Corretor Imobiliário",
-    image:
-      "https://imagedelivery.net/OSaOCMwq07nhXnBaDdauwA/35f43732-f783-46a5-1957-ec7b3a5edc00/public",
-    highlight: "Respostas em poucos minutos após abertura da proposta",
-    text: "Quando estou em conversa com um cliente e ele acessa, em poucos minutos já envio uma mensagem. Está funcionando muito bem!",
-  },
-  {
-    name: "Lucas Larralde",
-    role: "Corretor Imobiliário",
-    image:
-      "https://imagedelivery.net/OSaOCMwq07nhXnBaDdauwA/3e488c82-0d46-4852-36c7-5d260d2f2d00/public",
-    highlight: "Mais credibilidade com relatórios profissionais e economia de tempo",
-    text: "Os relatórios trazem credibilidade enorme. O sistema é intuitivo e me ajuda a economizar tempo. Consigo focar no que importa: fechar mais negócios.",
-  },
-  {
-    name: "Jonas Senhorini",
-    role: "Corretor Imobiliário",
-    image:
-      "https://imagedelivery.net/OSaOCMwq07nhXnBaDdauwA/e0e64084-d216-46b4-21e2-9d8275521700/public",
-    highlight: "Vendas alavancadas com atendimento mais assertivo",
-    text: "O ImobDeal foi fundamental para alavancar minhas vendas. Consigo verificar em tempo real onde o cliente dedicou mais tempo. Atendimento mais assertivo e mais vendas.",
-  },
-  {
-    name: "Rodrigo Barbosa",
-    role: "Corretor Imobiliário",
-    image:
-      "https://imagedelivery.net/OSaOCMwq07nhXnBaDdauwA/6b7a4684-7a20-47b1-1bbe-216a8e508400/public",
-    highlight: "Diferença direta nos fechamentos com follow-up na hora certa",
-    text: "Com o ImobDeal, envio tudo organizado, e se vejo que abriram mas não responderam, sei que posso dar um follow-up na hora certa. Fez toda diferença nos fechamentos!",
+    paragraphs: [
+      "Na Parisotto Imóveis, o ImobDeal revolucionou nossa gestão. Temos acesso rápido a informações essenciais, organização para os corretores e um aumento de 50% na taxa de fechamento. É mais que um sistema, é um diferencial competitivo.",
+    ],
   },
 ];
 
-interface PageProps {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}
-
-export default async function Home({ searchParams }: PageProps) {
-  const params = await searchParams;
-  const persona: Persona =
-    params.para === "corretor" ? "corretor" : "gestor";
-
-  const hero = heroContent[persona];
-
+export default function Home() {
   return (
     <>
       <StructuredData />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[92vh] flex items-center bg-primary overflow-hidden">
-        <HeroBackground />        <FloatingElements />
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-8 py-28 md:py-36 text-center">
+      <section className="relative bg-primary overflow-hidden">
+        <HeroBackground />
+        <FloatingElements />
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-8 pt-24 md:pt-28 pb-0 text-center">
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-white tracking-tight leading-[1.1] max-w-4xl mx-auto">
-            {hero.headline}
+            Controle total da sua imobiliária em um só lugar.
           </h1>
 
           {/* Subheadline */}
           <p className="text-base sm:text-lg md:text-xl text-white/70 mt-6 max-w-2xl mx-auto leading-relaxed">
-            {hero.sub}
+            O CRM completo da imobiliária: roleta de leads, dashboards e forecast
+            automáticos. Sem planilha e sem pagar um sistema para cada coisa.
           </p>
 
           {/* CTA row */}
           <div className="mt-10 flex justify-center items-center">
-            <FreeTrialButton
+            <CtaButton
               variant="primary"
               size="large"
               source="hero_section"
               showBlackNovemberBadge={false}
               className="w-full sm:w-auto px-10 !bg-gradient-to-r !from-accent-yellow !via-accent-amber !to-accent-orange !text-primary !rounded-xl !font-bold !shadow-lg !shadow-accent-amber/20 hover:!shadow-xl hover:!shadow-accent-amber/30 !transition-all !duration-300"
             >
-              Teste Grátis por 7 Dias
-            </FreeTrialButton>
+              Falar com especialista
+            </CtaButton>
           </div>
 
           {/* Trust badges */}
-          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-white/40">
+          <div className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-white/40">
             <span className="flex items-center gap-1.5">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-accent-amber">
                 <path d="M11.667 3.5L5.25 9.917 2.333 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Crie sua conta em 5 minutos
+              Demonstração sem compromisso
             </span>
             <span className="flex items-center gap-1.5">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-accent-amber">
@@ -137,129 +101,58 @@ export default async function Home({ searchParams }: PageProps) {
             </span>
           </div>
 
-          {/* Slogan */}
-          <p className="mt-14 text-gradient-accent text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
-            Sua imobiliária no próximo nível.
-          </p>
+          {/* Produto à vista — corta a dobra de propósito para induzir o scroll.
+              Proporção casada com a resolução nativa do print (1912x914). */}
+          <div className="mt-14 md:mt-16 max-w-5xl mx-auto">
+            <LightboxImage
+              src="/screenshots/tarefas-equipe.png"
+              alt="Painel de tarefas da equipe no ImobDeal: tarefas em dia, atrasadas, corretores sem agenda e negócios estagnados"
+              aspect="1912 / 914"
+              sizes="(min-width: 1024px) 65vw, 100vw"
+              priority
+              bleedBottom
+            />
+          </div>
         </div>
       </section>
 
-      {/* ── DASHBOARD SHOWCASE (planilha vs dashboards) ────────────── */}
-      <DashboardShowcase persona={persona} />
+      {/* ── DASHBOARDS — a história de origem do produto.
+             Vem logo após o hero: é a razão de existir do ImobDeal e o que
+             dá sentido a todas as seções seguintes. ───────────────────── */}
+      <DashboardShowcase />
 
-      {/* ── PILARES (3 features destaque por persona) ────────────────── */}
-      <FeaturePillars persona={persona} />
+      {/* ── CICLO DE GESTÃO — a profundidade que separa de um CRM comum ─ */}
+      <ManagementCycle />
 
-      {/* ── SCREENSHOT SHOWCASE ──────────────────────────────────────── */}
+      {/* ── MODO TV — o diferencial que ninguém mais tem ─────────────── */}
+      <TvMode />
+
+      {/* ── TOUR DO PRODUTO ──────────────────────────────────────────── */}
       <ScreenshotShowcase />
 
-      {/* ── METRICS BAR ──────────────────────────────────────────────── */}
-      <MetricsBar />
+      {/* ── APP MOBILE ───────────────────────────────────────────────── */}
+      <MobileApp />
 
-      {/* ── LINKS INTELIGENTES (promo) ────────────────────────────────── */}
-      <section className="relative bg-primary py-20 md:py-28 overflow-hidden">
-        <HeroBackground />
-        <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            {/* Texto */}
-            <div className="flex-1 text-center lg:text-left">
-              <p className="text-gradient-accent text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-4">
-                Recurso exclusivo
-              </p>
-              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-white tracking-tight leading-tight">
-                Links Inteligentes:
-                <br />
-                <span className="text-gradient-accent">seu diferencial competitivo.</span>
-              </h2>
-              <p className="text-white/60 text-base md:text-lg mt-5 max-w-xl leading-relaxed">
-                Envie propostas, portfólios e análises por links rastreáveis. Saiba em tempo real quem abriu, o que olhou e por quanto tempo — e receba um alerta no WhatsApp na hora exata de fazer o follow-up.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a
-                  href="/como-funciona"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-accent-yellow via-accent-amber to-accent-orange text-primary font-bold rounded-xl shadow-lg shadow-accent-amber/20 hover:shadow-xl hover:shadow-accent-amber/30 transition-all duration-300"
-                >
-                  Conheça os Links Inteligentes
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-primary">
-                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
+      {/* ── PORTAIS — por onde o lead entra, logo antes da roleta ────── */}
+      <PortalIntegrations />
 
-            {/* Cards visuais */}
-            <div className="flex-1 w-full max-w-md lg:max-w-none">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="glass-card rounded-2xl p-5">
-                  <div className="w-10 h-10 rounded-xl bg-accent-amber/20 flex items-center justify-center mb-3">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-accent-amber">
-                      <path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                      <path d="M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.102 1.101" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  </div>
-                  <p className="text-white font-bold text-sm">URL única por cliente</p>
-                  <p className="text-white/40 text-xs mt-1">Cada link é exclusivo e rastreável</p>
-                </div>
-                <div className="glass-card rounded-2xl p-5">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-400/20 flex items-center justify-center mb-3">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-emerald-400">
-                      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                  </div>
-                  <p className="text-white font-bold text-sm">Tracking em tempo real</p>
-                  <p className="text-white/40 text-xs mt-1">Saiba o que o cliente viu e por quanto tempo</p>
-                </div>
-                <div className="glass-card rounded-2xl p-5">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-3">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white/80">
-                      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  <p className="text-white font-bold text-sm">Alerta no WhatsApp</p>
-                  <p className="text-white/40 text-xs mt-1">Notificação instantânea ao abrir o link</p>
-                </div>
-                <div className="glass-card rounded-2xl p-5">
-                  <div className="w-10 h-10 rounded-xl bg-sky-400/20 flex items-center justify-center mb-3">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-sky-400">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M9 22V12h6v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  <p className="text-white font-bold text-sm">4 tipos de link</p>
-                  <p className="text-white/40 text-xs mt-1">Imóvel, proposta, portfólio e viabilidade</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ── ROLETA DE LEADS — encadeia com os portais (é por onde o lead
+             entra) e ancora o valor logo antes do preço. ─────────────── */}
+      <LeadRoulette />
 
-      {/* ── DEPOIMENTOS ──────────────────────────────────────────────── */}
-      <section className="bg-surface-light py-18 px-5 md:px-8 pb-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 md:mb-16">
-            <p className="text-sm font-semibold text-accent-amber uppercase tracking-wider mb-3">
-              Depoimentos
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 tracking-tight leading-tight">
-              Quem usa, recomenda.
-              <br />
-              <span className="text-primary">Quem já conhece, não vive sem!</span>
-            </h2>
-            <p className="mt-4 text-base md:text-lg text-gray-500 max-w-xl mx-auto">
-              Veja o que os corretores estão dizendo sobre o ImobDeal
-            </p>
-          </div>
-          <TestimonialsCarousel testimonials={testimonials} />
-        </div>
-      </section>
+      {/* ── GENTE POR TRÁS — o que segura o cliente não é o software,
+             é o time. O argumento; a prova vem logo abaixo. ─────────── */}
+      <PeopleBehind />
 
-      {/* ── FEATURE GRID (40+ funcionalidades) ───────────────────────── */}
-      <FeatureGrid />
+      {/* ── PROVA — a palavra de quem já opera assim. ────────────────── */}
+      <SocialProof testimonials={testimonials} />
+
+      {/* ── SITE SOB MEDIDA — último gatilho antes do preço. A galeria é
+             ao mesmo tempo a prova do argumento e a parede de clientes. ── */}
+      <WebsiteShowcase />
 
       {/* ── PRICING ──────────────────────────────────────────────────── */}
-      <PricingPlans persona={persona} />
+      <PricingPlans />
 
       {/* ── CTA FINAL ────────────────────────────────────────────────── */}
       <section className="relative bg-primary py-20 md:py-28 overflow-hidden">
@@ -269,21 +162,21 @@ export default async function Home({ searchParams }: PageProps) {
             Pronto para o próximo nível?
           </h2>
           <p className="text-white/60 text-lg mt-5 max-w-xl mx-auto">
-            Teste o ImobDeal grátis por 7 dias. Setup em 5 minutos, sem compromisso — e veja por que centenas de imobiliárias já migraram.
+            Converse com um especialista, veja o sistema rodando com o cenário da sua imobiliária e descubra o que dá para eliminar da sua operação hoje.
           </p>
           <div className="mt-10">
-            <FreeTrialButton
+            <CtaButton
               variant="primary"
               size="large"
               source="cta_final"
               showBlackNovemberBadge={false}
               className="!bg-gradient-to-r !from-accent-yellow !via-accent-amber !to-accent-orange !text-primary !rounded-xl !font-bold !shadow-lg !shadow-accent-amber/20 hover:!shadow-xl hover:!shadow-accent-amber/30 !transition-all !duration-300 px-12"
             >
-              Começar Teste Grátis
-            </FreeTrialButton>
+              Falar com especialista
+            </CtaButton>
           </div>
           <p className="text-white/30 text-xs mt-6">
-            7 dias grátis · Setup em 5 minutos · Cancele quando quiser
+            Sem compromisso · Resposta no mesmo dia útil
           </p>
         </div>
       </section>

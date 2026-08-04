@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Preços — ImobDeal CRM Imobiliário",
-  description: "Planos a partir de R$ 197/mês. CRM completo para imobiliárias e corretores autônomos. Teste grátis por 7 dias, setup em 5 minutos.",
+  description: "CRM completo para imobiliárias a partir de R$ 569/mês. Roleta de leads, dashboards, integração com portais e site sob medida.",
   keywords: [
     "CRM imobiliário preço",
     "planos imobdeal",
@@ -10,11 +10,10 @@ export const metadata: Metadata = {
     "CRM corretor de imóveis",
     "sistema imobiliário custo",
     "plataforma imobiliária valor",
-    "teste grátis CRM imobiliário",
   ],
   openGraph: {
     title: "Preços — ImobDeal CRM Imobiliário",
-    description: "Planos a partir de R$ 197/mês. Teste grátis por 7 dias, setup em 5 minutos.",
+    description: "CRM completo para imobiliárias a partir de R$ 569/mês.",
     url: "https://imobdeal.com.br/precos",
     images: [
       {

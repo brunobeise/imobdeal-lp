@@ -1,7 +1,7 @@
 "use client";
 
 import { useBlackNovember } from "@/hooks/useBlackNovember";
-import FreeTrialButton from "./FreeTrialButton";
+import CtaButton from "./CtaButton";
 
 export default function BlackNovemberPricingCard() {
   const { isBlackNovember, originalPrice, blackNovemberPrice, discount } = useBlackNovember();
@@ -99,14 +99,14 @@ export default function BlackNovemberPricingCard() {
         </div>
 
         <div className="text-center">
-          <FreeTrialButton
+          <CtaButton
             variant="secondary"
             size="large"
             className="w-full bg-[#F9A826] hover:bg-[#e6961f] text-black font-bold shadow-lg transform hover:scale-105 transition-all duration-200 text-sm md:text-base py-3 md:py-4"
             source="black_november_pricing_card"
           >
             🚀 Aproveitar Oferta Black November
-          </FreeTrialButton>
+          </CtaButton>
           
           <p className="text-[10px] md:text-xs text-gray-400 mt-2 md:mt-3">
             Teste grátis por 7 dias • Setup em 5 minutos

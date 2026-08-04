@@ -37,10 +37,11 @@ export default function StructuredData() {
       "name": "ImobDeal"
     },
     "offers": {
-      "@type": "Offer",
-      "price": "197",
+      "@type": "AggregateOffer",
+      "lowPrice": "569",
       "priceCurrency": "BRL",
-      "description": "Plano Autônomo a partir de R$ 197/mês. Teste grátis por 7 dias."
+      "offerCount": "1",
+      "description": "Plano Imobiliária a partir de R$ 569/mês. O valor varia conforme o número de usuários e os módulos ativos."
     },
     "featureList": [
       "CRM completo com funis de venda",
@@ -51,7 +52,9 @@ export default function StructuredData() {
       "Módulo financeiro",
       "Assinatura eletrônica",
       "Dashboard gerencial com KPIs",
-      "Integração com WhatsApp"
+      "Roleta de leads com distribuição automática",
+      "Integração com portais de anúncio",
+      "Aplicativo nativo iOS e Android"
     ]
   }
 
@@ -69,10 +72,10 @@ export default function StructuredData() {
       },
       {
         "@type": "Question", 
-        "name": "É possível testar gratuitamente?",
+        "name": "É possível conhecer o sistema antes de contratar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim! Oferecemos teste grátis por 7 dias com acesso completo a todas as funcionalidades, sem necessidade de cartão de crédito."
+          "text": "Um especialista faz uma demonstração completa do sistema com o cenário da sua imobiliária antes de qualquer contratação."
         }
       },
       {
@@ -80,7 +83,7 @@ export default function StructuredData() {
         "name": "Para quem é indicado o ImobDeal?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O ImobDeal é ideal para gestores de imobiliárias que querem controle total da operação e para corretores autônomos que desejam profissionalizar seus processos com IA e propostas interativas."
+          "text": "O ImobDeal é indicado para donos e gestores de imobiliárias que querem controle total da operação: roleta de leads, dashboards automáticos, gestão de equipe e integração com os portais de anúncio."
         }
       }
     ]

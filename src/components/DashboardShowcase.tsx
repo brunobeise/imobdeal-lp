@@ -76,94 +76,41 @@ const gestorSlides: SlideGroup[] = [
     id: "pci",
     label: "Performance Comercial",
     description:
-      "Indicadores individuais de cada corretor — volume, conversão e receita.",
+      "Indicadores individuais de cada corretor: volume, conversão e receita.",
     images: ["/dashboards/pci-1.png", "/dashboards/pci-2.png"],
   },
 ];
 
-/* ── Corretor: funcionalidades do dia a dia ───────────────────────── */
-const corretorSlides: SlideGroup[] = [
+/* ── Header copy ──────────────────────────────────────────────────── */
+const headerContent = {
+  badge: "Por que o ImobDeal existe",
+  headline: "A maioria dos CRMs guarda dado.",
+  headlineAccent: "O ImobDeal te entrega o número.",
+  sub: "Guardar informação é fácil. Difícil é ela virar decisão antes do fim do mês.",
+  leftLabel: "Horas preenchendo planilha",
+  leftSub: "Dados desatualizados, erros manuais, zero automação.",
+  callout:
+    "Sua equipe preenche o CRM normalmente, e todos os dashboards, relatórios e previsões são gerados automaticamente.",
+};
+
+/* ── A origem do produto, em três tempos ──────────────────────────── */
+const story = [
   {
-    id: "audio",
-    label: "Cadastro por Áudio",
-    description:
-      "Atualize seus negócios em segundos por áudio — a IA transcreve e preenche tudo.",
-    images: ["/screenshots/audio.png"],
+    tag: "O problema",
+    title: "Alguém tinha que montar o número",
+    text: "Exportar o CRM, jogar em planilha, fazer gráfico na mão. Quando ficava pronto, já era passado.",
   },
   {
-    id: "ia",
-    label: "Assistente com IA",
-    description:
-      "Pergunte qualquer coisa sobre seus negócios e receba respostas instantâneas.",
-    images: ["/screenshots/assitente-negocio.png"],
+    tag: "A decisão",
+    title: "Construir o CRM ao contrário",
+    text: "Especialistas do mercado imobiliário partiram dessa dor: o relatório se monta enquanto a equipe trabalha.",
   },
   {
-    id: "propostas",
-    label: "Propostas Interativas",
-    description:
-      "Envie propostas com tracking em tempo real — saiba quando o cliente abriu.",
-    images: ["/screenshots/propostas.png"],
-  },
-  {
-    id: "portfolios",
-    label: "Portfólios Interativos",
-    description:
-      "Seleção personalizada de imóveis para cada cliente com comparador lado a lado.",
-    images: ["/screenshots/portfolios.png"],
-  },
-  {
-    id: "agenda",
-    label: "Agenda Integrada",
-    description:
-      "Calendário sincronizado com Google Calendar, visitas e follow-ups automáticos.",
-    images: ["/screenshots/agenda.png"],
-  },
-  {
-    id: "gestao-leads-corretor",
-    label: "Gestão de Leads",
-    description:
-      "Todos os seus leads organizados com status, origem e próximos passos.",
-    images: ["/screenshots/gestao-de-leads.png"],
-  },
-  {
-    id: "kanban",
-    label: "Pipeline de Vendas",
-    description:
-      "Arraste e organize seus negócios por etapa — visual e intuitivo.",
-    images: ["/screenshots/kanban.png"],
-  },
-  {
-    id: "imoveis",
-    label: "Gestão de Imóveis",
-    description:
-      "Cadastro completo com fotos, vídeos, localização e compartilhamento rápido.",
-    images: ["/screenshots/imoveis.png"],
+    tag: "Hoje",
+    title: "O dashboard se monta sozinho",
+    text: "A equipe usa o CRM no dia a dia. Dashboards e forecast se atualizam sozinhos, sem BI paralelo.",
   },
 ];
-
-/* ── Header copy per persona ──────────────────────────────────────── */
-const headerContent = {
-  gestor: {
-    badge: "Chega de planilha para alimentar BI",
-    headline: "O corretor usa o CRM.",
-    headlineAccent: "Os dashboards se montam sozinhos.",
-    sub: "Sem horas preenchendo planilha. Sem BI manual. Cada ação no CRM alimenta relatórios, forecast e métricas em tempo real.",
-    leftLabel: "Horas preenchendo planilha",
-    leftSub: "Dados desatualizados, erros manuais, zero automação.",
-    callout:
-      "O corretor preenche o CRM normalmente, e todos os dashboards, relatórios e previsões são gerados automaticamente.",
-  },
-  corretor: {
-    badge: "Chega de improviso e planilha",
-    headline: "Ferramentas que trabalham por você.",
-    headlineAccent: "Foque em vender.",
-    sub: "Cadastro por áudio, propostas com tracking, IA e portfólios interativos. Tudo o que você precisa para fechar mais negócios.",
-    leftLabel: "Controle por planilha e WhatsApp",
-    leftSub: "Sem organização, sem dados, sem agilidade.",
-    callout:
-      "Use o CRM no dia a dia e tenha propostas, portfólios, agenda e IA trabalhando por você — sem esforço extra.",
-  },
-};
 
 /* ── Helpers ──────────────────────────────────────────────────────── */
 function flattenImages(slides: SlideGroup[]) {
@@ -190,13 +137,9 @@ function getGroupFromLightboxIndex(
   return { group: 0, sub: 0 };
 }
 
-interface Props {
-  persona?: "gestor" | "corretor";
-}
-
-export default function DashboardShowcase({ persona = "gestor" }: Props) {
-  const slides = persona === "corretor" ? corretorSlides : gestorSlides;
-  const header = headerContent[persona];
+export default function DashboardShowcase() {
+  const slides = gestorSlides;
+  const header = headerContent;
   const allImages = flattenImages(slides);
 
   const [active, setActive] = useState(0);
@@ -210,12 +153,11 @@ export default function DashboardShowcase({ persona = "gestor" }: Props) {
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // Reset state when persona changes
   useEffect(() => {
     setActive(0);
     setSubActive(slides.map(() => 0));
     setIsAutoPlaying(true);
-  }, [persona, slides]);
+  }, [slides]);
 
   const lightboxSlides = allImages.map((src) => ({
     src,
@@ -300,13 +242,62 @@ export default function DashboardShowcase({ persona = "gestor" }: Props) {
           <p className="text-sm font-semibold text-red-500 uppercase tracking-wider mb-3">
             {header.badge}
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-gray-900 tracking-tight leading-tight max-w-3xl mx-auto">
-            {header.headline}{" "}
-            <span className="text-primary">{header.headlineAccent}</span>
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-gray-900 tracking-tight leading-[1.15] max-w-3xl mx-auto text-balance">
+            {header.headline}
+            <span className="block text-primary">{header.headlineAccent}</span>
           </h2>
-          <p className="text-gray-500 text-base md:text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-500 text-base md:text-lg mt-5 max-w-xl mx-auto leading-relaxed text-pretty">
             {header.sub}
           </p>
+        </div>
+
+        {/* ── A história, em três tempos ─────────────────────────── */}
+        <div className="mb-16 md:mb-24 grid md:grid-cols-3 gap-8 md:gap-6 relative">
+          {/* Linha conectora (desktop) */}
+          <div
+            className="hidden md:block absolute top-5 left-[16%] right-[16%] h-px bg-gradient-to-r from-red-200 via-gray-200 to-primary/40"
+            aria-hidden="true"
+          />
+
+          {story.map((ato, i) => {
+            const isLast = i === story.length - 1;
+            return (
+              <div key={i} className="relative">
+                {/* Marcador */}
+                <div
+                  className={`relative z-10 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold mb-5 mx-auto md:mx-0 ${
+                    isLast
+                      ? "bg-primary text-white shadow-lg shadow-primary/25"
+                      : i === 0
+                      ? "bg-red-50 text-red-500 ring-1 ring-red-200"
+                      : "bg-gray-100 text-gray-500"
+                  }`}
+                >
+                  {i + 1}
+                </div>
+
+                <div className="text-center md:text-left">
+                  <p
+                    className={`text-xs font-bold uppercase tracking-wider mb-2 ${
+                      isLast
+                        ? "text-primary"
+                        : i === 0
+                        ? "text-red-500"
+                        : "text-gray-400"
+                    }`}
+                  >
+                    {ato.tag}
+                  </p>
+                  <h3 className="text-lg font-bold text-gray-900 leading-snug">
+                    {ato.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm mt-2.5 leading-relaxed">
+                    {ato.text}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* ── Split layout ──────────────────────────────────────── */}
@@ -334,7 +325,7 @@ export default function DashboardShowcase({ persona = "gestor" }: Props) {
                 <div className="aspect-[4/3] relative bg-white">
                   <Image
                     src="/screenshots/planilha.png"
-                    alt="Planilha de controle de vendas — método antigo"
+                    alt="Planilha de controle de vendas, o método antigo"
                     fill
                     className="object-cover object-top"
                     sizes="(min-width: 1024px) 38vw, 100vw"

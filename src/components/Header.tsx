@@ -71,7 +71,7 @@ export default function Header() {
               backgroundImage: "linear-gradient(90deg, #fde047 0%, #fbbf24 50%, #fb923c 100%)",
             }}
           >
-            Teste Grátis
+            Falar com especialista
           </button>
         </div>
 
@@ -113,7 +113,7 @@ export default function Header() {
                 backgroundImage: "linear-gradient(90deg, #fde047 0%, #fbbf24 50%, #fb923c 100%)",
               }}
             >
-              Teste Grátis
+              Falar com especialista
             </button>
           </div>
         </div>

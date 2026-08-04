@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { useLeadModal } from "@/contexts/LeadModalContext";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 import { InputMask } from "@react-input/mask";
-import { HiX } from "react-icons/hi";
+import { HiX, HiCheck } from "react-icons/hi";
+import { FaWhatsapp } from "react-icons/fa";
 
 declare global {
   interface Window {
@@ -72,6 +73,7 @@ export default function LeadCaptureModal() {
   const [error, setError] = useState("");
   const [nameTracked, setNameTracked] = useState(false);
   const [phoneTracked, setPhoneTracked] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -82,6 +84,7 @@ export default function LeadCaptureModal() {
       setNameTracked(false);
       setPhoneTracked(false);
       setError("");
+      setSubmitted(false);
     }
   }, [isOpen, trackAbriuModal]);
 
@@ -144,21 +147,15 @@ export default function LeadCaptureModal() {
       // Não bloqueia o redirect se o webhook falhar
     }
 
-    // Evento: redirecionou para cadastro
     trackRedirecionouCadastro();
 
-    const params = new URLSearchParams({
-      nome: nomeFinal,
-      telefone: telefoneFinal,
-      funcao,
-    });
-
     // Dispara a conversão do Google Ads específica da função escolhida
-    // (Dono / Gestor / Corretor) e só então redireciona.
+    // (Dono / Gestor / Corretor). Venda assistida: o lead fica na LP e o
+    // comercial faz o contato — não há mais redirect para o cadastro.
     dispararConversaoGoogle(funcao, () => {
-      window.location.href = `https://app.imobdeal.com.br/cadastro?${params.toString()}`;
+      setSubmitted(true);
+      setLoading(false);
     });
-    setLoading(false);
   }
 
   function handleOverlayClick(e: React.MouseEvent) {
@@ -181,14 +178,54 @@ export default function LeadCaptureModal() {
             <HiX size={22} />
           </button>
           <h2 className="text-xl font-bold text-primary">
-            Comece seu teste grátis
+            {submitted ? "Contato recebido!" : "Fale com um especialista"}
           </h2>
           <p className="text-primary/70 text-sm mt-1">
-            7 dias grátis, sem cartão de crédito.
+            {submitted
+              ? "Já estamos com seus dados aqui."
+              : "Uma demonstração com o cenário da sua imobiliária."}
           </p>
         </div>
 
-        {/* Form */}
+        {/* Confirmação */}
+        {submitted && (
+          <div className="p-6 -mt-3 text-center">
+            <div className="w-14 h-14 rounded-full bg-emerald-50 flex items-center justify-center mx-auto mb-4">
+              <HiCheck size={30} className="text-emerald-500" />
+            </div>
+            <p className="text-gray-900 font-semibold">
+              Obrigado, {name.trim().split(" ")[0]}!
+            </p>
+            <p className="text-gray-500 text-sm mt-2 leading-relaxed">
+              Um especialista do ImobDeal entra em contato pelo seu WhatsApp no
+              próximo dia útil para entender sua operação e mostrar o sistema
+              funcionando.
+            </p>
+
+            <a
+              href={`https://wa.me/5551995529578?text=${encodeURIComponent(
+                `Olá! Sou ${name.trim()} e acabei de pedir contato pelo site do ImobDeal.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all"
+            >
+              <FaWhatsapp size={18} />
+              Prefiro falar agora
+            </a>
+
+            <button
+              type="button"
+              onClick={handleClose}
+              className="mt-3 w-full py-3 rounded-xl font-semibold text-sm text-gray-500 hover:text-gray-700 transition-colors"
+            >
+              Voltar para o site
+            </button>
+          </div>
+        )}
+
+        {/* Formulário */}
+        {!submitted && (
         <form onSubmit={handleSubmit} className="p-6 space-y-4 -mt-3">
           <div>
             <label
@@ -262,13 +299,14 @@ export default function LeadCaptureModal() {
             disabled={!isValid || loading}
             className="w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200 bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? "Redirecionando..." : "Teste agora na sua imobiliária!"}
+            {loading ? "Enviando..." : "Quero falar com um especialista"}
           </button>
 
           <p className="text-center text-xs text-gray-400">
-            Setup em 5 minutos · Cancele quando quiser
+            Sem compromisso · Seus dados não são compartilhados
           </p>
         </form>
+        )}
       </div>
     </div>
   );

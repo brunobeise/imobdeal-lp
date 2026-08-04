@@ -52,9 +52,9 @@ const screenshots: Screenshot[] = [
   {
     id: "propostas",
     label: "Propostas Interativas",
-    description: "Propostas com tracking em tempo real e notificação no WhatsApp.",
+    description: "Propostas profissionais com a identidade da sua imobiliária, prontas em minutos.",
     screenshotInstruction:
-      "SCREENSHOT: Proposta interativa com tracking",
+      "SCREENSHOT: Proposta interativa",
     src: "/screenshots/propostas.png",
   },
   {
@@ -92,7 +92,7 @@ const screenshots: Screenshot[] = [
   {
     id: "forecast",
     label: "Forecast de Receita",
-    description: "Previsão de vendas automática — sem planilha, sem BI manual.",
+    description: "Previsão de vendas automática, sem planilha e sem BI manual.",
     screenshotInstruction:
       "SCREENSHOT: Forecast de receita com projeção mensal (/imobiliaria/forecast)",
     src: "/screenshots/forecast.png",
@@ -128,14 +128,6 @@ const screenshots: Screenshot[] = [
     screenshotInstruction:
       "SCREENSHOT: Tela de entrada de leads com fontes de captação",
     src: "/screenshots/leads.png",
-  },
-  {
-    id: "notificacao-whatsapp",
-    label: "Notificação no WhatsApp",
-    description: "Alertas automáticos no WhatsApp para novos leads, propostas abertas e follow-ups.",
-    screenshotInstruction:
-      "SCREENSHOT: Configuração de notificações WhatsApp",
-    src: "/tracking.png",
   },
   {
     id: "documentos",
