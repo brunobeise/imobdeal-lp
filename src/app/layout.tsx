@@ -14,11 +14,11 @@ import Providers from "@/components/Providers";
 export const metadata: Metadata = {
   title: {
     default:
-      "ImobDeal — CRM Imobiliário Completo | Sua Imobiliária no Próximo Nível",
+      "ImobDeal — CRM Imobiliário Completo para Quem Quer Resultado",
     template: "%s | ImobDeal — CRM Imobiliário",
   },
   description:
-    "O CRM imobiliário completo para gestores e corretores. Propostas inteligentes, funis de venda, dados automáticos, IA integrada e gestão de equipe — tudo em um só lugar. Teste grátis.",
+    "O CRM imobiliário completo para gestores e corretores que querem resultado. Roleta de leads, dashboards automáticos, funis de venda, IA integrada e gestão de equipe — tudo em um só lugar.",
   keywords: [
     "CRM imobiliário",
     "software imobiliário",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "ImobDeal — CRM Imobiliário Completo | Sua Imobiliária no Próximo Nível",
+      "ImobDeal — CRM Imobiliário Completo para Quem Quer Resultado",
     description:
       "O CRM imobiliário completo. Propostas inteligentes, funis de venda, dados automáticos, IA integrada e gestão de equipe. Teste grátis.",
     url: "https://imobdeal.com.br",

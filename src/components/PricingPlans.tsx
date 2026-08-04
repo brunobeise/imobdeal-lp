@@ -30,11 +30,11 @@ export default function PricingPlans() {
       <div className="max-w-5xl mx-auto px-5 md:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 tracking-tight leading-tight text-balance">
-            Um plano só, no tamanho da sua operação.
+            Não existe versão básica do ImobDeal.
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto text-pretty">
-            Sem edição básica, sem recurso bloqueado por plano. O que muda é o
-            tamanho da equipe e os módulos que a sua imobiliária usa.
+            Toda imobiliária recebe o CRM inteiro, sem escadinha de plano para
+            liberar função. O preço acompanha o tamanho da sua equipe.
           </p>
         </div>
 
@@ -79,8 +79,9 @@ export default function PricingPlans() {
                 <span className="text-gray-400 font-medium">/mês</span>
               </div>
               <p className="text-sm text-gray-500 mt-4 leading-relaxed">
-                O valor exato depende do número de usuários e dos módulos
-                ativos. O especialista fecha isso com você na conversa.
+                O valor exato depende do tamanho da equipe e dos módulos
+                opcionais, como o Financeiro. O especialista fecha isso com
+                você na conversa.
               </p>
 
               <button

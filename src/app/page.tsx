@@ -8,6 +8,7 @@ import HeroBackground from "@/components/HeroBackground";
 import ManagementCycle from "@/components/ManagementCycle";
 import TvMode from "@/components/TvMode";
 import PricingPlans from "@/components/PricingPlans";
+import Faq from "@/components/Faq";
 import ScreenshotShowcase from "@/components/ScreenshotShowcase";
 import FloatingElements from "@/components/FloatingElements";
 import DashboardShowcase from "@/components/DashboardShowcase";
@@ -154,12 +155,17 @@ export default function Home() {
       {/* ── PRICING ──────────────────────────────────────────────────── */}
       <PricingPlans />
 
+      {/* ── FAQ — derruba a objeção que sobrou depois do preço e alimenta
+             o FAQPage do schema.org para busca e assistentes. ────────── */}
+      <Faq />
+
       {/* ── CTA FINAL ────────────────────────────────────────────────── */}
       <section className="relative bg-primary py-20 md:py-28 overflow-hidden">
         <HeroBackground />
         <div className="relative z-10 max-w-3xl mx-auto px-5 md:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Pronto para o próximo nível?
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] text-balance">
+            O CRM imobiliário completo para quem
+            <span className="block text-accent-amber">quer resultado.</span>
           </h2>
           <p className="text-white/60 text-lg mt-5 max-w-xl mx-auto">
             Converse com um especialista, veja o sistema rodando com o cenário da sua imobiliária e descubra o que dá para eliminar da sua operação hoje.

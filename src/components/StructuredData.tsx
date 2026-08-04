@@ -58,36 +58,9 @@ export default function StructuredData() {
     ]
   }
 
-  const faqData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Como funciona o ImobDeal?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "O ImobDeal é um CRM imobiliário completo que centraliza gestão de equipe, propostas interativas, cadastro por áudio com IA, módulo financeiro e muito mais em uma única plataforma."
-        }
-      },
-      {
-        "@type": "Question", 
-        "name": "É possível conhecer o sistema antes de contratar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Um especialista faz uma demonstração completa do sistema com o cenário da sua imobiliária antes de qualquer contratação."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Para quem é indicado o ImobDeal?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "O ImobDeal é indicado para donos e gestores de imobiliárias que querem controle total da operação: roleta de leads, dashboards automáticos, gestão de equipe e integração com os portais de anúncio."
-        }
-      }
-    ]
-  }
+  /* O FAQPage saiu daqui: as perguntas precisam estar visíveis na página
+     para o Google aceitar a marcação, e essas três não estavam. Quem publica
+     o schema agora é o componente Faq, a partir do texto que ele renderiza. */
 
   return (
     <>
@@ -103,13 +76,6 @@ export default function StructuredData() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(softwareData),
-        }}
-      />
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqData),
         }}
       />
     </>
