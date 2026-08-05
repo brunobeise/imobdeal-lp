@@ -102,8 +102,8 @@ const story = [
   },
   {
     tag: "A decisão",
-    title: "Construir o CRM ao contrário",
-    text: "Especialistas do mercado imobiliário partiram dessa dor: o relatório se monta enquanto a equipe trabalha.",
+    title: "Começar pelo número, não pelo cadastro",
+    text: "Especialistas do mercado imobiliário desenharam o CRM a partir do relatório que o gestor precisa ver — e não o contrário.",
   },
   {
     tag: "Hoje",
