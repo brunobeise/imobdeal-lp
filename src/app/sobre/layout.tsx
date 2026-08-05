@@ -19,12 +19,20 @@ export const metadata: Metadata = {
     url: "https://imobdeal.com.br/sobre",
     images: [
       {
-        url: "/imobDeal.png",
+        url: "https://imobdeal.com.br/og-image.jpg",
+        secureUrl: "https://imobdeal.com.br/og-image.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Sobre o ImobDeal",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sobre o ImobDeal - Plataforma de Propostas Imobiliárias",
+    description: "Conheça a história e missão do ImobDeal, a plataforma que revoluciona a gestão de propostas imobiliárias.",
+    images: ["https://imobdeal.com.br/og-image.jpg"],
   },
   alternates: {
     canonical: "https://imobdeal.com.br/sobre",

@@ -19,12 +19,20 @@ export const metadata: Metadata = {
     url: "https://imobdeal.com.br/como-funciona",
     images: [
       {
-        url: "/imobDeal.png",
+        url: "https://imobdeal.com.br/og-image.jpg",
+        secureUrl: "https://imobdeal.com.br/og-image.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Links Inteligentes do ImobDeal",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Links Inteligentes - Como Funciona o ImobDeal",
+    description: "Envie propostas por links rastreáveis. Saiba em tempo real quem abriu, o que olhou e quando agir.",
+    images: ["https://imobdeal.com.br/og-image.jpg"],
   },
   alternates: {
     canonical: "https://imobdeal.com.br/como-funciona",

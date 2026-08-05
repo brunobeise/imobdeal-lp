@@ -54,9 +54,11 @@ export const metadata: Metadata = {
     siteName: "ImobDeal",
     images: [
       {
-        url: "/imobDeal.png",
+        url: "https://imobdeal.com.br/og-image.jpg",
+        secureUrl: "https://imobdeal.com.br/og-image.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "ImobDeal — CRM Imobiliário Completo",
       },
     ],
@@ -68,7 +70,7 @@ export const metadata: Metadata = {
     title: "ImobDeal — CRM Imobiliário Completo",
     description:
       "Roleta de leads nativa, funis de venda, dados automáticos, IA integrada e gestão de equipe. Fale com um especialista.",
-    images: ["/imobDeal.png"],
+    images: ["https://imobdeal.com.br/og-image.jpg"],
   },
   robots: {
     index: true,

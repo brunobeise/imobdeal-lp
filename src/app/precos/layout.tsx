@@ -17,12 +17,20 @@ export const metadata: Metadata = {
     url: "https://imobdeal.com.br/precos",
     images: [
       {
-        url: "/imobDeal.png",
+        url: "https://imobdeal.com.br/og-image.jpg",
+        secureUrl: "https://imobdeal.com.br/og-image.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Preços ImobDeal — CRM Imobiliário Completo",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Preços — ImobDeal CRM Imobiliário",
+    description: "CRM completo para imobiliárias a partir de R$ 569/mês.",
+    images: ["https://imobdeal.com.br/og-image.jpg"],
   },
   alternates: {
     canonical: "https://imobdeal.com.br/precos",

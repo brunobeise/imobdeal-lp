@@ -31,7 +31,7 @@ export default function StructuredData() {
     "operatingSystem": "Web Browser",
     "description": "CRM imobiliário completo com gestão de equipe, propostas interativas, IA e módulo financeiro. A plataforma soberana para imobiliárias e corretores.",
     "url": "https://imobdeal.com.br",
-    "screenshot": "https://imobdeal.com.br/imobDeal.png",
+    "screenshot": "https://imobdeal.com.br/og-image.jpg",
     "author": {
       "@type": "Organization",
       "name": "ImobDeal"
