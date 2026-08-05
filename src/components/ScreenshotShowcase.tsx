@@ -1,12 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useState, useCallback } from "react";
-import Lightbox from "yet-another-react-lightbox";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import "yet-another-react-lightbox/styles.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
+
+/* Só baixa o pacote do lightbox quando alguém clica para ampliar. */
+const ImageLightbox = dynamic(() => import("./ImageLightbox"), { ssr: false });
 
 interface Screenshot {
   id: string;
@@ -23,7 +22,7 @@ const screenshots: Screenshot[] = [
     description: "Acompanhe os status de tarefas e negócios da sua equipe.",
     screenshotInstruction:
       "SCREENSHOT: Dashboard do gestor com KPIs e gráficos",
-    src: "/screenshots/inicio-gestor.png",
+    src: "/screenshots/inicio-gestor.webp",
   },
   {
     id: "leads",
@@ -31,7 +30,7 @@ const screenshots: Screenshot[] = [
     description: "Acompanhe cada oportunidade de negócio.",
     screenshotInstruction:
       "SCREENSHOT: Gestão de Leads com tabela e filtros",
-    src: "/screenshots/gestao-de-leads.png",
+    src: "/screenshots/gestao-de-leads.webp",
   },
   {
     id: "kanban",
@@ -39,7 +38,7 @@ const screenshots: Screenshot[] = [
     description: "Negócios organizados por etapa no Kanban drag-and-drop.",
     screenshotInstruction:
       "SCREENSHOT: Board Kanban de negócios",
-    src: "/screenshots/kanban.png",
+    src: "/screenshots/kanban.webp",
   },
   {
     id: "imoveis",
@@ -47,7 +46,7 @@ const screenshots: Screenshot[] = [
     description: "Cadastro completo com fotos, vídeos e localização.",
     screenshotInstruction:
       "SCREENSHOT: Catálogo de imóveis com galeria",
-    src: "/screenshots/imoveis.png",
+    src: "/screenshots/imoveis.webp",
   },
   {
     id: "propostas",
@@ -55,7 +54,7 @@ const screenshots: Screenshot[] = [
     description: "Propostas profissionais com a identidade da sua imobiliária, prontas em minutos.",
     screenshotInstruction:
       "SCREENSHOT: Proposta interativa",
-    src: "/screenshots/propostas.png",
+    src: "/screenshots/propostas.webp",
   },
   {
     id: "equipe",
@@ -63,7 +62,7 @@ const screenshots: Screenshot[] = [
     description: "Ranking de corretores, metas e monitoramento de atividades.",
     screenshotInstruction:
       "SCREENSHOT: Ranking de corretores e metas",
-    src: "/screenshots/metas.png",
+    src: "/screenshots/metas.webp",
   },
   {
     id: "financeiro",
@@ -71,7 +70,7 @@ const screenshots: Screenshot[] = [
     description: "Contas a pagar, receber e comissões automáticas.",
     screenshotInstruction:
       "SCREENSHOT: Módulo financeiro — lançamentos e fluxo de caixa (/financeiro/lancamentos)",
-    src: "/screenshots/financeiro.png",
+    src: "/screenshots/financeiro.webp",
   },
   {
     id: "dre",
@@ -79,7 +78,7 @@ const screenshots: Screenshot[] = [
     description: "Demonstrativo de resultados e análise financeira completa da imobiliária.",
     screenshotInstruction:
       "SCREENSHOT: Painel financeiro DRE com gráficos (/financeiro/painel)",
-    src: "/screenshots/fluxo-caixa.png",
+    src: "/screenshots/fluxo-caixa.webp",
   },
   {
     id: "portfolios",
@@ -87,7 +86,7 @@ const screenshots: Screenshot[] = [
     description: "Seleção personalizada de imóveis por cliente com comparador lado a lado.",
     screenshotInstruction:
       "SCREENSHOT: Portfólio interativo com imóveis selecionados (/portfolios)",
-    src: "/screenshots/portfolios.png",
+    src: "/screenshots/portfolios.webp",
   },
   {
     id: "forecast",
@@ -95,7 +94,7 @@ const screenshots: Screenshot[] = [
     description: "Previsão de vendas automática, sem planilha e sem BI manual.",
     screenshotInstruction:
       "SCREENSHOT: Forecast de receita com projeção mensal (/imobiliaria/forecast)",
-    src: "/screenshots/forecast.png",
+    src: "/screenshots/forecast.webp",
   },
   {
     id: "ia",
@@ -103,7 +102,7 @@ const screenshots: Screenshot[] = [
     description: "Chat com IA integrado para perguntar o que quiser sobre o negócio.",
     screenshotInstruction:
       "SCREENSHOT: Chat IA — deal chat ou financial chat",
-    src: "/screenshots/assitente-negocio.png",
+    src: "/screenshots/assitente-negocio.webp",
   },
   {
     id: "agenda",
@@ -111,7 +110,7 @@ const screenshots: Screenshot[] = [
     description: "Calendário integrado com Google Calendar, visitas e follow-ups.",
     screenshotInstruction:
       "SCREENSHOT: Calendário de agenda com compromissos (/agenda)",
-    src: "/screenshots/agenda.png",
+    src: "/screenshots/agenda.webp",
   },
   {
     id: "site",
@@ -119,7 +118,7 @@ const screenshots: Screenshot[] = [
     description: "Portal de imóveis próprio da imobiliária, integrado ao CRM.",
     screenshotInstruction:
       "SCREENSHOT: Configuração do site imobiliário (/website)",
-    src: "/screenshots/website.png",
+    src: "/screenshots/website.webp",
   },
   {
     id: "entrada-leads",
@@ -127,7 +126,7 @@ const screenshots: Screenshot[] = [
     description: "Captura automática de leads de portais, site e redes sociais direto no CRM.",
     screenshotInstruction:
       "SCREENSHOT: Tela de entrada de leads com fontes de captação",
-    src: "/screenshots/leads.png",
+    src: "/screenshots/leads.webp",
   },
   {
     id: "documentos",
@@ -135,7 +134,7 @@ const screenshots: Screenshot[] = [
     description: "Gestão de contratos, fichas cadastrais e documentos por negócio com assinatura digital.",
     screenshotInstruction:
       "SCREENSHOT: Módulo de documentos com contratos e anexos",
-    src: "/screenshots/documentos.png",
+    src: "/screenshots/documentos.webp",
   },
   {
     id: "contatos",
@@ -143,7 +142,7 @@ const screenshots: Screenshot[] = [
     description: "Base completa de clientes, proprietários e parceiros com histórico de interações.",
     screenshotInstruction:
       "SCREENSHOT: Lista de contatos com detalhes e histórico",
-    src: "/screenshots/contatos.png",
+    src: "/screenshots/contatos.webp",
   },
 ];
 
@@ -284,6 +283,11 @@ export default function ScreenshotShowcase() {
               const isCenter = offset === 0;
               const style = getCardStyle(offset);
 
+              /* Só os cards visíveis (e o próximo de cada lado, para a
+                 transição não pipocar) ficam montados. Com os 16 no DOM o
+                 navegador baixava as 16 screenshots de uma vez. */
+              if (Math.abs(offset) > 2) return null;
+
               return (
                 <div
                   key={s.id}
@@ -310,14 +314,13 @@ export default function ScreenshotShowcase() {
                       </div>
                     </div>
                     {/* Screenshot */}
-                    <div className="aspect-[16/9] relative overflow-hidden">
+                    <div className="aspect-[16/9] relative overflow-hidden bg-slate-100">
                       <Image
                         src={s.src || "/placeholder-screenshot.png"}
                         alt={s.label}
                         fill
-                        priority={i <= 2}
-                        quality={95}
-                        sizes="(min-width: 768px) 54vw, 100vw"
+                        quality={72}
+                        sizes={isCenter ? "(min-width: 768px) 54vw, 100vw" : "24vw"}
                         className="object-cover object-top"
                       />
                       {/* Hover overlay — only triggers on center card via group-hover */}
@@ -366,18 +369,20 @@ export default function ScreenshotShowcase() {
       </div>
 
       {/* Lightbox */}
-      <Lightbox
-        open={lightboxOpen}
-        close={() => setLightboxOpen(false)}
-        slides={lightboxSlides}
-        index={lightboxIndex}
-        controller={{ closeOnBackdropClick: true }}
-        on={{ view: ({ index: i }) => setLightboxIndex(i) }}
-        styles={{ container: { backgroundColor: "rgba(0, 0, 0, 0.85)" } }}
-        plugins={[Zoom, Thumbnails]}
-        animation={{ navigation: 500 }}
-        zoom={{ maxZoomPixelRatio: 5 }}
-      />
+      {lightboxOpen && (
+        <ImageLightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          slides={lightboxSlides}
+          index={lightboxIndex}
+          controller={{ closeOnBackdropClick: true }}
+          on={{ view: ({ index: i }) => setLightboxIndex(i) }}
+          styles={{ container: { backgroundColor: "rgba(0, 0, 0, 0.85)" } }}
+          withThumbnails
+          animation={{ navigation: 500 }}
+          zoom={{ maxZoomPixelRatio: 5 }}
+        />
+      )}
     </section>
   );
 }

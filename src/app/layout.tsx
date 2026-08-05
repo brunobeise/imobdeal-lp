@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import BusinessStructuredData from "@/components/BusinessStructuredData";
 import MicrosoftClarity from "@/components/MicrosoftClarity";
@@ -7,9 +8,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import "./globals.css";
-import "../assets/fonts/font.css";
 import WhatsAppButton from "@/components/WhatsappButton";
 import Providers from "@/components/Providers";
+
+/* Self-hosted pelo Next: sem ida ao fonts.googleapis.com, com preload e
+   swap. Antes vinha por @import dentro do CSS, o que criava uma cadeia
+   bloqueante (HTML → CSS → CSS do Google → woff2) antes do primeiro texto. */
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -98,12 +107,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={inter.variable}>
       <head>
-        {/* Meta Pixel Script */}
+        {/* Meta Pixel Script — lazyOnload: dispara depois do load, sem
+            competir com a renderização. O PageView continua sendo enviado. */}
         <Script
           id="facebook-pixel"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)

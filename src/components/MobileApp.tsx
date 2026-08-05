@@ -114,7 +114,7 @@ export default function MobileApp() {
           <div className="flex justify-center">
             <div className="w-full max-w-[300px]">
               <LightboxImage
-                src="/screenshots/app-mobile.png"
+                src="/screenshots/app-mobile.webp"
                 alt="Aplicativo do ImobDeal no celular: leads aguardando atendimento, tarefas atrasadas e funil de vendas por etapa"
                 aspect="1216 / 2207"
                 sizes="(min-width: 1024px) 300px, 70vw"

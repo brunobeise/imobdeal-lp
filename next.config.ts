@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
       },
     ],
     formats: ['image/webp', 'image/avif'],
+    // Sem isso o cache das imagens otimizadas expira em 60s e o Lighthouse
+    // acusa política de cache ineficiente a cada rodada.
+    minimumCacheTTL: 31536000,
   },
   experimental: {
     optimizePackageImports: ['react-icons'],
@@ -49,6 +52,16 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=86400, stale-while-revalidate=604800',
+          },
+        ],
+      },
+      {
+        // Screenshots do produto: conteúdo imutável, trocado por novo arquivo.
+        source: '/:dir(screenshots|dashboards|sites|clientes|portais|depoimentos)/:file*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

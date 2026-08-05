@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useState, useCallback, useEffect, useRef } from "react";
-import Lightbox from "yet-another-react-lightbox";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/styles.css";
+
+/* Só baixa o pacote do lightbox quando alguém clica para ampliar. */
+const ImageLightbox = dynamic(() => import("./ImageLightbox"), { ssr: false });
 
 interface SlideGroup {
   id: string;
@@ -20,21 +21,21 @@ const gestorSlides: SlideGroup[] = [
     label: "Relatório de Vendas",
     description:
       "Visão consolidada de vendas por período, corretor e tipo de negócio.",
-    images: ["/dashboards/vendas-1.png", "/dashboards/vendas-3.png"],
+    images: ["/dashboards/vendas-1.webp", "/dashboards/vendas-3.webp"],
   },
   {
     id: "analise-funil",
     label: "Análise de Funil",
     description:
       "Taxas de conversão por etapa do funil e gargalos identificados automaticamente.",
-    images: ["/dashboards/analise-funil-1.png", "/dashboards/analise-funil-2.png"],
+    images: ["/dashboards/analise-funil-1.webp", "/dashboards/analise-funil-2.webp"],
   },
   {
     id: "metas",
     label: "Metas & Ranking",
     description:
       "Acompanhe a performance da equipe com metas individuais e ranking.",
-    images: ["/dashboards/metas-1.png", "/dashboards/metas-2.png"],
+    images: ["/dashboards/metas-1.webp", "/dashboards/metas-2.webp"],
   },
   {
     id: "gestao-leads",
@@ -42,9 +43,9 @@ const gestorSlides: SlideGroup[] = [
     description:
       "Leads organizados por origem, status e distribuição automática.",
     images: [
-      "/dashboards/gestao-de-leads-1.png",
-      "/dashboards/gestao-de-leads-2.png",
-      "/dashboards/getsao-de-leads-3.png",
+      "/dashboards/gestao-de-leads-1.webp",
+      "/dashboards/gestao-de-leads-2.webp",
+      "/dashboards/getsao-de-leads-3.webp",
     ],
   },
   {
@@ -52,7 +53,7 @@ const gestorSlides: SlideGroup[] = [
     label: "Atividade da Equipe",
     description:
       "Monitoramento de tarefas, ligações e atividades dos corretores em tempo real.",
-    images: ["/dashboards/atividade-1.png", "/dashboards/atividade-2.png"],
+    images: ["/dashboards/atividade-1.webp", "/dashboards/atividade-2.webp"],
   },
   {
     id: "perdas",
@@ -60,9 +61,9 @@ const gestorSlides: SlideGroup[] = [
     description:
       "Identifique motivos de perda e ajuste a estratégia comercial com dados reais.",
     images: [
-      "/dashboards/perdas-1.png",
-      "/dashboards/perdas-2.png",
-      "/dashboards/perdas-4.png",
+      "/dashboards/perdas-1.webp",
+      "/dashboards/perdas-2.webp",
+      "/dashboards/perdas-4.webp",
     ],
   },
   {
@@ -70,14 +71,14 @@ const gestorSlides: SlideGroup[] = [
     label: "Relatório de Visitas",
     description:
       "Controle de visitas realizadas, agendadas e taxa de conversão pós-visita.",
-    images: ["/dashboards/visitas-1.png", "/dashboards/visitas-2.png"],
+    images: ["/dashboards/visitas-1.webp", "/dashboards/visitas-2.webp"],
   },
   {
     id: "pci",
     label: "Performance Comercial",
     description:
       "Indicadores individuais de cada corretor: volume, conversão e receita.",
-    images: ["/dashboards/pci-1.png", "/dashboards/pci-2.png"],
+    images: ["/dashboards/pci-1.webp", "/dashboards/pci-2.webp"],
   },
 ];
 
@@ -121,6 +122,12 @@ function getLightboxIndex(slides: SlideGroup[], groupIdx: number, subIdx: number
   let total = 0;
   for (let i = 0; i < groupIdx; i++) total += slides[i].images.length;
   return total + subIdx;
+}
+
+/** Distância circular no carrossel — define o que fica montado no DOM. */
+function isNear(i: number, active: number, len: number) {
+  const d = Math.abs(i - active);
+  return Math.min(d, len - d) <= 1;
 }
 
 function getGroupFromLightboxIndex(
@@ -330,7 +337,7 @@ export default function DashboardShowcase() {
                 {/* Imagem da planilha */}
                 <div className="aspect-[4/3] relative bg-white">
                   <Image
-                    src="/screenshots/planilha.png"
+                    src="/screenshots/planilha.webp"
                     alt="Planilha de controle de vendas, o método antigo"
                     fill
                     className="object-cover object-top"
@@ -425,10 +432,14 @@ export default function DashboardShowcase() {
                   </div>
                 </div>
 
-                {/* Slides — one per group, showing sub-active image */}
-                <div className="aspect-[16/9] relative bg-white overflow-hidden">
+                {/* Slides — one per group, showing sub-active image.
+                    Só o grupo ativo e os vizinhos imediatos são montados: com
+                    os 8 grupos no DOM o navegador dispara as 19 imagens de uma
+                    vez e a seção fica em branco no mobile até tudo chegar. */}
+                <div className="aspect-[16/9] relative bg-slate-100 overflow-hidden">
                   {slides.map((d, i) => {
                     const sub = subActive[i] ?? 0;
+                    if (!isNear(i, active, slides.length)) return null;
                     return (
                       <div
                         key={d.id}
@@ -439,32 +450,38 @@ export default function DashboardShowcase() {
                           pointerEvents: i === active ? "auto" : "none",
                         }}
                       >
-                        {/* Sub-images within the group */}
-                        {d.images.map((src, si) => (
-                          <div
-                            key={src}
-                            className="absolute inset-0 transition-opacity duration-400 ease-out"
-                            style={{
-                              opacity: si === sub ? 1 : 0,
-                              pointerEvents: si === sub ? "auto" : "none",
-                            }}
-                          >
-                            <Image
-                              src={src}
-                              alt={`${d.label} — ${si + 1} de ${d.images.length}`}
-                              fill
-                              priority={i === 0 && si === 0}
-                              quality={90}
-                              sizes="(min-width: 1024px) 56vw, 100vw"
-                              className="object-cover object-top cursor-pointer"
-                              onClick={() => {
-                                setLightboxIndex(getLightboxIndex(slides, i, si));
-                                setLightboxOpen(true);
-                                setIsAutoPlaying(false);
+                        {/* Sub-images within the group — no grupo ativo mantém a
+                            seguinte pré-carregada para o autoplay não piscar;
+                            nos vizinhos, só a primeira. */}
+                        {d.images.map((src, si) => {
+                          const keep =
+                            i === active ? si <= sub + 1 && si >= sub - 1 : si === 0;
+                          if (!keep) return null;
+                          return (
+                            <div
+                              key={src}
+                              className="absolute inset-0 transition-opacity duration-400 ease-out"
+                              style={{
+                                opacity: si === sub ? 1 : 0,
+                                pointerEvents: si === sub ? "auto" : "none",
                               }}
-                            />
-                          </div>
-                        ))}
+                            >
+                              <Image
+                                src={src}
+                                alt={`${d.label} — ${si + 1} de ${d.images.length}`}
+                                fill
+                                quality={72}
+                                sizes="(min-width: 1024px) 56vw, 100vw"
+                                className="object-cover object-top cursor-pointer"
+                                onClick={() => {
+                                  setLightboxIndex(getLightboxIndex(slides, i, si));
+                                  setLightboxOpen(true);
+                                  setIsAutoPlaying(false);
+                                }}
+                              />
+                            </div>
+                          );
+                        })}
                       </div>
                     );
                   })}
@@ -575,7 +592,8 @@ export default function DashboardShowcase() {
       </div>
 
       {/* Lightbox */}
-      <Lightbox
+      {lightboxOpen && (
+      <ImageLightbox
         open={lightboxOpen}
         close={() => setLightboxOpen(false)}
         slides={lightboxSlides}
@@ -594,10 +612,10 @@ export default function DashboardShowcase() {
           },
         }}
         styles={{ container: { backgroundColor: "rgba(0, 0, 0, 0.85)" } }}
-        plugins={[Zoom]}
         animation={{ navigation: 500 }}
         zoom={{ maxZoomPixelRatio: 5 }}
       />
+      )}
     </section>
   );
 }

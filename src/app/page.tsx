@@ -106,7 +106,7 @@ export default function Home() {
               Proporção casada com a resolução nativa do print (1912x914). */}
           <div className="mt-14 md:mt-16 max-w-5xl mx-auto">
             <LightboxImage
-              src="/screenshots/tarefas-equipe.png"
+              src="/screenshots/tarefas-equipe.webp"
               alt="Painel de tarefas da equipe no ImobDeal: tarefas em dia, atrasadas, corretores sem agenda e negócios estagnados"
               aspect="1912 / 914"
               sizes="(min-width: 1024px) 65vw, 100vw"

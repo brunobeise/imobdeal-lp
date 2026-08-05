@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useState } from "react";
-import Lightbox from "yet-another-react-lightbox";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/styles.css";
+
+/* Só baixa o pacote do lightbox quando alguém clica para ampliar. */
+const ImageLightbox = dynamic(() => import("./ImageLightbox"), { ssr: false });
 
 interface LightboxImageProps {
   src: string;
@@ -82,16 +83,17 @@ export default function LightboxImage({
         </div>
       </button>
 
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        slides={[{ src, alt }]}
-        controller={{ closeOnBackdropClick: true }}
-        styles={{ container: { backgroundColor: "rgba(0, 0, 0, 0.9)" } }}
-        plugins={[Zoom]}
-        zoom={{ maxZoomPixelRatio: 5 }}
-        render={{ buttonPrev: () => null, buttonNext: () => null }}
-      />
+      {open && (
+        <ImageLightbox
+          open={open}
+          close={() => setOpen(false)}
+          slides={[{ src, alt }]}
+          controller={{ closeOnBackdropClick: true }}
+          styles={{ container: { backgroundColor: "rgba(0, 0, 0, 0.9)" } }}
+          zoom={{ maxZoomPixelRatio: 5 }}
+          render={{ buttonPrev: () => null, buttonNext: () => null }}
+        />
+      )}
     </>
   );
 }

@@ -23,21 +23,21 @@ const pillars: Pillar[] = [
     title: "Dados Automáticos",
     description: "Corretores preenchem o CRM, você vê os dados. Sem Power BI manual. Dashboards em tempo real com KPIs, gráficos e métricas de performance.",
     screenshotAlt: "Dashboard do gestor com KPIs e gráficos de performance",
-    src: "/screenshots/gestao-de-leads.png",
+    src: "/screenshots/gestao-de-leads.webp",
   },
   {
     icon: <BsPeopleFill size={22} />,
     title: "Controle Total da Equipe",
     description: "Saiba o que cada corretor está fazendo. Acompanhe tarefas, metas, ranking de performance e produtividade de toda a equipe.",
     screenshotAlt: "Ranking de corretores e metas de performance",
-    src: "/screenshots/inicio-gestor.png",
+    src: "/screenshots/inicio-gestor.webp",
   },
   {
     icon: <MdTrendingUp size={22} />,
     title: "Funis e Previsão de Receita",
     description: "Pipeline visual Kanban com drag-and-drop. Forecast de vendas automático. Identifique gargalos antes que virem perdas.",
     screenshotAlt: "Board Kanban de negócios com funil de vendas",
-    src: "/screenshots/kanban.png",
+    src: "/screenshots/kanban.webp",
   },
 ];
 

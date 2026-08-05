@@ -49,7 +49,7 @@ export default function TvMode() {
         {/* Painel real */}
         <div className="mt-12">
           <LightboxImage
-            src="/screenshots/central-live.png"
+            src="/screenshots/central-live.webp"
             alt="Central Operacional do ImobDeal em modo Live: pipeline ao vivo por etapa, meta de VGV do mês, conversão entre etapas e últimas vendas realizadas"
             aspect="1912 / 914"
             sizes="(min-width: 1024px) 90vw, 100vw"

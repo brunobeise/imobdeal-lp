@@ -234,7 +234,7 @@ export default function LeadRoulette() {
         {/* Print da tela de leads + capacidades, dividindo o espaço */}
         <div className="mt-16 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <LightboxImage
-            src="/screenshots/leads-roleta.png"
+            src="/screenshots/leads-roleta.webp"
             alt="Tela de leads do ImobDeal: origem, canal de atração, corretor da vez, status do negócio e configuração das roletas"
             aspect="1912 / 965"
             sizes="(min-width: 1024px) 45vw, 100vw"
