@@ -133,14 +133,17 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) — lazyOnload pelo mesmo motivo do Pixel: em
+            afterInteractive o gtag sozinho custava ~780ms de main thread e
+            entrava direto no TBT. Depois do load, o config e as conversões
+            seguem funcionando. */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18077235039"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-gtag"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -153,7 +156,7 @@ export default function RootLayout({
         {/* Google Tag Manager */}
         <Script
           id="google-tag-manager"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

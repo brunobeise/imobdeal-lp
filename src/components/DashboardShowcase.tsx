@@ -501,7 +501,7 @@ export default function DashboardShowcase() {
 
                   {/* Sub-image indicators (inside the slide, bottom-right) */}
                   {currentGroup.images.length > 1 && (
-                    <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm rounded-full px-2.5 py-1.5">
+                    <div className="absolute bottom-3 right-3 z-10 flex items-center bg-black/50 backdrop-blur-sm rounded-full px-1.5 py-0">
                       {currentGroup.images.map((_, si) => (
                         <button
                           key={si}
@@ -509,15 +509,19 @@ export default function DashboardShowcase() {
                             e.stopPropagation();
                             setSubForActive(si);
                           }}
-                          className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                            si === currentSub
-                              ? "bg-white w-4"
-                              : "bg-white/40 hover:bg-white/60 w-1.5"
-                          }`}
+                          className="group/dot grid place-items-center h-6 min-w-6 px-1 cursor-pointer"
                           aria-label={`Imagem ${si + 1} de ${currentGroup.images.length}`}
-                        />
+                        >
+                          <span
+                            className={`block h-1.5 rounded-full transition-all duration-300 ${
+                              si === currentSub
+                                ? "bg-white w-4"
+                                : "bg-white/40 group-hover/dot:bg-white/60 w-1.5"
+                            }`}
+                          />
+                        </button>
                       ))}
-                      <span className="text-[10px] text-white/70 ml-1 font-medium">
+                      <span className="text-[10px] text-white/70 ml-1 mr-1 font-medium">
                         {currentSub + 1}/{currentGroup.images.length}
                       </span>
                     </div>
@@ -559,18 +563,23 @@ export default function DashboardShowcase() {
               </div>
 
               {/* Dot indicators */}
-              <div className="flex justify-center lg:justify-start gap-2 mt-4">
+              {/* Alvo de 24px por botão (WCAG 2.5.8); o ponto visível é o span. */}
+              <div className="flex justify-center lg:justify-start gap-0 mt-4">
                 {slides.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => goTo(i)}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      i === active
-                        ? "bg-primary w-6"
-                        : "bg-gray-300 hover:bg-gray-400 w-2"
-                    }`}
+                    className="group grid place-items-center h-6 min-w-6 px-1 cursor-pointer"
                     aria-label={`Ir para ${slides[i].label}`}
-                  />
+                  >
+                    <span
+                      className={`block h-2 rounded-full transition-all duration-300 ${
+                        i === active
+                          ? "bg-primary w-6"
+                          : "bg-gray-300 group-hover:bg-gray-400 w-2"
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
             </div>

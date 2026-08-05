@@ -351,18 +351,24 @@ export default function ScreenshotShowcase() {
           </div>
 
           {/* Dot indicators */}
-          <div className="flex justify-center gap-2.5 mt-7">
+          {/* O alvo clicável é o botão de 24px (mínimo do WCAG 2.5.8); o ponto
+              em si continua sendo o span, com o tamanho visual de antes. */}
+          <div className="flex justify-center gap-0.5 mt-7">
             {screenshots.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  i === active
-                    ? "bg-primary w-8"
-                    : "bg-gray-300 hover:bg-gray-400 w-2.5"
-                }`}
+                className="group grid place-items-center h-6 min-w-6 px-1 cursor-pointer"
                 aria-label={`Ir para ${screenshots[i].label}`}
-              />
+              >
+                <span
+                  className={`block h-2.5 rounded-full transition-all duration-300 ${
+                    i === active
+                      ? "bg-primary w-8"
+                      : "bg-gray-300 group-hover:bg-gray-400 w-2.5"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

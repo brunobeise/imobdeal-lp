@@ -124,7 +124,10 @@ function SiteCard({ item }: { item: ClientSite }) {
       href={item.site}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`Visitar o site da ${item.name}`}
+      /* Sem aria-label: ele substituía o nome acessível pelo texto "Visitar o
+         site da X", que não continha o texto visível do card (a região). O
+         nome computado do conteúdo — alt do logo + região + "Visitar" — já
+         descreve melhor e casa com o que se vê. */
       className="group relative block aspect-[4/3] rounded-xl overflow-hidden border border-gray-200 shadow-sm transition-shadow hover:shadow-xl hover:shadow-primary/10"
     >
       <Image

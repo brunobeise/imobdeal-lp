@@ -11,8 +11,21 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { open: openLeadModal } = useLeadModal();
 
+  /* A leitura de window.scrollY vai para dentro de um rAF: o handler troca as
+     classes do header (py-3/py-5), o que invalida o layout, e ler a posição de
+     scroll logo em seguida forçaria o navegador a recalcular tudo no meio do
+     evento — o forced reflow. Dentro do rAF a leitura acontece com o layout já
+     resolvido, e o ticking evita enfileirar um frame por evento de scroll. */
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 20);
+        ticking = false;
+      });
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

@@ -65,6 +65,10 @@ export default function LightboxImage({
               alt={alt}
               fill
               priority={priority}
+              /* O next/image desta versão não deriva fetchPriority de priority:
+                 sem isto o <link rel=preload> e o <img> saem sem
+                 fetchpriority="high" e o LCP disputa banda com os scripts. */
+              fetchPriority={priority ? "high" : undefined}
               sizes={sizes}
               className={bare ? "object-contain" : `object-cover ${objectPosition}`}
             />

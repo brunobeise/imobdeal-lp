@@ -24,7 +24,7 @@ export default function Footer() {
 
           {/* Produto */}
           <div>
-            <h4 className="font-semibold text-white/90 mb-4 text-sm uppercase tracking-wider">Produto</h4>
+            <h2 className="font-semibold text-white/90 mb-4 text-sm uppercase tracking-wider">Produto</h2>
             <ul className="space-y-3">
               <li><Link href="/como-funciona" className="text-white/50 hover:text-white text-sm transition-colors">Links Inteligentes</Link></li>
               <li><Link href="/precos" className="text-white/50 hover:text-white text-sm transition-colors">Preços</Link></li>
@@ -33,7 +33,7 @@ export default function Footer() {
 
           {/* Suporte */}
           <div>
-            <h4 className="font-semibold text-white/90 mb-4 text-sm uppercase tracking-wider">Suporte</h4>
+            <h2 className="font-semibold text-white/90 mb-4 text-sm uppercase tracking-wider">Suporte</h2>
             <ul className="space-y-3">
               <li>
                 <Link href="https://wa.me/5551995529578?text=Olá! Tenho dúvidas sobre o ImobDeal." target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white text-sm transition-colors">
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Empresa */}
           <div>
-            <h4 className="font-semibold text-white/90 mb-4 text-sm uppercase tracking-wider">Empresa</h4>
+            <h2 className="font-semibold text-white/90 mb-4 text-sm uppercase tracking-wider">Empresa</h2>
             <ul className="space-y-3">
               <li><Link href="/sobre" className="text-white/50 hover:text-white text-sm transition-colors">Sobre Nós</Link></li>
               <li><Link href="/politica-privacidade" className="text-white/50 hover:text-white text-sm transition-colors">Política de Privacidade</Link></li>
