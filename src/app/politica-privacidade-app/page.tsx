@@ -207,8 +207,8 @@ export default function PoliticaPrivacidadeApp() {
                     </h3>
                     <ul className="list-disc pl-6 text-gray-700 space-y-1">
                       <li>
-                        <strong>Não coletamos sua localização (GPS) em momento algum</strong>{" "}
-                        — nem em primeiro plano (com o app aberto), nem em segundo
+                        <strong>Não coletamos sua localização (GPS) em momento algum</strong>
+                        , nem em primeiro plano (com o app aberto), nem em segundo
                         plano. O aplicativo não solicita a permissão de localização
                         do sistema operacional
                       </li>

@@ -199,7 +199,7 @@ export default function WebsiteShowcase() {
           <p className="text-gray-500 text-base md:text-lg mt-5 leading-relaxed text-pretty">
             Quando o site vem incluso no plano, ele é um template. O mesmo
             layout usado por centenas de imobiliárias, com a logo trocada e a
-            cor ajustada — e o visitante não distingue a sua marca da do
+            cor ajustada. O visitante não distingue a sua marca da do
             concorrente ao lado.
           </p>
         </div>

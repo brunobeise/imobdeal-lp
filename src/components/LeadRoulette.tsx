@@ -41,7 +41,7 @@ const capabilities = [
     icon: <MdHistory size={20} />,
     title: "Origem registrada",
     description:
-      "Cada lead guarda de onde veio — portal, campanha no Meta, site. No fim do mês você sabe qual canal realmente dá retorno.",
+      "Cada lead guarda de onde veio: portal, campanha no Meta, site. No fim do mês você sabe qual canal realmente dá retorno.",
   },
 ];
 
@@ -51,16 +51,21 @@ export default function LeadRoulette() {
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         {/* Header */}
         <div className="max-w-3xl">
+          <p className="text-sm font-semibold text-accent-amber uppercase tracking-wider mb-3">
+            Roleta de leads nativa
+          </p>
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 tracking-tight leading-[1.15] text-balance">
-            Você não precisa mais
-            <span className="block text-primary">assinar o C2S.</span>
+            O ImobDeal tem roleta de leads.
+            <span className="block text-primary">
+              Você não precisa mais assinar o C2S.
+            </span>
           </h2>
           <p className="text-gray-500 text-base md:text-lg mt-5 leading-relaxed text-pretty">
-            A maioria das imobiliárias paga uma assinatura à parte, quase
-            sempre o C2S, só para receber os leads dos portais e das campanhas e
-            rodiziar entre a equipe. No ImobDeal a roleta é nativa: recebe,
-            distribui e registra a origem dentro do próprio CRM, já incluída no
-            plano. É um sistema a menos na sua conta todo mês.
+            O ImobDeal recebe os leads dos portais e das campanhas, distribui
+            entre os corretores pela regra que você definir e registra a origem
+            de cada um, tudo dentro do próprio CRM. A maioria das imobiliárias
+            paga uma assinatura à parte, quase sempre o C2S, só para fazer isso.
+            Aqui a roleta já vem incluída no plano.
           </p>
         </div>
 
@@ -121,8 +126,8 @@ export default function LeadRoulette() {
               {[
                 { step: "Portal ou campanha no Meta", note: "o lead chega" },
                 {
-                  step: "ImobDeal",
-                  note: "recebe, rodizia e registra de forma nativa",
+                  step: "Roleta do ImobDeal",
+                  note: "recebe, distribui e registra a origem, dentro do CRM",
                   highlight: true,
                 },
                 { step: "Corretor da vez", note: "já com o negócio criado" },
@@ -158,12 +163,12 @@ export default function LeadRoulette() {
 
             <div className="mt-8 rounded-xl bg-primary/5 border border-primary/10 p-4">
               <p className="text-sm text-primary font-semibold">
-                Uma assinatura a menos.
+                A roleta já vem no plano.
               </p>
               <p className="text-xs text-gray-500 mt-1 leading-relaxed">
-                Ao migrar, a imobiliária cancela o C2S: a roleta já está
-                incluída no plano do ImobDeal, junto com o CRM que a equipe usa
-                todo dia.
+                Ao migrar, a imobiliária cancela o C2S: receber e distribuir
+                lead faz parte do ImobDeal, junto com o CRM que a equipe usa
+                todo dia. É uma assinatura a menos na conta todo mês.
               </p>
             </div>
           </div>
@@ -185,11 +190,10 @@ export default function LeadRoulette() {
                 O lead da sua campanha no Facebook e Instagram cai direto no CRM.
               </h3>
               <p className="text-white/60 text-sm md:text-base mt-4 leading-relaxed">
-                Conecte a conta da imobiliária uma vez e todo formulário
-                preenchido na campanha entra no ImobDeal em segundos — já
-                distribuído pela roleta e com a origem registrada. Sem exportar
-                planilha do Gerenciador, sem ferramenta de automação no meio,
-                sem ninguém digitando lead na mão.
+                Conecte a conta uma vez e todo formulário preenchido na campanha
+                entra no ImobDeal em segundos, já distribuído pela roleta e com
+                a origem registrada. Sem planilha, sem automação no meio, sem
+                ninguém digitando lead na mão.
               </p>
             </div>
 
@@ -241,18 +245,23 @@ export default function LeadRoulette() {
             objectPosition="object-top"
           />
 
-          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-8">
-            {capabilities.map((cap, i) => (
-              <div key={i}>
-                <span className="text-primary">{cap.icon}</span>
-                <p className="text-gray-900 font-bold text-sm mt-2.5">
-                  {cap.title}
-                </p>
-                <p className="text-gray-600 text-sm mt-1.5 leading-relaxed">
-                  {cap.description}
-                </p>
-              </div>
-            ))}
+          <div>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight mb-8">
+              O que a roleta do ImobDeal faz
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-8">
+              {capabilities.map((cap, i) => (
+                <div key={i}>
+                  <span className="text-primary">{cap.icon}</span>
+                  <p className="text-gray-900 font-bold text-sm mt-2.5">
+                    {cap.title}
+                  </p>
+                  <p className="text-gray-600 text-sm mt-1.5 leading-relaxed">
+                    {cap.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

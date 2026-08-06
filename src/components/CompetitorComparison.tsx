@@ -18,7 +18,7 @@ const rows: ComparisonRow[] = [
     imobdeal: true,
     crmGenerico: false,
     planilha: false,
-    emphasis: "Sem preencher planilha — os dados vêm direto do CRM.",
+    emphasis: "Sem preencher planilha. Os dados vêm direto do CRM.",
   },
   {
     feature: "Forecast de vendas automático",
@@ -126,7 +126,7 @@ export default function CompetitorComparison() {
             Por que o ImobDeal?
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
-            Compare com o que você usa hoje — seja planilha, WhatsApp ou outro CRM.
+            Compare com o que você usa hoje: planilha, WhatsApp ou outro CRM.
           </p>
         </div>
 
@@ -195,7 +195,7 @@ export default function CompetitorComparison() {
             </span>
           </p>
           <p className="text-xs text-gray-500 mt-1">
-            O ImobDeal centraliza tudo em um só lugar — com dashboards, forecast e relatórios automáticos.
+            O ImobDeal centraliza tudo em um só lugar, com dashboards, forecast e relatórios automáticos.
           </p>
         </div>
       </div>

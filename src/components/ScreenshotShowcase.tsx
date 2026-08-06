@@ -226,7 +226,10 @@ export default function ScreenshotShowcase() {
   }, []);
 
   return (
-    <section className="bg-[#f5f6fa] py-20 md:py-28 overflow-hidden">
+    <section
+      id="funcionalidades"
+      className="bg-[#f5f6fa] py-20 md:py-28 overflow-hidden scroll-mt-20"
+    >
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* ── Header ──────────────────────────────────────────────── */}
         <div className="text-center mb-16">

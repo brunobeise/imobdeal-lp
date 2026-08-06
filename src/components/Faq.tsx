@@ -48,7 +48,7 @@ const faqs: QA[] = [
     a: "É a objeção mais comum e por isso a implantação inclui treinamento da equipe. O corretor trabalha principalmente pelo aplicativo, que é nativo para iOS e Android, e recebe o lead com aviso na hora em que ele entra. O gestor acompanha pelo painel quem respondeu e quem deixou esfriar, o que faz a adoção acontecer na prática e não só no papel.",
   },
   {
-    q: "O ImobDeal serve para imobiliária de que tamanho?",
+    q: "O ImobDeal serve para imobiliária de qual tamanho?",
     a: "O sistema foi desenhado para imobiliárias com equipe de corretores, onde o gestor precisa distribuir leads, acompanhar o funil e cobrar meta. Funciona tanto para operações pequenas, de poucos corretores, quanto para times maiores com várias equipes e regras de distribuição diferentes por equipe.",
   },
   {

@@ -85,8 +85,8 @@ const gestorSlides: SlideGroup[] = [
 /* ── Header copy ──────────────────────────────────────────────────── */
 const headerContent = {
   badge: "Por que o ImobDeal existe",
-  headline: "A maioria dos CRMs guarda dado.",
-  headlineAccent: "O ImobDeal te entrega o número.",
+  headline: "A maioria dos CRMs guarda dados.",
+  headlineAccent: "O ImobDeal entrega os números.",
   sub: "Guardar informação é fácil. Difícil é ela virar decisão antes do fim do mês.",
   leftLabel: "Horas preenchendo planilha",
   leftSub: "Dados desatualizados, erros manuais, zero automação.",
@@ -98,18 +98,18 @@ const headerContent = {
 const story = [
   {
     tag: "O problema",
-    title: "Alguém tinha que montar o número",
-    text: "Exportar o CRM, jogar em planilha, fazer gráfico na mão. Quando ficava pronto, já era passado.",
+    title: "O número era montado na mão",
+    text: "Exportar o CRM, consolidar em planilhas, montar gráficos manualmente. Quando o relatório ficava pronto, já não refletia a realidade.",
   },
   {
     tag: "A decisão",
-    title: "Começar pelo número, não pelo cadastro",
-    text: "Especialistas do mercado imobiliário desenharam o CRM a partir do relatório que o gestor precisa ver — e não o contrário.",
+    title: "Partir do indicador, não do cadastro",
+    text: "Especialistas do mercado imobiliário desenharam o CRM a partir dos relatórios que o gestor precisa acompanhar, e não o contrário.",
   },
   {
     tag: "Hoje",
-    title: "O dashboard se monta sozinho",
-    text: "A equipe usa o CRM no dia a dia. Dashboards e forecast se atualizam sozinhos, sem BI paralelo.",
+    title: "O dashboard se atualiza sozinho",
+    text: "A equipe usa o CRM no dia a dia. Dashboards e projeções se atualizam automaticamente, sem precisar de um BI paralelo.",
   },
 ];
 
@@ -253,7 +253,7 @@ export default function DashboardShowcase() {
             {header.headline}
             <span className="block text-primary">{header.headlineAccent}</span>
           </h2>
-          <p className="text-gray-500 text-base md:text-lg mt-5 max-w-xl mx-auto leading-relaxed text-pretty">
+          <p className="text-gray-500 text-base md:text-lg mt-5 max-w-2xl mx-auto leading-relaxed text-balance">
             {header.sub}
           </p>
         </div>
@@ -468,7 +468,7 @@ export default function DashboardShowcase() {
                             >
                               <Image
                                 src={src}
-                                alt={`${d.label} — ${si + 1} de ${d.images.length}`}
+                                alt={`${d.label}: ${si + 1} de ${d.images.length}`}
                                 fill
                                 quality={72}
                                 sizes="(min-width: 1024px) 56vw, 100vw"

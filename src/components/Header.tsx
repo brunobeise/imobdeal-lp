@@ -31,7 +31,7 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: "Funcionalidades", href: "#funcionalidades" },
+    { label: "Funcionalidades", href: "/#funcionalidades" },
     { label: "Preços", href: "/precos" },
     { label: "Sobre", href: "/sobre" },
   ];

@@ -23,11 +23,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default:
-      "ImobDeal — CRM Imobiliário Completo para Quem Quer Resultado",
-    template: "%s | ImobDeal — CRM Imobiliário",
+      "ImobDeal | CRM Imobiliário Completo para Quem Quer Resultado",
+    template: "%s | ImobDeal CRM Imobiliário",
   },
   description:
-    "O CRM imobiliário completo para gestores e corretores que querem resultado. Roleta de leads, dashboards automáticos, funis de venda, IA integrada e gestão de equipe — tudo em um só lugar.",
+    "O CRM imobiliário completo para gestores e corretores que querem resultado. Roleta de leads, dashboards automáticos, funis de venda, IA integrada e gestão de equipe, tudo em um só lugar.",
   keywords: [
     "CRM imobiliário",
     "software imobiliário",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "ImobDeal — CRM Imobiliário Completo para Quem Quer Resultado",
+      "ImobDeal | CRM Imobiliário Completo para Quem Quer Resultado",
     description:
       "O CRM imobiliário completo. Roleta de leads nativa, funis de venda, dados automáticos, IA integrada e gestão de equipe. Fale com um especialista.",
     url: "https://imobdeal.com.br",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "ImobDeal — CRM Imobiliário Completo",
+        alt: "ImobDeal: CRM Imobiliário Completo",
       },
     ],
     locale: "pt_BR",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ImobDeal — CRM Imobiliário Completo",
+    title: "ImobDeal | CRM Imobiliário Completo",
     description:
       "Roleta de leads nativa, funis de venda, dados automáticos, IA integrada e gestão de equipe. Fale com um especialista.",
     images: ["https://imobdeal.com.br/og-image.jpg"],

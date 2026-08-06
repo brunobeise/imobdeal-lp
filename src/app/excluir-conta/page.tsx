@@ -53,7 +53,7 @@ export default function ExcluirContaPage() {
                 </li>
                 <li>
                   Mantemos retidos apenas os dados exigidos por obrigação legal
-                  (notas fiscais por 5 anos, logs de acesso por 6 meses) — vide
+                  (notas fiscais por 5 anos, logs de acesso por 6 meses). Vide
                   seção 8 da{" "}
                   <a
                     href="/politica-privacidade-app"

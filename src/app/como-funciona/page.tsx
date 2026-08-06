@@ -14,7 +14,7 @@ export default function ComoFunciona() {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/70 mt-6 max-w-2xl mx-auto leading-relaxed">
-            Envie propostas, portfólios e análises por links rastreáveis. Saiba em tempo real quem abriu, o que olhou e por quanto tempo — e faça o follow-up na hora certa.
+            Envie propostas, portfólios e análises por links rastreáveis. Saiba em tempo real quem abriu, o que olhou e por quanto tempo, e faça o follow-up na hora certa.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -71,7 +71,7 @@ export default function ComoFunciona() {
               <span className="text-primary">É uma ferramenta de vendas.</span>
             </h2>
             <p className="mt-4 text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
-              Links Inteligentes do ImobDeal são URLs únicas que carregam propostas, portfólios ou análises de investimento — e rastreiam cada interação do cliente automaticamente.
+              Links Inteligentes do ImobDeal são URLs únicas que carregam propostas, portfólios ou análises de investimento e rastreiam cada interação do cliente automaticamente.
             </p>
           </div>
 
@@ -146,7 +146,7 @@ export default function ComoFunciona() {
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Crie o conteúdo e gere o link</h3>
                 <p className="text-gray-500 text-lg leading-relaxed max-w-xl">
-                  Monte sua proposta comercial, portfólio de imóveis ou análise de investimento na plataforma. Em poucos cliques, o ImobDeal gera um link exclusivo e rastreável — pronto para enviar por WhatsApp, e-mail ou qualquer canal.
+                  Monte sua proposta comercial, portfólio de imóveis ou análise de investimento na plataforma. Em poucos cliques, o ImobDeal gera um link exclusivo e rastreável, pronto para enviar por WhatsApp, e-mail ou qualquer canal.
                 </p>
                 <div className="mt-5 inline-flex items-center gap-2 bg-primary/5 rounded-xl px-4 py-2.5 text-sm">
                   <span className="text-primary font-mono font-medium">app.imobdeal.com.br/p/</span>
@@ -166,7 +166,7 @@ export default function ComoFunciona() {
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">O cliente abre e navega</h3>
                 <p className="text-gray-500 text-lg leading-relaxed max-w-xl">
-                  Seu cliente clica no link e visualiza um conteúdo profissional e interativo — sem precisar baixar nada. Nos bastidores, o ImobDeal registra cada ação: quando abriu, quanto tempo ficou, quais imóveis ou condições mais chamaram atenção.
+                  Seu cliente clica no link e visualiza um conteúdo profissional e interativo, sem precisar baixar nada. Nos bastidores, o ImobDeal registra cada ação: quando abriu, quanto tempo ficou, quais imóveis ou condições mais chamaram atenção.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 rounded-lg px-3 py-1.5 text-sm font-medium">
@@ -195,7 +195,7 @@ export default function ComoFunciona() {
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Você recebe o alerta e age</h3>
                 <p className="text-gray-500 text-lg leading-relaxed max-w-xl">
-                  No momento em que o cliente abre o link, o acesso aparece no seu painel com o nome dele e qual conteúdo foi acessado. Você faz o follow-up na hora certa, com contexto — quando o interesse está no pico.
+                  No momento em que o cliente abre o link, o acesso aparece no seu painel com o nome dele e qual conteúdo foi acessado. Você faz o follow-up na hora certa, com contexto, quando o interesse está no pico.
                 </p>
                 <div className="mt-5 bg-gray-50 rounded-2xl p-5 max-w-sm border border-gray-100">
                   <div className="flex items-center gap-3 mb-3">
@@ -248,7 +248,7 @@ export default function ComoFunciona() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Link de Proposta</h3>
                 <p className="text-gray-500 leading-relaxed mb-5">
-                  Proposta comercial completa com fotos, condições de pagamento, simulação financeira e dados do imóvel — tudo interativo e profissional.
+                  Proposta comercial completa com fotos, condições de pagamento, simulação financeira e dados do imóvel, tudo interativo e profissional.
                 </p>
                 <ul className="space-y-2.5">
                   <li className="flex items-center gap-2 text-sm text-gray-600">
@@ -287,7 +287,7 @@ export default function ComoFunciona() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Link de Portfólio</h3>
                 <p className="text-gray-500 leading-relaxed mb-5">
-                  Vários imóveis em um único link. Ideal para mostrar opções ao cliente e descobrir qual despertou mais interesse — pelo tempo de visualização.
+                  Vários imóveis em um único link. Ideal para mostrar opções ao cliente e descobrir qual despertou mais interesse pelo tempo de visualização.
                 </p>
                 <ul className="space-y-2.5">
                   <li className="flex items-center gap-2 text-sm text-gray-600">
@@ -324,7 +324,7 @@ export default function ComoFunciona() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Link de Imóvel</h3>
                 <p className="text-gray-500 leading-relaxed mb-5">
-                  Uma landing page exclusiva para cada imóvel. Compartilhe nas redes, anúncios ou diretamente com o cliente — com tracking de quem acessou.
+                  Uma landing page exclusiva para cada imóvel. Compartilhe nas redes, anúncios ou diretamente com o cliente, com tracking de quem acessou.
                 </p>
                 <ul className="space-y-2.5">
                   <li className="flex items-center gap-2 text-sm text-gray-600">
@@ -360,7 +360,7 @@ export default function ComoFunciona() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Link de Viabilidade</h3>
                 <p className="text-gray-500 leading-relaxed mb-5">
-                  Análise de investimento com projeção de rentabilidade, retorno e valorização — profissional e interativa, feita para converter investidores.
+                  Análise de investimento com projeção de rentabilidade, retorno e valorização. Profissional e interativa, feita para converter investidores.
                 </p>
                 <ul className="space-y-2.5">
                   <li className="flex items-center gap-2 text-sm text-gray-600">
@@ -490,7 +490,7 @@ export default function ComoFunciona() {
             Pare de vender no escuro.
           </h2>
           <p className="text-white/60 text-lg mt-5 max-w-xl mx-auto">
-            Comece a enviar Links Inteligentes hoje. Saiba quem abre, o que olha e quando agir — tudo em tempo real.
+            Comece a enviar Links Inteligentes hoje. Saiba quem abre, o que olha e quando agir, tudo em tempo real.
           </p>
           <div className="mt-10">
             <CtaButton
