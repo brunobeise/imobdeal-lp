@@ -16,7 +16,7 @@ export default function WhatsAppButton({
   const handleClick = () => {
     trackClicouWhatsApp("botao_inline");
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/5551995529578?text=${encodedMessage}`, "_blank");
+    window.open(`https://wa.me/5551997306897?text=${encodedMessage}`, "_blank");
   };
 
   return (

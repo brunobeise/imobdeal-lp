@@ -203,7 +203,7 @@ export default function LeadCaptureModal() {
             </p>
 
             <a
-              href={`https://wa.me/5551995529578?text=${encodeURIComponent(
+              href={`https://wa.me/5551997306897?text=${encodeURIComponent(
                 `Olá! Sou ${name.trim()} e acabei de pedir contato pelo site do ImobDeal.`
               )}`}
               target="_blank"

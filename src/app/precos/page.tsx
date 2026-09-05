@@ -98,7 +98,7 @@ export default function Precos() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/5551995529578"
+              href="https://wa.me/5551997306897"
               className="inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors"
             >
               <MdHeadsetMic size={18} />
