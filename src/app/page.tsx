@@ -15,6 +15,7 @@ import DashboardShowcase from "@/components/DashboardShowcase";
 import LeadRoulette from "@/components/LeadRoulette";
 import MobileApp from "@/components/MobileApp";
 import PortalIntegrations from "@/components/PortalIntegrations";
+import AiAssistants from "@/components/AiAssistants";
 
 /* ---------------------------------------------------------------------------
  * Público único: dono/gestor de imobiliária.
@@ -133,6 +134,9 @@ export default function Home() {
 
       {/* ── APP MOBILE ───────────────────────────────────────────────── */}
       <MobileApp />
+
+      {/* ── IA VIA MCP — o CRM conversa com Claude, ChatGPT e Gemini ──── */}
+      <AiAssistants />
 
       {/* ── PORTAIS — por onde o lead entra, logo antes da roleta ────── */}
       <PortalIntegrations />
