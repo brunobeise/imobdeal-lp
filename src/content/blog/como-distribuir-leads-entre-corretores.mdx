@@ -1,0 +1,176 @@
+export const metadata = {
+  title: "Sua roleta de leads não precisa ser justa. Precisa vender.",
+  description:
+    "Fila, sorteio ponderado, plantão ou bolsão: os modos de roleta de leads e o que eu vi funcionar (e não funcionar) em cada um, programando a roleta do ImobDeal.",
+  date: "2026-10-15",
+  author: "bruno",
+  tags: ["roleta de leads", "gestão de leads", "gestão comercial"],
+  draft: true,
+  faq: [
+    {
+      pergunta: "Qual é a melhor forma de distribuir leads entre corretores?",
+      resposta:
+        "Pelo que eu acompanhei, não existe uma forma melhor para todas as imobiliárias. A fila é a mais igualitária, o sorteio ponderado favorece quem converte mais, o plantão dá controle de horário e o bolsão reduz a espera do cliente. Cada operação acaba encontrando a que combina com o tamanho da equipe e com a cultura dos corretores.",
+    },
+    {
+      pergunta: "Quanto tempo o corretor deve ter para aceitar um lead?",
+      resposta:
+        "Não existe um número exato. Na minha experiência, entre 5 e 10 minutos foi o que funcionou melhor. Com 1 ou 2 minutos eu vi as equipes ficarem ansiosas, perdendo lead por uma queda de internet. Acima de 10, o cliente espera demais justamente no momento em que está mais propenso a responder.",
+    },
+    {
+      pergunta: "O que é sorteio ponderado na roleta de leads?",
+      resposta:
+        "É um sorteio em que cada corretor tem um peso. A cada lead que chega, o sistema sorteia quem recebe, e quem tem peso maior tem mais chance. Na soma de muitos leads, os corretores com mais peso recebem mais, sem que o gestor precise escolher lead por lead.",
+    },
+    {
+      pergunta: "Distribuir leads pelo grupo de WhatsApp funciona?",
+      resposta:
+        "Foi a forma que eu vi gerar mais problemas. O telefone do cliente fica exposto para a equipe inteira e a distribuição depende de uma pessoa repassar cada lead na mão, o que costuma atrasar a resposta.",
+    },
+  ],
+};
+
+Toda imobiliária que começa a anunciar com seriedade esbarra no mesmo problema. As campanhas ficam centralizadas numa conta só, os leads chegam por Facebook, Instagram, portais e site, e alguém precisa decidir **qual corretor atende cada um**.
+
+As próprias plataformas não resolvem isso. O Facebook, por exemplo, funciona bem quando a campanha é de uma pessoa só: o lead chega para quem anunciou e pronto. Mas uma imobiliária com dez, vinte corretores, todos atendendo leads da mesma conta, precisa de alguma coisa no meio do caminho. E a notificação do próprio Facebook nem sempre chega como deveria.
+
+Antes de seguir, preciso ser honesto sobre quem está escrevendo. **Eu não sou corretor nem gestor de imobiliária. Sou desenvolvedor de software.** Fui eu que programei a roleta de leads do ImobDeal, e muitos dos modos e regras que existem nela foram pedidos por imobiliárias com operações bem diferentes umas das outras.
+
+Programar isso me colocou num lugar curioso: depois que cada roleta entrava no ar, eu acompanhava de perto o que acontecia. O que funcionou, o que deu errado, o que precisou ser ajustado. Não escrevo como especialista do mercado imobiliário. Quem conhece a rotina da sua imobiliária é você. Escrevo como alguém que viu várias operações tentando resolver o mesmo problema de jeitos diferentes.
+
+E a primeira coisa que eu aprendi foi que **não existe uma forma certa de distribuir leads**. Vi a fila funcionar bem numa imobiliária e travar a equipe em outra. Cada forma tem seus ganhos e seus custos, e o que decide é a operação e a cultura dos corretores.
+
+Então, o que segue não é um manual. É a minha visão, a partir do que eu observei.
+
+## O que eu vi dar mais problema: o grupo de WhatsApp
+
+Começo pelo cenário que eu mais vi dar dor de cabeça, e que ainda é muito comum: o lead chega e alguém (a secretária, o gerente, o próprio dono) cola as informações no grupo de WhatsApp da equipe.
+
+Dois problemas apareciam sempre.
+
+O primeiro é que **o telefone do cliente fica exposto para todo mundo**. Um corretor pega o lead, mas os outros nove também viram o número. Não tem como garantir que ninguém vai chamar esse cliente por fora.
+
+O segundo é que **a distribuição depende de uma pessoa estar olhando**. Se quem repassa está em reunião, almoçando ou já foi embora, o lead espera. E lead que espera esfria.
+
+Por isso, a minha visão é que qualquer modelo que dependa de alguém intervir para o lead andar acaba falhando em algum momento. Foi isso que me levou a pensar a distribuição como algo automático.
+
+## Os quatro modos de roleta
+
+Automatizar a distribuição é o que o mercado chama de **roleta de leads**. Os modos que eu mais vi as imobiliárias usarem são quatro.
+
+### Escala de plantão
+
+O lead vai para quem está de plantão naquele horário, segundo uma escala que o gestor monta (segunda de manhã é o João, segunda à tarde é a Ana, e assim por diante).
+
+**O que eu vi de bom:** controle. A imobiliária decide exatamente quem atende em cada horário e consegue garantir cobertura nos horários de pico.
+
+**O que eu vi custar:** dá trabalho para montar e manter, e prende o corretor. Quem está de plantão fica limitado, não pode estar numa visita ou numa captação, porque precisa estar ali para pegar o lead. Não foram poucos os corretores que eu vi resistirem ao plantão justamente por isso.
+
+Pessoalmente, não é o modo de que eu mais gosto. Hoje o corretor recebe o lead no celular, em qualquer lugar, e eu tendo a preferir deixar mais livre: quem puder pegar naquele momento, pega. Mas entendo perfeitamente a imobiliária que precisa desse controle.
+
+### Bolsão
+
+O lead não vai para ninguém. Ele fica num "balcão" visível para todos os corretores da roleta ao mesmo tempo, e **quem pegar primeiro fica com ele**.
+
+**O que eu vi de bom:** é o modo em que o lead espera menos, porque todo mundo pode atender na hora.
+
+**O que eu vi custar:** uma certa euforia na equipe. Nos outros modos o corretor corre contra o tempo. No bolsão ele corre contra o colega. Em algumas equipes eu vi isso virar uma competição que passava da linha do saudável.
+
+Por isso eu costumo ver o bolsão funcionando melhor **combinado** com outro modo do que sozinho. Volto nisso mais abaixo.
+
+### Fila
+
+Os corretores ficam numa fila. O lead vai para o primeiro, e quem recebe vai para o fim. Cada um recebe um lead por vez.
+
+**O que eu vi de bom:** em teoria, é o modo mais justo. Ninguém pode reclamar que o colega está recebendo mais.
+
+**O que eu vi custar:** aqui vem a minha opinião mais polêmica. Eu acho que justiça não é o objetivo de uma imobiliária, vender é. E, na minha visão, uma imobiliária que quer vender mais acaba querendo entregar mais leads para quem entrega mais resultado. Na fila, o corretor que converte 2% recebe o mesmo volume que o que converte 8%.
+
+Dito isso, eu vi a fila fazer muito sentido em alguns contextos: uma equipe nova, em que ninguém tem histórico ainda, ou um time muito equilibrado, em que a sensação de injustiça derrubaria o clima.
+
+### Sorteio ponderado
+
+É o modo de que eu mais gosto. Cada corretor tem um **peso**. A cada lead que chega, o sistema faz um sorteio, e quem tem peso maior tem mais chance de ser sorteado.
+
+Eu gosto dele por dois motivos.
+
+O primeiro é que ele **favorece quem converte mais** sem tirar a chance de ninguém. Num lead ou outro, o sorteio pode cair para qualquer um. Mas, pela lei dos grandes números, ao longo de centenas de leads, quem tem peso maior recebe mais.
+
+O segundo, e eu vejo pouca gente falar disso, é que ele **tira o gestor da linha de tiro**. Quando o gestor escolhe na mão quem recebe, cada lead pode virar motivo de reclamação. No sorteio, a regra é conhecida por todos. Fica difícil dizer que o gestor está protegendo alguém: foi o sorteio.
+
+{/* TODO Bruno: como o gestor define o peso na prática? De quanto em quanto tempo revisa? Olha a conversão de quantos meses? E o corretor novo, entra com qual peso? Escrevi uma versão abaixo, ajusta se não for o que você pensa. */}
+
+O cuidado que eu vi fazer diferença é revisar os pesos de tempos em tempos, olhando o desempenho recente. E dar ao corretor novo um peso que permita mostrar resultado, senão ele corre o risco de nunca sair do peso baixo.
+
+## Por que eu olho a taxa de conversão, e não o número de vendas
+
+Esse é um ponto que vale para qualquer modo que leve desempenho em conta, e é onde eu mais vi confusão.
+
+Quando o peso é decidido olhando **quantas vendas** cada corretor fez, forma-se uma bola de neve. Quem recebe mais leads tende a vender mais, porque tem mais oportunidades. Aí ganha mais peso, recebe ainda mais leads, vende ainda mais. Na minha leitura, o número de vendas acaba medindo o volume que a imobiliária entregou, e não a competência de quem recebeu.
+
+Por isso eu prefiro olhar a **taxa de conversão**: de cada 100 leads que o corretor recebeu, quantos viraram venda. Um corretor que recebeu menos leads e vendeu menos, mas converte mais, talvez seja justamente quem deveria estar recebendo mais.
+
+## Os modos lado a lado
+
+<Table
+  head={["Modo", "O que eu vi de bom", "O que eu vi custar", "Onde eu vi funcionar"]}
+  rows={[
+    ["Escala de plantão", "Controle de quem atende em cada horário", "Dá trabalho e prende o corretor", "Imobiliárias que precisavam de cobertura garantida em horários específicos"],
+    ["Bolsão", "O lead espera menos", "Pode gerar competição entre colegas", "Como plano B, quando ninguém pegou a tempo"],
+    ["Fila", "Igualdade entre os corretores", "Não diferencia quem converte mais", "Equipes novas ou muito equilibradas"],
+    ["Sorteio ponderado", "Favorece desempenho sem o gestor escolher", "Exige revisar os pesos com critério", "Operações focadas em venda que acompanham a conversão"],
+  ]}
+/>
+
+## Além do modo: regras que eu vi fazer diferença
+
+O modo é só uma parte. Algumas regras que valem para qualquer modo acabaram pesando tanto quanto ele nas operações que eu acompanhei.
+
+### Tempo de aceite
+
+Na maioria das roletas (menos no bolsão puro), o corretor tem um tempo para assumir o lead. Se não assumir, o lead passa para o próximo.
+
+Encontrar esse tempo foi um dos ajustes mais comuns que eu vi. **Curto demais**, 1 ou 2 minutos, gerava a mesma euforia do bolsão: uma queda de internet, uma ida ao banheiro ou uma distração qualquer e o corretor perdia o lead. Isso criava uma ansiedade que não me parece saudável.
+
+**Longo demais**, acima de 10 minutos, o corretor ficava tranquilo demais e o cliente esperava justamente no momento em que estava mais propenso a responder.
+
+Pelo que eu vi, o ponto de equilíbrio costuma ficar **entre 5 e 10 minutos**. Mas cada equipe acaba achando o seu.
+
+Outro detalhe que fez diferença: pausar o cronômetro fora do horário comercial. Sem isso, o lead que chega às 18h, depois que todo mundo foi embora, roda a equipe inteira de madrugada e amanhece sem dono.
+
+### O bolsão como plano B
+
+É aqui que o bolsão faz mais sentido para mim. Faça a conta: com 5 minutos de aceite e 10 corretores na roleta, se ninguém pegar, o lead pode passar **50 minutos** rodando até alguém assumir. É muito tempo para um cliente esperando.
+
+O que eu vi funcionar bem foi combinar: a roleta usa sorteio ou fila normalmente e, se o lead passar por, digamos, três corretores sem ninguém pegar (15 minutos), ele cai no bolsão para que qualquer um atenda. O bolsão vira um recurso de emergência, para quando tem um cliente esperando, e não a regra do dia a dia.
+
+### Prioridade para quem captou o imóvel
+
+Quando o lead chega por causa de um imóvel específico, eu vi muitas imobiliárias darem a primeira chance para quem captou esse imóvel, **qualquer que seja o modo da roleta**. Faz sentido: ele conhece o imóvel, o proprietário e a negociação. Se não pegar dentro do tempo, o lead segue a distribuição normal.
+
+### Regra de memória: o cliente perdido que volta
+
+Um cliente que foi atendido há meses, teve o negócio perdido e agora mandou mensagem de novo: para quem ele vai?
+
+O comportamento mais comum é ele ser bloqueado como "lead duplicado" e voltar para o corretor que já tinha desistido dele. A regra de memória foi a forma que eu encontrei de tratar isso: se o negócio foi perdido há mais tempo que um prazo definido (30 dias, por exemplo), o lead volta para a roleta como novo e pode ser atendido por outro corretor.
+
+Assim como a prioridade do captador, eu acho importante que essa regra possa ser ligada em qualquer modo.
+
+{/* TODO Bruno: você já viu alguma imobiliária perder venda por causa de lead que "escapou" (o corretor deixou passar e outro fechou, ou ninguém atendeu a tempo)? Se tiver um caso, mesmo contado por cima, entra aqui e fortalece muito o texto. */}
+
+## Perguntas que eu faria antes de escolher
+
+Não tenho uma resposta pronta para a sua imobiliária. Mas, olhando para as operações que eu acompanhei, estas perguntas costumavam clarear a escolha:
+
+- **A operação é mais focada em volume de vendas ou em dar oportunidade igual para todos?** Quem pendia para venda costumava ir para o sorteio ponderado. Quem pendia para igualdade, para a fila.
+- **Existem horários críticos que precisam de cobertura garantida?** O plantão resolve isso, mas vale pesar o custo de prender o corretor.
+- **Você já mede a taxa de conversão de cada corretor?** Se ainda não, talvez valha começar por aí antes de dar peso para alguém.
+- **Quanto tempo um lead pode esperar na sua operação?** A resposta ajuda a definir o tempo de aceite e quando o bolsão entra como plano B.
+
+E nada disso é para sempre. A imobiliária muda, a equipe muda, e eu vi muita roleta mudar junto.
+
+## Como isso funciona no ImobDeal
+
+A roleta está dentro do ImobDeal porque foi o que eu mais ouvi das imobiliárias: elas não queriam um sistema para cada coisa, integrados entre si. Integração costuma dar problema, e ter tudo num lugar só simplifica a rotina.
+
+Lá dá para escolher o modo de cada roleta (sorteio ponderado, fila, plantão ou bolsão), ter várias roletas ao mesmo tempo, uma por campanha ou por equipe, e ligar as regras que fazem sentido para a sua operação: tempo de aceite com horário comercial, bolsão depois de algumas tentativas, prioridade para o captador e regra de memória. E o dashboard Raio-X da Roleta mostra quem está deixando o lead passar e quanto em vendas escapou por isso.

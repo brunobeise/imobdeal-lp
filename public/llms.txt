@@ -40,6 +40,7 @@ O público-alvo são imobiliárias com equipe de corretores, de operações pequ
 - [Preços](https://imobdeal.com.br/precos): planos, o que está incluso e como o valor é composto
 - [Como funciona](https://imobdeal.com.br/como-funciona): o fluxo da operação dentro do sistema, do lead ao fechamento
 - [Sobre](https://imobdeal.com.br/sobre): quem desenvolve o ImobDeal
+- [Blog](https://imobdeal.com.br/blog): artigos práticos sobre gestão comercial de imobiliárias, distribuição de leads, funil de vendas e tecnologia na rotina do corretor
 - [Perguntas frequentes](https://imobdeal.com.br/#faq): preço, migração, integrações, adoção pela equipe, suporte e cancelamento
 
 ## Perguntas frequentes

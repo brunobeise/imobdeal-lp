@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
+  // .md/.mdx entram como módulo (posts do blog em src/content/blog).
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     remotePatterns: [
       {
@@ -14,6 +17,11 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "imagedelivery.net",
+      },
+      {
+        // Foto dos autores do blog (ver src/lib/authors.ts).
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
       },
     ],
     formats: ['image/webp', 'image/avif'],
@@ -56,6 +64,16 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        // Feed RSS do blog: muda só quando sai post novo.
+        source: '/blog/feed.xml',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      {
         // Screenshots do produto: conteúdo imutável, trocado por novo arquivo.
         source: '/:dir(screenshots|dashboards|sites|clientes|portais|depoimentos)/:file*',
         headers: [
@@ -78,4 +96,11 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+/* Posts do blog em MDX (src/content/blog). Sem plugins de remark: no
+   @next/mdx 15.2 o plugin passado por nome é carregado com import() de um
+   caminho absoluto, o que quebra no Windows (dev e build), e plugin passado
+   como função não roda no dev com Turbopack. Por isso tabela é o componente
+   <Table> (ver src/components/blog/Table.tsx). */
+const withMDX = createMDX();
+
+export default withMDX(nextConfig);
