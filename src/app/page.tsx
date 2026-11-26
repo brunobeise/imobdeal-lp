@@ -65,13 +65,13 @@ export default function Home() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-8 pt-24 md:pt-28 pb-0 text-center">
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-white tracking-tight leading-[1.1] max-w-4xl mx-auto">
-            Controle total da sua imobiliária em um só lugar.
+            O CRM imobiliário para ter controle total da sua imobiliária.
           </h1>
 
           {/* Subheadline */}
           <p className="text-base sm:text-lg md:text-xl text-white/70 mt-6 max-w-2xl mx-auto leading-relaxed">
-            O CRM completo da imobiliária: roleta de leads, dashboards e forecast
-            automáticos. Sem planilha e sem pagar um sistema para cada coisa.
+            Roleta de leads, funil de vendas, dashboards e forecast automáticos
+            em um só lugar. Sem planilha e sem pagar um sistema para cada coisa.
           </p>
 
           {/* CTA row */}

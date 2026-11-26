@@ -1,21 +1,15 @@
 import { Metadata } from "next";
 
+const title = "Sobre o ImobDeal";
+const description =
+  "Conheça o ImobDeal, o CRM imobiliário de Santa Cruz do Sul (RS) construído junto com imobiliárias clientes, com atendimento direto com quem desenvolve o sistema.";
+
 export const metadata: Metadata = {
-  title: "Sobre o ImobDeal - Plataforma de Propostas Imobiliárias",
-  description: "Conheça a história do ImobDeal, a plataforma que revoluciona a gestão de propostas imobiliárias. Fundada por profissionais com vasta experiência no mercado imobiliário.",
-  keywords: [
-    "sobre imobdeal",
-    "história imobdeal",
-    "empresa propostas imobiliárias",
-    "fundadores imobdeal",
-    "missão imobiliária",
-    "visão corretor imóveis",
-    "equipe plataforma imobiliária",
-    "software brasileiro imóveis"
-  ],
+  title,
+  description,
   openGraph: {
-    title: "Sobre o ImobDeal - Plataforma de Propostas Imobiliárias",
-    description: "Conheça a história e missão do ImobDeal, a plataforma que revoluciona a gestão de propostas imobiliárias.",
+    title: `${title} | ImobDeal CRM Imobiliário`,
+    description,
     url: "https://imobdeal.com.br/sobre",
     images: [
       {
@@ -30,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sobre o ImobDeal - Plataforma de Propostas Imobiliárias",
-    description: "Conheça a história e missão do ImobDeal, a plataforma que revoluciona a gestão de propostas imobiliárias.",
+    title: `${title} | ImobDeal CRM Imobiliário`,
+    description,
     images: ["https://imobdeal.com.br/og-image.jpg"],
   },
   alternates: {

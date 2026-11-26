@@ -8,7 +8,7 @@ export default function Sobre() {
             Sobre o ImobDeal
           </h1>
           <p className="text-xl text-white/90">
-            Revolucionando o mercado imobiliário com tecnologia e inovação
+            O CRM imobiliário construído junto com as imobiliárias que usam
           </p>
         </div>
       </section>
@@ -23,16 +23,24 @@ export default function Sobre() {
             </h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
-                O ImobDeal nasceu da necessidade de modernizar e simplificar o processo de criação e 
-                acompanhamento de propostas imobiliárias. Fundada por profissionais com vasta experiência 
-                no mercado imobiliário e tecnológico, nossa empresa entende as dificuldades enfrentadas 
-                por corretores e imobiliárias no dia a dia.
+                O ImobDeal começou resolvendo um problema pequeno e concreto:
+                corretores mandavam propostas pelo WhatsApp e não tinham como
+                saber se o cliente tinha aberto, o que tinha olhado e quando
+                valia a pena ligar. Daí vieram as propostas e os portfólios
+                com links rastreáveis.
               </p>
               <p>
-                Percebemos que muitos profissionais ainda perdiam tempo criando propostas manualmente, 
-                enviando documentos por WhatsApp sem controle, e não tinham visibilidade sobre o 
-                interesse real dos clientes. Foi assim que desenvolvemos uma solução completa que 
-                combina praticidade, profissionalismo e inteligência.
+                As imobiliárias que passaram a usar começaram a pedir o resto
+                da operação no mesmo lugar: distribuir os leads entre os
+                corretores, acompanhar o funil, cobrar meta com número na mão.
+                Pedido a pedido, o ImobDeal virou um CRM imobiliário completo,
+                com roleta de leads, integração com portais e Meta Ads,
+                dashboards, módulo financeiro e aplicativo nativo.
+              </p>
+              <p>
+                Boa parte do que o sistema faz hoje nasceu da rotina de uma
+                imobiliária cliente. E o atendimento continua sendo direto com
+                quem desenvolve: sem fila de chamado e sem script.
               </p>
             </div>
           </div>
@@ -43,9 +51,9 @@ export default function Sobre() {
               Nossa Missão
             </h2>
             <p className="text-lg text-gray-700">
-              Capacitar corretores e imobiliárias com ferramentas tecnológicas que aumentem sua 
-              produtividade, melhorem o relacionamento com clientes e potencializem suas vendas, 
-              tornando o processo de vendas imobiliárias mais eficiente e profissional.
+              Dar ao gestor de imobiliária controle real da operação comercial:
+              nenhum lead parado, cada negócio com dono e o número do mês à vista,
+              sem planilha e sem pagar um sistema para cada coisa.
             </p>
           </div>
 
@@ -55,9 +63,8 @@ export default function Sobre() {
               Nossa Visão
             </h2>
             <p className="text-lg text-gray-700">
-              Ser a principal plataforma de gestão de propostas imobiliárias do Brasil, 
-              reconhecida pela inovação, facilidade de uso e resultados excepcionais para 
-              nossos clientes.
+              Ser o CRM imobiliário em que a imobiliária brasileira roda a operação
+              inteira, do lead que chega pelo portal ao contrato assinado.
             </p>
           </div>
 

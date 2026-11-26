@@ -92,6 +92,13 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        // A página de preços saiu: o valor não é mais publicado na LP.
+        // Quem chega pelo link antigo cai na seção de planos da home.
+        source: '/precos',
+        destination: '/#planos',
+        permanent: true,
+      },
     ];
   },
 };

@@ -4,11 +4,10 @@ import { MdCheck } from "react-icons/md";
 import { useLeadModal } from "@/contexts/LeadModalContext";
 
 /* ---------------------------------------------------------------------------
- * Preço para venda assistida, não PLG.
- * Um valor de entrada que ancora e qualifica; o número fechado sai na
- * conversa, porque depende do tamanho da equipe e dos módulos. Sem tabela de
- * usuário adicional, sem custo variável no rodapé: a conta é do comercial,
- * não do visitante.
+ * Plano para venda assistida, não PLG.
+ * Sem valor publicado na LP: o número sai na conversa com o especialista,
+ * porque depende do tamanho da equipe e dos módulos. A seção mostra o que
+ * vem incluso e leva para a conversa.
  * --------------------------------------------------------------------------- */
 
 const inclusos = [
@@ -26,7 +25,7 @@ export default function PricingPlans() {
   const { open: openLeadModal } = useLeadModal();
 
   return (
-    <section id="precos" className="bg-white py-20 md:py-28">
+    <section id="planos" className="bg-white py-20 md:py-28 scroll-mt-20">
       <div className="max-w-5xl mx-auto px-5 md:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 tracking-tight leading-tight text-balance">
@@ -34,16 +33,16 @@ export default function PricingPlans() {
           </h2>
           <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto text-pretty">
             Toda imobiliária recebe o CRM inteiro, sem escadinha de plano para
-            liberar função. O preço acompanha o tamanho da sua equipe.
+            liberar função. O plano acompanha o tamanho da sua equipe.
           </p>
         </div>
 
         {/* Duas colunas: o que você recebe à esquerda, a conversa comercial
-            à direita. O preço não disputa espaço com a lista. */}
+            à direita. */}
         <div className="max-w-4xl mx-auto rounded-2xl border-2 border-primary bg-white shadow-xl shadow-primary/8 ring-1 ring-primary/10 overflow-hidden">
           <div className="grid lg:grid-cols-5">
-            {/* Escopo. No mobile vem depois do preço: quem rola no celular
-                precisa do valor antes da lista, não depois de oito itens. */}
+            {/* Escopo. No mobile vem depois da chamada comercial, para o
+                botão não ficar depois de oito itens. */}
             <div className="order-2 lg:order-1 lg:col-span-3 p-8 md:p-10">
               <h3 className="text-xl font-bold text-gray-900">Imobiliária</h3>
               <p className="text-sm text-gray-500 mt-1.5 leading-relaxed">
@@ -71,17 +70,13 @@ export default function PricingPlans() {
 
             {/* Comercial */}
             <div className="order-1 lg:order-2 lg:col-span-2 bg-surface border-b lg:border-b-0 lg:border-l border-gray-200 p-8 md:p-10 flex flex-col justify-center">
-              <p className="text-sm font-semibold text-gray-400">a partir de</p>
-              <div className="mt-1 flex items-baseline gap-1.5">
-                <span className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-                  R$ 569
-                </span>
-                <span className="text-gray-400 font-medium">/mês</span>
-              </div>
+              <p className="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight leading-tight text-balance">
+                Plano sob medida para a sua equipe
+              </p>
               <p className="text-sm text-gray-500 mt-4 leading-relaxed">
-                O valor exato depende do tamanho da equipe e dos módulos
-                opcionais, como o Financeiro. O especialista fecha isso com
-                você na conversa.
+                O valor depende do tamanho da equipe e dos módulos opcionais,
+                como o Financeiro. O especialista monta a proposta com você
+                na conversa.
               </p>
 
               <button

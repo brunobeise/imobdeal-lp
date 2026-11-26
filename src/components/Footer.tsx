@@ -26,8 +26,9 @@ export default function Footer() {
           <div>
             <h2 className="font-semibold text-white/90 mb-4 text-sm uppercase tracking-wider">Produto</h2>
             <ul className="space-y-3">
+              <li><Link href="/crm-imobiliario" className="text-white/50 hover:text-white text-sm transition-colors">CRM imobiliário</Link></li>
               <li><Link href="/como-funciona" className="text-white/50 hover:text-white text-sm transition-colors">Links Inteligentes</Link></li>
-              <li><Link href="/precos" className="text-white/50 hover:text-white text-sm transition-colors">Preços</Link></li>
+              <li><Link href="/#planos" className="text-white/50 hover:text-white text-sm transition-colors">Planos</Link></li>
             </ul>
           </div>
 

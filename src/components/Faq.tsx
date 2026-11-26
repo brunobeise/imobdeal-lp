@@ -21,7 +21,7 @@ interface QA {
 const faqs: QA[] = [
   {
     q: "Quanto custa o ImobDeal?",
-    a: "O plano Imobiliária começa em R$ 569 por mês. O valor final depende do número de usuários e dos módulos que a sua imobiliária ativar. Não existe versão básica com recurso bloqueado: o que muda é o tamanho da operação, não o que o sistema faz. O especialista fecha o número exato na conversa, depois de entender como a sua equipe trabalha.",
+    a: "O valor depende do número de usuários e dos módulos que a sua imobiliária ativar. Não existe versão básica com recurso bloqueado: o que muda é o tamanho da operação, não o que o sistema faz. O especialista monta a proposta na conversa, depois de entender como a sua equipe trabalha.",
   },
   {
     q: "Preciso de outro sistema para receber e distribuir os leads dos portais?",

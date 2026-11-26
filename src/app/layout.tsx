@@ -93,7 +93,8 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    // Google Search Console: verificar a propriedade por DNS (registro TXT
+    // no domínio). Se for usar a meta tag, o código entra aqui em `google`.
     other: {
       "facebook-domain-verification": "a0bhtabj6mp9fpq3q63gcybmoe67z3",
     },

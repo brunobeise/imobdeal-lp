@@ -7,11 +7,12 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /dashboard/
-Disallow: /_next/
 Disallow: /private/
+# /_next/ NÃO pode ser bloqueado: é de lá que saem o CSS, o JS e as imagens
+# otimizadas. Bloqueado, o Google não renderiza a página nem indexa as imagens.
 
 # Allow important pages for SEO
-Allow: /precos
+Allow: /crm-imobiliario
 Allow: /como-funciona
 Allow: /sobre
 Allow: /blog

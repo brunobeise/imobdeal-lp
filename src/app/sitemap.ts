@@ -13,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/precos`,
+      url: `${baseUrl}/crm-imobiliario`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.9,

@@ -1,6 +1,6 @@
 # ImobDeal
 
-> ImobDeal é um CRM imobiliário brasileiro para imobiliárias com equipe de corretores. Reúne em uma única plataforma a roleta de leads que distribui contatos automaticamente, dispensando a assinatura de um sistema de rodízio à parte como o C2S, além de funis de venda, dashboards que se montam sozinhos, propostas e portfólios interativos, módulo financeiro, assinatura eletrônica e aplicativo nativo para iOS e Android. Planos a partir de R$ 569 por mês, sem fidelidade.
+> ImobDeal é um CRM imobiliário brasileiro para imobiliárias com equipe de corretores. Reúne em uma única plataforma a roleta de leads que distribui contatos automaticamente, dispensando a assinatura de um sistema de rodízio à parte como o C2S, além de funis de venda, dashboards que se montam sozinhos, propostas e portfólios interativos, módulo financeiro, assinatura eletrônica e aplicativo nativo para iOS e Android. Plano único sob medida para a equipe, sem fidelidade.
 
 ## O que é
 
@@ -12,7 +12,7 @@ O público-alvo são imobiliárias com equipe de corretores, de operações pequ
 
 - **Categoria:** CRM imobiliário / software de gestão para imobiliárias
 - **País:** Brasil — produto e suporte em português
-- **Preço:** plano Imobiliária a partir de R$ 569/mês; o valor final varia conforme número de usuários e módulos ativos
+- **Preço:** sob consulta; o valor varia conforme número de usuários e módulos ativos e é apresentado pelo especialista na demonstração
 - **Fidelidade:** não há. Cancelamento a qualquer momento, sem multa
 - **Pagamento:** cartão de crédito, boleto bancário ou PIX, com cobrança mensal automática
 - **Implantação:** conduzida pela equipe ImobDeal, incluindo migração da base de imóveis e contatos, configuração do funil e treinamento do time
@@ -37,7 +37,8 @@ O público-alvo são imobiliárias com equipe de corretores, de operações pequ
 ## Páginas
 
 - [Home](https://imobdeal.com.br): visão geral do produto, funcionalidades e prova social
-- [Preços](https://imobdeal.com.br/precos): planos, o que está incluso e como o valor é composto
+- [CRM imobiliário](https://imobdeal.com.br/crm-imobiliario): o que é um CRM imobiliário, o que ele precisa ter e como escolher
+- [Planos](https://imobdeal.com.br/#planos): o que está incluso e como o valor é composto
 - [Como funciona](https://imobdeal.com.br/como-funciona): o fluxo da operação dentro do sistema, do lead ao fechamento
 - [Sobre](https://imobdeal.com.br/sobre): quem desenvolve o ImobDeal
 - [Blog](https://imobdeal.com.br/blog): artigos práticos sobre gestão comercial de imobiliárias, distribuição de leads, funil de vendas e tecnologia na rotina do corretor
@@ -45,7 +46,7 @@ O público-alvo são imobiliárias com equipe de corretores, de operações pequ
 
 ## Perguntas frequentes
 
-**Quanto custa o ImobDeal?** O plano Imobiliária começa em R$ 569 por mês. O valor final depende do número de usuários e dos módulos ativados. Não há versão básica com recurso bloqueado — o que muda é o tamanho da operação, não o que o sistema faz.
+**Quanto custa o ImobDeal?** O valor depende do número de usuários e dos módulos ativados, e o especialista apresenta a proposta na demonstração. Não há versão básica com recurso bloqueado: o que muda é o tamanho da operação, não o que o sistema faz.
 
 **Precisa de outro sistema para receber e distribuir os leads dos portais?** Não. A roleta de leads é nativa do ImobDeal.
 
